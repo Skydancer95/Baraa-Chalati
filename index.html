@@ -1103,36 +1103,51 @@
         <i class="fab fa-linkedin-in"></i> 
     </a>
 </div>
-    <section style="max-width: 600px; margin: 50px auto; padding: 30px; background-color: #f7f7f7; border-radius: 15px; box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); font-family: Arial, sans-serif;">
+                 
+  <section style="max-width: 600px; margin: 50px auto; padding: 30px; background-color: #f7f7f7; border-radius: 15px; box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); font-family: Arial, sans-serif;">
   <h2 style="text-align: center; margin-bottom: 20px; color: #333;">Kontakta Mig</h2>
-  <form
-  action="https://formspree.io/f/mzzryrbe"
-  method="POST"
->
-   <label>
-    Your email:
-    <input type="email" name="email">
-  </label>
-  <label>
-   <label for="email" style="display: block; margin-bottom: 5px; font-weight: bold; color: #444;">Din e-postadress:</label>
-    <input type="email" id="email" name="email" placeholder="namn@exempel.com" required
-      style="width: 100%; padding: 12px; margin-bottom: 20px; border: 1px solid #ccc; border-radius: 10px; font-size: 1rem;">
-   
-Your message:
-    <textarea name="message"></textarea>
-  </label>
-    <label for="message" style="display: block; margin-bottom: 5px; font-weight: bold; color: #444;">Ditt meddelande:</label>
-    <textarea id="message" name="message" rows="5" placeholder="Skriv ditt meddelande här..." required
-      style="width: 100%; padding: 12px; margin-bottom: 20px; border: 1px solid #ccc; border-radius: 10px; font-size: 1rem;"></textarea>
+  <form action="https://formspree.io/f/mzzryrbe" method="POST">
+    <!-- Email Input -->
+    <div style="margin-bottom: 20px;">
+      <label for="email" style="display: block; margin-bottom: 5px; font-weight: bold; color: #444;">
+        Din e-postadress:
+      </label>
+      <input 
+        type="email" 
+        id="email" 
+        name="email" 
+        placeholder="namn@exempel.com" 
+        required
+        style="width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 10px; font-size: 1rem;"
+      >
+    </div>
 
-   <button type="submit">Send</button>
-</form>
-      style="width: 100%; padding: 12px; background-color: #0077cc; color: white; font-size: 1rem; font-weight: bold; border: none; border-radius: 10px; cursor: pointer;">
+    <!-- Message Textarea -->
+    <div style="margin-bottom: 25px;">
+      <label for="message" style="display: block; margin-bottom: 5px; font-weight: bold; color: #444;">
+        Ditt meddelande:
+      </label>
+      <textarea 
+        id="message" 
+        name="message" 
+        rows="5" 
+        placeholder="Skriv ditt meddelande här..." 
+        required
+        style="width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 10px; font-size: 1rem; resize: vertical;"
+      ></textarea>
+    </div>
+
+    <!-- Submit Button -->
+    <button 
+      type="submit" 
+      style="width: 100%; padding: 12px; background-color: #0077cc; color: white; font-size: 1rem; font-weight: bold; border: none; border-radius: 10px; cursor: pointer; transition: background-color 0.3s;"
+      onmouseover="this.style.backgroundColor='#005fa3'" 
+      onmouseout="this.style.backgroundColor='#0077cc'"
+    >
       Skicka
     </button>
   </form>
 </section>
-                </div>
              
                 </div>
                 </section>
