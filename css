@@ -1,0 +1,123 @@
+/* style.css */
+:root {
+    --neon: #0ff;
+    --dark: #0a0a0a;
+    --accent: #1a1a1a;
+}
+
+body {
+    background: var(--dark);
+    color: #fff;
+    font-family: 'Segoe UI', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 20px;
+}
+
+.glow {
+    text-shadow: 0 0 10px var(--neon);
+}
+
+.card {
+    background: var(--accent);
+    border-radius: 10px;
+    padding: 2rem;
+    margin: 2rem 0;
+    box-shadow: 0 0 15px rgba(0,255,255,0.1);
+}
+
+#skills {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.skill-card {
+    background: #111;
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid rgba(0,255,255,0.1);
+}
+
+.project-card {
+    background: var(--accent);
+    border: 2px solid var(--neon);
+    border-radius: 8px;
+    padding: 1.5rem;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+}
+
+.preview-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-top: 1rem;
+}
+
+.preview-item {
+    aspect-ratio: 1;
+    background: #222;
+    border: 1px solid var(--neon);
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.8);
+}
+
+.modal-content {
+    background: var(--dark);
+    margin: 5% auto;
+    padding: 2rem;
+    width: 80%;
+    max-width: 1000px;
+    border-radius: 10px;
+    position: relative;
+}
+
+.project-video {
+    width: 100%;
+    margin: 1rem 0;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+.gallery img {
+    width: 100%;
+    border: 1px solid var(--neon);
+}
+
+.btn {
+    background: var(--neon);
+    color: var(--dark);
+    padding: 1rem 2rem;
+    border-radius: 5px;
+    text-decoration: none;
+    display: inline-block;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+    
+    #skills {
+        grid-template-columns: 1fr;
+    }
+}
