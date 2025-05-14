@@ -1,0 +1,1151 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baraa Chalati | Senior IT Support Engineer</title>
+    <meta name="description" content="Senior IT-supporttekniker med expertis inom systemadministration och infrastrukturhantering">
+    <meta property="og:title" content="Baraa Chalati | Senior IT-supportspecialist">
+    <meta property="og:description" content="Professionell IT-support och infrastrukturhantering med 5+ års erfarenhet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #10b981;
+            --primary-dark: #059669;
+            --dark: #0f172a;
+            --darker: #020617;
+            --light: #f8fafc;
+            --gray: #94a3b8;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', system-ui, sans-serif;
+        }
+
+        body {
+            background-color: var(--darker);
+            color: var(--light);
+            line-height: 1.7;
+        }
+
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, var(--dark), var(--darker));
+            padding: 6rem 2rem 4rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('images/tech-pattern.png') center/cover;
+            opacity: 0.05;
+        }
+
+        .profile-container {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .profile-img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid var(--primary);
+            margin: 0 auto 1.5rem;
+            box-shadow: 0 10px 30px rgba(16, 185, 129, 0.3);
+        }
+
+        h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(to right, var(--primary), #3b82f6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .tagline {
+            font-size: 1.25rem;
+            color: var(--gray);
+            margin-bottom: 2rem;
+            font-weight: 300;
+        }
+
+        .contact-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: var(--darker);
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(16, 185, 129, 0.4);
+        }
+
+        .btn-outline {
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+
+        .btn-outline:hover {
+            background: var(--primary);
+            color: var(--darker);
+        }
+
+        /* Navigation */
+        nav {
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1.5rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-weight: 700;
+            font-size: 1.25rem;
+            color: var(--primary);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: var(--light);
+            text-decoration: none;
+            font-weight: 500;
+            position: relative;
+            padding: 0.5rem 0;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Main Content */
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        section {
+            margin-bottom: 5rem;
+            scroll-margin-top: 100px;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            color: var(--primary);
+            position: relative;
+            display: inline-block;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: var(--primary);
+            border-radius: 2px;
+        }
+
+        /* About Section */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-text p {
+            margin-bottom: 1.5rem;
+            color: var(--gray);
+        }
+
+        .personal-letter {
+            background: rgba(15, 23, 42, 0.7);
+            border-left: 4px solid var(--primary);
+            padding: 2rem;
+            border-radius: 0 8px 8px 0;
+            margin-top: 2rem;
+        }
+
+        .personal-letter p {
+            font-style: italic;
+            color: var(--light);
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .skill-category {
+            background: rgba(15, 23, 42, 0.7);
+            border-radius: 8px;
+            padding: 1.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .skill-category h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .skill-list {
+            list-style: none;
+        }
+
+        .skill-list li {
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .skill-list li::before {
+            content: '▹';
+            color: var(--primary);
+            font-size: 0.9rem;
+        }
+
+        /* Experience Section */
+        .timeline {
+            position: relative;
+            padding-left: 2rem;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 7px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--primary);
+            opacity: 0.3;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 3rem;
+            padding-left: 2rem;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 5px;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: var(--darker);
+            border: 3px solid var(--primary);
+        }
+
+        .timeline-date {
+            font-weight: 500;
+            color: var(--primary);
+            display: block;
+            margin-bottom: 0.25rem;
+        }
+
+        .timeline-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin: 0.5rem 0;
+        }
+
+        .timeline-company {
+            color: var(--gray);
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .timeline-description {
+            color: var(--gray);
+        }
+
+        .timeline-description ul {
+            margin-top: 0.5rem;
+            padding-left: 1.5rem;
+        }
+
+        .timeline-description li {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Projects Section */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background: rgba(15, 23, 42, 0.7);
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+            border-color: rgba(16, 185, 129, 0.3);
+        }
+
+        .project-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .project-content {
+            padding: 1.5rem;
+        }
+
+        .project-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--light);
+        }
+
+        .project-description {
+            color: var(--gray);
+            margin-bottom: 1rem;
+        }
+
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .tech-tag {
+            background: rgba(16, 185, 129, 0.1);
+            color: var(--primary);
+            padding: 0.25rem 0.75rem;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 500;
+        }
+
+        .project-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .project-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+        }
+
+        .project-link:hover {
+            color: var(--light);
+        }
+
+        /* Contact Section */
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+
+        .contact-icon {
+            font-size: 1.25rem;
+            color: var(--primary);
+            margin-top: 0.25rem;
+        }
+
+        .contact-details h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .contact-details p, .contact-details a {
+            color: var(--gray);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-details a:hover {
+            color: var(--primary);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(16, 185, 129, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            background: var(--primary);
+            color: var(--darker);
+            transform: translateY(-3px);
+        }
+
+        .contact-form {
+            display: grid;
+            gap: 1.5rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .form-group label {
+            font-weight: 500;
+        }
+
+        .form-control {
+            padding: 0.75rem 1rem;
+            background: rgba(15, 23, 42, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 4px;
+            color: var(--light);
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            background: var(--primary);
+            color: var(--darker);
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 4px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: fit-content;
+        }
+
+        .submit-btn:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(16, 185, 129, 0.4);
+        }
+
+        /* References Section */
+        .references-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .reference-card {
+            background: rgba(15, 23, 42, 0.7);
+            border-radius: 8px;
+            padding: 1.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .reference-content {
+            font-style: italic;
+            color: var(--gray);
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+
+        .reference-content::before,
+        .reference-content::after {
+            content: '"';
+            font-size: 2rem;
+            color: var(--primary);
+            opacity: 0.3;
+            position: absolute;
+        }
+
+        .reference-content::before {
+            top: -10px;
+            left: -5px;
+        }
+
+        .reference-content::after {
+            bottom: -20px;
+            right: -5px;
+        }
+
+        .reference-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .reference-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .reference-info h4 {
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+
+        .reference-info p {
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            padding: 3rem 2rem;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .footer-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .footer-logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+
+        .footer-text {
+            color: var(--gray);
+            margin-bottom: 2rem;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: var(--gray);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary);
+        }
+
+        .copyright {
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .about-content,
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+
+            .projects-grid {
+                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .nav-links {
+                gap: 1.5rem;
+            }
+
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            .tagline {
+                font-size: 1.1rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            header {
+                padding: 4rem 1rem 3rem;
+            }
+
+            .profile-img {
+                width: 140px;
+                height: 140px;
+            }
+
+            .contact-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .nav-links {
+                gap: 1rem;
+            }
+
+            section {
+                margin-bottom: 3rem;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="profile-container">
+            <img src="images/profile.jpg" alt="Porträttbild av Baraa Chalati" class="profile-img">
+            <h1>Baraa Chalati</h1>
+            <p class="tagline">Senior IT Support Specialist | Systemadministratör | IT-infrastrukturtekniker</p>
+            <div class="contact-buttons">
+                <a href="#contact" class="btn btn-primary">
+                    <i class="fas fa-envelope"></i> Kontakta Mig
+                </a>
+                <a href="docs/baraa-chalati-cv.pdf" download class="btn btn-outline">
+                    <i class="fas fa-download"></i> Ladda Ner CV
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav aria-label="Huvudnavigation">
+        <div class="nav-container">
+            <div class="logo">Baraa Chalati</div>
+            <div class="nav-links">
+                <a href="#about">Om Mig</a>
+                <a href="#skills">Kompetenser</a>
+                <a href="#experience">Erfarenhet</a>
+                <a href="#projects">Projekt</a>
+                <a href="#references">Referenser</a>
+                <a href="#contact">Kontakt</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main role="main">
+        <!-- About Section -->
+        <section id="about">
+            <h2>Om Mig</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Jag är en certifierad IT-professionell med över 5 års erfarenhet inom IT-support, systemadministration och infrastrukturhantering. Min expertis sträcker sig från första linjens support till avancerad systemadministration och virtualisering.</p>
+                    <p>Med en stark teknisk bakgrund och exceptionella kundservicefärdigheter har jag hjälpt både små företag och stora enterprise-kunder att optimera sina IT-miljöer. Jag brinner för att skapa effektiva tekniska lösningar som ökar produktiviteten och minskar driftstopp.</p>
+                    
+                    <div class="personal-letter">
+                        <p>"Min passion för teknik började redan som barn när jag plockade isär min första dator. Idag kombinerar jag denna nyfikenhet med professionell expertis för att leverera lösningar som gör verklig skillnad. Jag tror på att bra IT inte bara ska fungera - det ska underlätta och inspirera."</p>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 style="margin-bottom: 1.5rem;">Mina nyckelkompetenser</h3>
+                    <div class="skills-grid">
+                        <div class="skill-category">
+                            <h3><i class="fas fa-server"></i> Systemadministration</h3>
+                            <ul class="skill-list">
+                                <li>Windows Server 2016-2022</li>
+                                <li>Active Directory</li>
+                                <li>Group Policy</li>
+                                <li>DNS/DHCP</li>
+                                <li>Virtualisering</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="skill-category">
+                            <h3><i class="fas fa-network-wired"></i> Nätverk</h3>
+                            <ul class="skill-list">
+                                <li>TCP/IP</li>
+                                <li>VPN</li>
+                                <li>Router/Switch</li>
+                                <li>Wireshark</li>
+                                <li>Brandväggar</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="skill-category">
+                            <h3><i class="fas fa-code"></i> Automatisering</h3>
+                            <ul class="skill-list">
+                                <li>PowerShell</li>
+                                <li>Bash</li>
+                                <li>Python</li>
+                                <li>Task Scheduler</li>
+                                <li>API-integrationer</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="skill-category">
+                            <h3><i class="fas fa-cloud"></i> Molntjänster</h3>
+                            <ul class="skill-list">
+                                <li>Microsoft 365</li>
+                                <li>Azure AD</li>
+                                <li>Exchange Online</li>
+                                <li>SharePoint</li>
+                                <li>OneDrive</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills">
+            <h2>Teknisk Expertis</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 2rem;">
+                <div>
+                    <h3 style="margin-bottom: 1rem; color: var(--primary);">Operativsystem</h3>
+                    <ul style="list-style: none;">
+                        <li style="margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.5rem;">
+                            <i class="fab fa-windows" style="color: var(--primary);"></i>
+                            Windows 10/11 & Server
+                        </li>
+                        <li style="margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.5rem;">
+                            <i class="fab fa-linux" style="color: var(--primary);"></i>
+                            Linux (Ubuntu, CentOS)
+                        </li>
+                        <li style="margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.5rem;">
+                            <i class="fab fa-apple" style="color: var(--primary);"></i>
+                            macOS
+                        </li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 style="margin-bottom: 1rem; color: var(--primary);">Virtualisering</h3>
+                    <ul style="list-style: none;">
+                        <li style="margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.5rem;">
+                            <i class="fas fa-cube" style="color: var(--primary);"></i>
+                            VMware vSphere
+                        </li>
+                        <li style="margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.5rem;">
+                            <i class="fas fa-cubes" style="color: var(--primary);"></i>
+                            Hyper-V
+                        </li>
+                        <li style="margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.5rem;">
+                            <i class="fab fa-docker" style="color: var(--primary);"></i>
+                            Docker
+                        </li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 style="margin-bottom: 1rem; color: var(--primary);">Språk</h3>
+                    <ul style="list-style: none;">
+                        <li style="margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.5rem;">
+                            <i class="fas fa-language" style="color: var(--primary);"></i>
+                            Svenska - Flytande
+                        </li>
+                        <li style="margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.5rem;">
+                            <i class="fas fa-language" style="color: var(--primary);"></i>
+                            Engelska - Modersmål
+                        </li>
+                        <li style="margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.5rem;">
+                            <i class="fas fa-language" style="color: var(--primary);"></i>
+                            Arabiska - Modersmål
+                        </li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 style="margin-bottom: 1rem; color: var(--primary);">Certifieringar</h3>
+                    <ul style="list-style: none;">
+                        <li style="margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.5rem;">
+                            <i class="fas fa-certificate" style="color: var(--primary);"></i>
+                            Microsoft 365 Certified
+                        </li>
+                        <li style="margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.5rem;">
+                            <i class="fas fa-certificate" style="color: var(--primary);"></i>
+                            ITIL 4 Foundation
+                        </li>
+                        <li style="margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.5rem;">
+                            <i class="fas fa-certificate" style="color: var(--primary);"></i>
+                            Azure Fundamentals
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience">
+            <h2>Professionell Erfarenhet</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <span class="timeline-date">2022 - Nuvarande</span>
+                    <h3 class="timeline-title">Senior IT Support Specialist</h3>
+                    <span class="timeline-company">Tietoevry, Stockholm</span>
+                    <div class="timeline-description">
+                        <p>Ansvarar för avancerad IT-support och problemlösning för enterprise-kunder med fokus på Microsoft 365 och Azure-miljöer.</p>
+                        <ul>
+                            <li>Löser komplexa tekniska problem för över 500 användare</li>
+                            <li>Implementerar och underhåller Microsoft 365- och Azure-lösningar</li>
+                            <li>Utvecklar PowerShell-skript för automatisering av rutinuppgifter</li>
+                            <li>Fungerar som teknisk rådgivare för kunder</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <span class="timeline-date">2020 - 2022</span>
+                    <h3 class="timeline-title">Systemadministratör</h3>
+                    <span class="timeline-company">Academedia Institute, Syrien</span>
+                    <div class="timeline-description">
+                        <p>Ansvarade för hela IT-infrastrukturen för en organisation med 200+ användare.</p>
+                        <ul>
+                            <li>Designade och implementerade ny virtualiseringsmiljö med VMware</li>
+                            <li>Migrerade lokala servrar till molnbaserade lösningar</li>
+                            <li>Automatiserade användarhantering med PowerShell</li>
+                            <li>Utbildade personal i IT-säkerhet och bästa praxis</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <span class="timeline-date">2018 - 2020</span>
+                    <h3 class="timeline-title">IT-tekniker</h3>
+                    <span class="timeline-company">Levant Center, Turkiet</span>
+                    <div class="timeline-description">
+                        <p>Levererade teknisk support och underhåll för en mångsidig IT-miljö.</p>
+                        <ul>
+                            <li>Hanterade helpdesk-ärenden och felsökningsprocesser</li>
+                            <li>Implementerade Active Directory-strukturer</li>
+                            <li>Konfigurerade och underhöll nätverksutrustning</li>
+                            <li>Utvecklade dokumentation och kunskapsbaser</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects">
+            <h2>Utvalda Projekt</h2>
+            <div class="projects-grid">
+                <!-- Project 1 -->
+                <div class="project-card">
+                    <img src="images/server-migration.jpg" alt="Server Migration Project" class="project-image">
+                    <div class="project-content">
+                        <h3 class="project-title">Virtualiseringsplattform från grunden</h3>
+                        <p class="project-description">Designade och implementerade en komplett virtualiseringslösning med VMware vSphere för att modernisera företagets IT-infrastruktur.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">VMware</span>
+                            <span class="tech-tag">Windows Server</span>
+                            <span class="tech-tag">Storage</span>
+                            <span class="tech-tag">Backup</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="project-server.html" class="project-link">
+                                <i class="fas fa-arrow-right"></i> Läs mer
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="project-card">
+                    <img src="images/active-directory.jpg" alt="Active Directory Project" class="project-image">
+                    <div class="project-content">
+                        <h3 class="project-title">Active Directory Modernisering</h3>
+                        <p class="project-description">Implementerade en ny AD-struktur med avancerade Group Policy-inställningar för förbättrad säkerhet och hantering.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Active Directory</span>
+                            <span class="tech-tag">Group Policy</span>
+                            <span class="tech-tag">PowerShell</span>
+                            <span class="tech-tag">LDAP</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="project-ad.html" class="project-link">
+                                <i class="fas fa-arrow-right"></i> Läs mer
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 3 -->
+                <div class="project-card">
+                    <img src="images/automation.jpg" alt="Automation Project" class="project-image">
+                    <div class="project-content">
+                        <h3 class="project-title">IT-processautomatisering</h3>
+                        <p class="project-description">Utvecklade PowerShell-skript för att automatisera användarhantering, rapportering och systemövervakning.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">PowerShell</span>
+                            <span class="tech-tag">Automation</span>
+                            <span class="tech-tag">Scheduled Tasks</span>
+                            <span class="tech-tag">API</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="project-automation.html" class="project-link">
+                                <i class="fas fa-arrow-right"></i> Läs mer
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- References Section -->
+        <section id="references">
+            <h2>Referenser</h2>
+            <div class="references-grid">
+                <div class="reference-card">
+                    <div class="reference-content">
+                        Baraa har varit en ovärderlig tillgång för vårt team. Hans tekniska expertis kombinerat med hans förmåga att förklara komplexa koncept på ett enkelt sätt har gjort honom till en utmärkt IT-professionell.
+                    </div>
+                    <div class="reference-author">
+                        <img src="images/ref1.jpg" alt="Anna Karlsson" class="reference-avatar">
+                        <div class="reference-info">
+                            <h4>Anna Karlsson</h4>
+                            <p>IT-chef, Tietoevry</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="reference-card">
+                    <div class="reference-content">
+                        Baraas arbete med vår virtualiseringsplattform var exceptionellt. Han levererade inte bara inom tidsramen utan överträffade våra förväntningar på prestanda och tillförlitlighet.
+                    </div>
+                    <div class="reference-author">
+                        <img src="images/ref2.jpg" alt="Mohammed Ali" class="reference-avatar">
+                        <div class="reference-info">
+                            <h4>Mohammed Ali</h4>
+                            <p>CTO, Academedia</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="reference-card">
+                    <div class="reference-content">
+                        Som kollega är Baraa både kunnig och hjälpsam. Hans automationsskript har sparat oss otaliga timmar i manuellt arbete och minskat våra felhastigheter markant.
+                    </div>
+                    <div class="reference-author">
+                        <img src="images/ref3.jpg" alt="Emma Andersson" class="reference-avatar">
+                        <div class="reference-info">
+                            <h4>Emma Andersson</h4>
+                            <p>IT-supporttekniker, Tietoevry</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact">
+            <h2>Kontakt</h2>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt contact-icon"></i>
+                        <div class="contact-details">
+                            <h3>Adress</h3>
+                            <p>123 IT-gatan<br>Stockholm, Sverige</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope contact-icon"></i>
+                        <div class="contact-details">
+                            <h3>E-post</h3>
+                            <a href="mailto:kontakt@baraachalati.se">kontakt@baraachalati.se</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone contact-icon"></i>
+                        <div class="contact-details">
+                            <h3>Telefon</h3>
+                            <a href="tel:+46701234567">+46 70 123 45 67</a>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="contact-form">
+                    <h3>Skicka Meddelande</h3>
+                    <form>
+                        <div class="form-group">
+                            <label for="name">Namn</label>
+                            <input type="text" id="name" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">E-post</label>
+                            <input type="email" id="email" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Meddelande</label>
+                            <textarea id="message" class="form-control" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">Skicka</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">Baraa Chalati</div>
+            <p class="footer-text">IT-infrastruktursexpert med passion för teknik och problemlösning</p>
+            <div class="footer-links">
+                <a href="#about">Om Mig</a>
+                <a href="#experience">Erfarenhet</a>
+                <a href="#contact">Kontakt</a>
+                <a href="docs/baraa-chalati-cv.pdf" download>Ladda Ner CV</a>
+            </div>
+            <p class="copyright">&copy; 2023 Baraa Chalati. Alla rättigheter reserverade.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Form submission
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Tack för ditt meddelande! Jag återkommer inom 24 timmar.');
+            this.reset();
+        });
+    </script>
+</body>
+</html>
