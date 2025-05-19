@@ -274,6 +274,74 @@
             font-size: 0.9rem;
         }
 
+        /* Education Section */
+        .education-timeline {
+            position: relative;
+            padding-left: 2rem;
+            margin-top: 2rem;
+        }
+
+        .education-timeline::before {
+            content: '';
+            position: absolute;
+            left: 7px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--primary);
+            opacity: 0.3;
+        }
+
+        .education-item {
+            position: relative;
+            margin-bottom: 2.5rem;
+            padding-left: 2rem;
+        }
+
+        .education-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 5px;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: var(--darker);
+            border: 3px solid var(--primary);
+        }
+
+        .education-date {
+            font-weight: 500;
+            color: var(--primary);
+            display: block;
+            margin-bottom: 0.25rem;
+        }
+
+        .education-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin: 0.5rem 0;
+        }
+
+        .education-institution {
+            color: var(--gray);
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .education-description {
+            color: var(--gray);
+        }
+
+        .education-description ul {
+            margin-top: 0.5rem;
+            padding-left: 1.5rem;
+        }
+
+        .education-description li {
+            margin-bottom: 0.5rem;
+        }
+
         /* Experience Section */
         .timeline {
             position: relative;
@@ -721,7 +789,9 @@
             <img src="images/profile.jpg" alt="Porträttbild av Baraa Chalati" class="profile-img">
             <h1>Baraa Chalati</h1>
             <p class="tagline">Senior IT Support Specialist</p>
-            
+            <div class="contact-buttons">
+                <a href="#contact" class="btn btn-primary">
+                    <i class="fas fa-envelope"></i> Kontakta Mig
                 </a>
                 <a href="docs/baraa-chalati-cv.pdf" download class="btn btn-outline">
                     <i class="fas fa-download"></i> Ladda Ner CV
@@ -736,7 +806,7 @@
             <div class="logo">Baraa Chalati</div>
             <div class="nav-links">
                 <a href="#about">Om Mig</a>
-                <a href="#skills">Kompetenser</a>
+                <a href="#education">Utbildning</a>
                 <a href="#experience">Erfarenhet</a>
                 <a href="#projects">Projekt</a>
                 <a href="#references">Referenser</a>
@@ -803,7 +873,7 @@
                                 <li>Exchange Online</li>
                                 <li>SharePoint</li>
                                 <li>OneDrive</li>
-                                <li>Ärendehanteringssystem (t.ex.ServiceNow, Jira).</li>
+                                <li>Ärendehanteringssystem</li>
                             </ul>
                         </div>
                     </div>
@@ -811,76 +881,67 @@
             </div>
         </section>
 
-        <!-- Skills Section -->
-        <section id="skills">
-            <h2>Teknisk Expertis</h2>
-            <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 2rem;">
-                <div>
-                    <h3 style="margin-bottom: 1rem; color: var(--primary);">Operativsystem</h3>
-                    <ul style="list-style: none;">
-                        <li style="margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.5rem;">
-                            <i class="fab fa-windows" style="color: var(--primary);"></i>
-                            Windows 10/11 & Server
-                        </li>
-                        <li style="margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.5rem;">
-                            <i class="fab fa-linux" style="color: var(--primary);"></i>
-                            Linux (Ubuntu, CentOS)
-                        </li>
-                        <li style="margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.5rem;">
-                            <i class="fab fa-apple" style="color: var(--primary);"></i>
-                            macOS
-                        </li>
-                    </ul>
+        <!-- Education Section -->
+        <section id="education">
+            <h2>Utbildning</h2>
+            <div class="education-timeline">
+                <div class="education-item">
+                    <span class="education-date">2025-02-10 – Pågående</span>
+                    <h3 class="education-title">IT-Support Specialist</h3>
+                    <span class="education-institution">Lexicon, Sverige</span>
+                    <div class="education-description">
+                        <p>Komplett utbildning inom IT-support med fokus på:</p>
+                        <ul>
+                            <li>IT-säkerhet och nätverksteknik</li>
+                            <li>Databashantering och operativsystem</li>
+                            <li>Molntjänster (Microsoft Azure)</li>
+                            <li>Administration av Microsoft 365-miljöer</li>
+                            <li>Användarsupport och problemlösning</li>
+                        </ul>
+                    </div>
                 </div>
                 
-                <div>
-                    <h3 style="margin-bottom: 1rem; color: var(--primary);">Virtualisering</h3>
-                    <ul style="list-style: none;">
-                        <li style="margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.5rem;">
-                            <i class="fas fa-cubes" style="color: var(--primary);"></i>
-                            Hyper-V
-                        </li>
-                        <li style="margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.5rem;">
-                            <i class="fab fa-docker" style="color: var(--primary);"></i>
-                            Microsoft Azure 
-                        </li>
-                    </ul>
+                <div class="education-item">
+                    <span class="education-date">2023-11 – 2023-12</span>
+                    <h3 class="education-title">Servicedesk Tekniker / IT-support</h3>
+                    <span class="education-institution">Cornerstone, Sverige</span>
+                    <div class="education-description">
+                        <p>Intensivutbildning inom enterprise IT-support:</p>
+                        <ul>
+                            <li>ITIL-processer och ärendehantering</li>
+                            <li>Microsoft 365 och Azure AD-administration</li>
+                            <li>Nätverksgrunderna och säkerhetsprinciper</li>
+                            <li>MS900-certifierad (Microsoft 365 Fundamentals)</li>
+                        </ul>
+                    </div>
                 </div>
                 
-                <div>
-                    <h3 style="margin-bottom: 1rem; color: var(--primary);">Språk</h3>
-                    <ul style="list-style: none;">
-                        <li style="margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.5rem;">
-                            <i class="fas fa-language" style="color: var(--primary);"></i>
-                            Svenska - Flytande
-                        </li>
-                        <li style="margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.5rem;">
-                            <i class="fas fa-language" style="color: var(--primary);"></i>
-                            Engelska - Modersmål
-                        </li>
-                        <li style="margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.5rem;">
-                            <i class="fas fa-language" style="color: var(--primary);"></i>
-                            Arabiska - Modersmål
-                        </li>
-                    </ul>
+                <div class="education-item">
+                    <span class="education-date">2019-08 – 2021-06</span>
+                    <h3 class="education-title">Receptarieprogrammet</h3>
+                    <span class="education-institution">Uppsala Universitet, Sverige</span>
+                    <div class="education-description">
+                        <p>Universitetsstudier som ledde till en passion för IT och teknik. Under denna tid utvecklade jag:</p>
+                        <ul>
+                            <li>Strukturerat tänkande och problemlösningsförmåga</li>
+                            <li>Vetenskapligt arbetssätt och noggrannhet</li>
+                            <li>Kundfokus och kommunikationsfärdigheter</li>
+                        </ul>
+                    </div>
                 </div>
                 
-                <div>
-                    <h3 style="margin-bottom: 1rem; color: var(--primary);">Certifieringar</h3>
-                    <ul style="list-style: none;">
-                        <li style="margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.5rem;">
-                            <i class="fas fa-certificate" style="color: var(--primary);"></i>
-                            Microsoft 365 Certified
-                        </li>
-                        <li style="margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.5rem;">
-                            <i class="fas fa-certificate" style="color: var(--primary);"></i>
-                            ITIL 4 Foundation
-                        </li>
-                        <li style="margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.5rem;">
-                            <i class="fas fa-certificate" style="color: var(--primary);"></i>
-                            Azure Fundamentals
-                        </li>
-                    </ul>
+                <div class="education-item">
+                    <span class="education-date">2011-01 – 2013-06</span>
+                    <h3 class="education-title">Naturvetenskapligt program</h3>
+                    <span class="education-institution">Al Mamoon Gymnasium, Syrien</span>
+                    <div class="education-description">
+                        <p>Gymnasieexamen med fokus på:</p>
+                        <ul>
+                            <li>Matematik och fysik</li>
+                            <li>Problemorienterat lärande</li>
+                            <li>Teknisk analys och logiskt tänkande</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </section>
@@ -913,10 +974,10 @@
                     <div class="timeline-description">
                         <p>Ansvarade för hela IT-infrastrukturen för en organisation med 200+ användare.</p>
                         <ul>
-                            <li>• Undervisning i ICDL-kurser på engelska och arabiska.</li>
-                            <li>• Praktisk utbildning i datorprogram och grafisk design (Photoshop).</li>
-                            <li>• Automatiserade användarhantering med PowerShell</li>
-                            <li>• Utbildning i Microsoft Office-program för barn.</li>
+                            <li>Undervisning i ICDL-kurser på engelska och arabiska.</li>
+                            <li>Praktisk utbildning i datorprogram och grafisk design (Photoshop).</li>
+                            <li>Automatiserade användarhantering med PowerShell</li>
+                            <li>Utbildning i Microsoft Office-program för barn.</li>
                         </ul>
                     </div>
                 </div>
@@ -924,16 +985,16 @@
                 <div class="timeline-item">
                     <span class="timeline-date">2022-08 – 2022-10</span>
                     <h3 class="timeline-title">Flygplatskontrollant</h3>
-                    <span class="timeline-company">Arlanda,Stockholm</span>
+                    <span class="timeline-company">Arlanda, Stockholm</span>
                     <div class="timeline-description">
                         <p>Utförde säkerhetskontroller och hanterade röntgenmaskiner för bagagekontroll.</p>
                         <ul>
-                            <li>• Säkerställde att säkerhetsföreskrifter efterlevdes och bidrog till en trygg miljö.</li>
+                            <li>Säkerställde att säkerhetsföreskrifter efterlevdes och bidrog till en trygg miljö.</li>
                         </ul>
                     </div>
                 </div>
 
-                 <div class="timeline-item">
+                <div class="timeline-item">
                     <span class="timeline-date">2022-08 – 2022-10</span>
                     <h3 class="timeline-title">HR-assistent</h3>
                     <span class="timeline-company">Landstinget i Kalmar Län</span>
@@ -1097,13 +1158,45 @@
                         </div>
                     </div>
                     <div class="social-links">
-    <a href="https://www.linkedin.com/in/baraachalati/" class="social-link" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
-        <i class="fab fa-linkedin-in"></i> 
-    </a>
-</div>             
+                        <a href="https://www.linkedin.com/in/baraachalati/" class="social-link" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://github.com/Skydancer95" class="social-link" aria-label="GitHub" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://x.com/Darkskydancer95" class="social-link" aria-label="Twitter" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </div>
                 </div>
-                </section>
-        
+                
+                <div class="contact-form">
+                    <form action="#" method="POST">
+                        <div class="form-group">
+                            <label for="name">Namn</label>
+                            <input type="text" id="name" name="name" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">E-post</label>
+                            <input type="email" id="email" name="email" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Ämne</label>
+                            <input type="text" id="subject" name="subject" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Meddelande</label>
+                            <textarea id="message" name="message" class="form-control" required></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">
+                            <i class="fas fa-paper-plane"></i> Skicka Meddelande
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
     <!-- Footer -->
     <footer>
         <div class="footer-content">
@@ -1111,6 +1204,7 @@
             <p class="footer-text">IT-infrastruktursexpert med passion för teknik och problemlösning</p>
             <div class="footer-links">
                 <a href="#about">Om Mig</a>
+                <a href="#education">Utbildning</a>
                 <a href="#experience">Erfarenhet</a>
                 <a href="#contact">Kontakt</a>
                 <a href="docs/baraa-chalati-cv.pdf" download>Ladda Ner CV</a>
