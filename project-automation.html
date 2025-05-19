@@ -5,12 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IT-processautomatisering med PowerShell</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <style>
         body {
-            background-color: #1e3a8a;
-            color: #f8fafc;
+            background-color: #1a202c;
+            color: #cbd5e0;
             font-family: 'Inter', sans-serif;
-            line-height: 1.6;
             margin: 0;
             padding: 0;
         }
@@ -21,44 +22,57 @@
         }
         h1 {
             font-size: 2.5rem;
-            color: #10b981;
-            margin-bottom: 1rem;
-        }
-        h2 {
-            font-size: 2rem;
-            color: #3b82f6;
-            margin-bottom: 1rem;
-        }
-        p {
+            color: #38b2ac;
+            text-align: center;
             margin-bottom: 1rem;
         }
         .project-image {
             width: 100%;
             height: auto;
+            border-radius: 8px;
             margin-bottom: 1rem;
         }
-        .back-link {
-            display: inline-block;
-            margin-top: 2rem;
-            color: #10b981;
-            text-decoration: none;
+        .project-description {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
         }
-        .back-link:hover {
-            text-decoration: underline;
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+        .tech-tag {
+            background-color: #2d3748;
+            color: #38b2ac;
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+        }
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: #38b2ac;
+            text-decoration: none;
+            font-size: 1rem;
+            margin-top: 2rem;
+        }
+        .back-link i {
+            margin-right: 0.5rem;
         }
     </style>
 </head>
 <body>
-    <div class="container">
+    <div class="container animate__animated animate__fadeIn">
         <h1>IT-processautomatisering med PowerShell</h1>
-        <img src="images/automation.jpg" alt="IT-processautomatisering med PowerShell" class="project-image">
-        <h2>Introduktion</h2>
-        <p>Som en proaktiv problemlösare såg jag möjligheten att effektivisera vår IT-miljö genom automatisering. Med PowerShell som verktyg utvecklade jag skript som inte bara sparade tid – de förbättrade också säkerheten och minskade risken för mänskliga fel. Det här projektet visar min förmåga att tänka strategiskt, agera självständigt och leverera konkreta resultat.</p>
-        <h2>Resultat</h2>
-        <ul>
-            <li>Automatiserade användarskapande, lösenordsåterställning och grupptilldelning.</li><li>Skapade rapportskript som gav daglig översikt över systemstatus och användaraktivitet.</li><li>Implementerade realtidsövervakning med larm vid avvikelser.</li><li>Minskat manuellt arbete med 60% – frigjorde tid för mer avancerad support.</li>
-        </ul>
-        <a href="index.html" class="back-link">&larr; Tillbaka till startsidan</a>
+        <img src="images/automation.jpg" alt="Automation Project" class="project-image">
+        <p class="project-description">Utvecklade PowerShell-skript för att automatisera användarhantering, rapportering och systemövervakning.</p>
+        <div class="project-tech">
+            <span class="tech-tag">PowerShell</span>
+            <span class="tech-tag">Automation</span>
+            <span class="tech-tag">Scheduled Tasks</span>
+            <span class="tech-tag">API</span>
+        </div>
+        <a href="index.html" class="back-link"><i class="fas fa-arrow-left"></i> Tillbaka till startsidan</a>
     </div>
 </body>
 </html>
