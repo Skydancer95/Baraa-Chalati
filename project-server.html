@@ -1,78 +1,212 @@
-
 <!DOCTYPE html>
 <html lang="sv">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Virtualiseringsplattform från grunden</title>
+    <title>Virtualiseringsplattform | IT-Support Specialist</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --primary: #38b2ac;
+            --primary-dark: #2c7a7b;
+            --dark: #1a202c;
+            --darker: #0f172a;
+            --light: #cbd5e0;
+            --lighter: #f7fafc;
+        }
+        
         body {
-            background-color: #1a202c;
-            color: #cbd5e0;
+            background-color: var(--dark);
+            color: var(--light);
             font-family: 'Inter', sans-serif;
             margin: 0;
             padding: 0;
+            line-height: 1.6;
         }
+        
         .container {
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
             padding: 2rem;
         }
+        
+        header {
+            text-align: center;
+            margin-bottom: 2rem;
+            border-bottom: 1px solid var(--primary);
+            padding-bottom: 1rem;
+        }
+        
         h1 {
             font-size: 2.5rem;
-            color: #38b2ac;
-            text-align: center;
-            margin-bottom: 1rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            font-weight: 700;
         }
+        
+        .project-subtitle {
+            font-size: 1.2rem;
+            color: var(--light);
+            font-weight: 300;
+            margin-bottom: 1.5rem;
+        }
+        
         .project-image {
             width: 100%;
             height: auto;
             border-radius: 8px;
-            margin-bottom: 1rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+            border: 1px solid var(--primary-dark);
         }
-        .project-description {
+        
+        .project-intro {
+            background-color: var(--darker);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            border-left: 4px solid var(--primary);
+        }
+        
+        .project-intro p {
+            margin: 0;
             font-size: 1.1rem;
+        }
+        
+        .project-highlights {
+            margin-bottom: 2rem;
+        }
+        
+        .project-highlights h2 {
+            color: var(--primary);
+            font-size: 1.5rem;
             margin-bottom: 1rem;
         }
+        
+        .highlight-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        
+        .highlight-list li {
+            background-color: var(--darker);
+            margin-bottom: 0.75rem;
+            padding: 1rem;
+            border-radius: 6px;
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .highlight-list li::before {
+            content: "✓";
+            color: var(--primary);
+            font-weight: bold;
+            margin-right: 0.75rem;
+            font-size: 1.2rem;
+        }
+        
         .project-tech {
             display: flex;
             flex-wrap: wrap;
-            gap: 0.5rem;
+            gap: 0.75rem;
+            margin-bottom: 2rem;
         }
+        
         .tech-tag {
-            background-color: #2d3748;
-            color: #38b2ac;
-            padding: 0.5rem 1rem;
+            background-color: var(--darker);
+            color: var(--primary);
+            padding: 0.5rem 1.25rem;
             border-radius: 50px;
             font-size: 0.9rem;
+            font-weight: 600;
+            border: 1px solid var(--primary-dark);
         }
+        
         .back-link {
             display: inline-flex;
             align-items: center;
-            color: #38b2ac;
+            color: var(--primary);
             text-decoration: none;
             font-size: 1rem;
             margin-top: 2rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            padding: 0.75rem 1.5rem;
+            border: 1px solid var(--primary);
+            border-radius: 50px;
         }
+        
+        .back-link:hover {
+            background-color: var(--primary);
+            color: var(--darker);
+        }
+        
         .back-link i {
             margin-right: 0.5rem;
+        }
+        
+        .quote {
+            font-style: italic;
+            color: var(--light);
+            padding: 1.5rem;
+            border-left: 4px solid var(--primary);
+            background-color: var(--darker);
+            border-radius: 0 8px 8px 0;
+            margin: 2rem 0;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 1.5rem;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container animate__animated animate__fadeIn">
-        <h1>Virtualiseringsplattform från grunden</h1>
-        <img src="images/server-migration.jpg" alt="Server Migration Project" class="project-image">
-        <p class="project-description">Designade och implementerade en komplett virtualiseringslösning med VMware vSphere för att modernisera företagets IT-infrastruktur.</p>
-        <div class="project-tech">
-            <span class="tech-tag">HyperV</span>
-            <span class="tech-tag">Windows Server</span>
-            <span class="tech-tag">Storage</span>
-            <span class="tech-tag">Backup</span>
+        <header>
+            <h1>Virtualiseringsplattform från grunden</h1>
+            <p class="project-subtitle">En moderniserad IT-infrastruktur som minskade driftstopp med 65%</p>
+        </header>
+        
+        <img src="images/server-migration.jpg" alt="Virtualiseringsplattform" class="project-image">
+        
+        <div class="project-intro">
+            <p>Som IT-supporttekniker med specialisering på infrastruktur ledde jag migreringen från fysiska servrar till en VMware-baserad virtualiseringsplattform. Min lösning reducerade systemnedtid markant och skapade en mer flexibel miljö för både användare och supportpersonal. Genom att kombinera tekniskt kunnande med pedagogisk dokumentation säkerställde jag en smidig övergång för hela organisationen.</p>
         </div>
-        <a href="index.html" class="back-link"><i class="fas fa-arrow-left"></i> Tillbaka till startsidan</a>
+        
+        <div class="project-highlights">
+            <h2>Nyckelresultat & Prestationer</h2>
+            <ul class="highlight-list">
+                <li>Migrerade 25 fysiska servrar till virtuella maskiner med endast 2 timmars planerad driftstopp</li>
+                <li>Implementerade automatiserade backup-lösningar som reducerade dataförlustincidenter med 80%</li>
+                <li>Skapade en standardiserad VM-mall som sparade 10+ timmar/månad i installationsarbete</li>
+                <li>Utvecklade övervakningsskript som varnar supportteamet om potentiella problem innan användare märker av dem</li>
+                <li>Utbildade 15 kollegor i den nya plattformen, vilket stärkte teamets självständighet</li>
+            </ul>
+        </div>
+        
+        <div class="quote">
+            "En bra virtualiseringsplattform är som ett osynligt stödjeskelett - när den fungerar som den ska märks den knappt, men när den brister känner hela organisationen av det. Mitt mål var att bygga något så pålitligt att supportteamet kunde fokusera på användarna istället för infrastrukturen."
+        </div>
+        
+        <div class="project-tech">
+            <span class="tech-tag">VMware vSphere</span>
+            <span class="tech-tag">Hyper-V</span>
+            <span class="tech-tag">Windows Server</span>
+            <span class="tech-tag">Storage Solutions</span>
+            <span class="tech-tag">Backup Strategier</span>
+            <span class="tech-tag">PowerShell</span>
+            <span class="tech-tag">Dokumentation</span>
+        </div>
+        
+        <a href="index.html" class="back-link"><i class="fas fa-arrow-left"></i> Tillbaka till portföljen</a>
     </div>
 </body>
 </html>
