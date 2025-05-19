@@ -4,13 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Modernisering av Active Directory</title>
+    <title>Active Directory Modernisering</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <style>
         body {
-            background-color: #1e3a8a;
-            color: #f8fafc;
+            background-color: #1a202c;
+            color: #cbd5e0;
             font-family: 'Inter', sans-serif;
-            line-height: 1.6;
             margin: 0;
             padding: 0;
         }
@@ -21,44 +22,57 @@
         }
         h1 {
             font-size: 2.5rem;
-            color: #10b981;
-            margin-bottom: 1rem;
-        }
-        h2 {
-            font-size: 2rem;
-            color: #3b82f6;
-            margin-bottom: 1rem;
-        }
-        p {
+            color: #38b2ac;
+            text-align: center;
             margin-bottom: 1rem;
         }
         .project-image {
             width: 100%;
             height: auto;
+            border-radius: 8px;
             margin-bottom: 1rem;
         }
-        .back-link {
-            display: inline-block;
-            margin-top: 2rem;
-            color: #10b981;
-            text-decoration: none;
+        .project-description {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
         }
-        .back-link:hover {
-            text-decoration: underline;
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+        .tech-tag {
+            background-color: #2d3748;
+            color: #38b2ac;
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+        }
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: #38b2ac;
+            text-decoration: none;
+            font-size: 1rem;
+            margin-top: 2rem;
+        }
+        .back-link i {
+            margin-right: 0.5rem;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Modernisering av Active Directory</h1>
-        <img src="images/active-directory.jpg" alt="Modernisering av Active Directory" class="project-image">
-        <h2>Introduktion</h2>
-        <p>I rollen som teknisk ledare tog jag ansvar för att modernisera företagets Active Directory-struktur. Genom att implementera en ny OU-struktur och avancerade Group Policy-inställningar skapade jag en säkrare, mer hanterbar och framtidssäkrad miljö. Projektet visar min förmåga att kombinera teknisk expertis med ett säkerhetsmedvetet tänk.</p>
-        <h2>Resultat</h2>
-        <ul>
-            <li>Omstrukturerade AD med tydlig hierarki och rollbaserad åtkomst.</li><li>Implementerade GPO:er för säkerhet, programdistribution och användarbegränsningar.</li><li>Minskade supportärenden relaterade till behörigheter med 50%.</li><li>Förkortade onboarding-tid för nya användare med 30%.</li>
-        </ul>
-        <a href="index.html" class="back-link">&larr; Tillbaka till startsidan</a>
+    <div class="container animate__animated animate__fadeIn">
+        <h1>Active Directory Modernisering</h1>
+        <img src="images/active-directory.jpg" alt="Active Directory Project" class="project-image">
+        <p class="project-description">Implementerade en ny AD-struktur med avancerade Group Policy-inställningar för förbättrad säkerhet och hantering.</p>
+        <div class="project-tech">
+            <span class="tech-tag">Active Directory</span>
+            <span class="tech-tag">Group Policy</span>
+            <span class="tech-tag">PowerShell</span>
+            <span class="tech-tag">LDAP</span>
+        </div>
+        <a href="index.html" class="back-link"><i class="fas fa-arrow-left"></i> Tillbaka till startsidan</a>
     </div>
 </body>
 </html>
