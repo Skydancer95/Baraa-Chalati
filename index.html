@@ -273,6 +273,445 @@
             color: var(--primary);
             font-size: 0.9rem;
         }
+
+        /* Experience Section */
+        .timeline {
+            position: relative;
+            padding-left: 2rem;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 7px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--primary);
+            opacity: 0.3;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 3rem;
+            padding-left: 2rem;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 5px;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: var(--darker);
+            border: 3px solid var(--primary);
+        }
+
+        .timeline-date {
+            font-weight: 500;
+            color: var(--primary);
+            display: block;
+            margin-bottom: 0.25rem;
+        }
+
+        .timeline-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin: 0.5rem 0;
+        }
+
+        .timeline-company {
+            color: var(--gray);
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .timeline-description {
+            color: var(--gray);
+        }
+
+        .timeline-description ul {
+            margin-top: 0.5rem;
+            padding-left: 1.5rem;
+        }
+
+        .timeline-description li {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Projects Section */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background: rgba(15, 23, 42, 0.7);
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+            border-color: rgba(16, 185, 129, 0.3);
+        }
+
+        .project-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .project-content {
+            padding: 1.5rem;
+        }
+
+        .project-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--light);
+        }
+
+        .project-description {
+            color: var(--gray);
+            margin-bottom: 1rem;
+        }
+
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .tech-tag {
+            background: rgba(16, 185, 129, 0.1);
+            color: var(--primary);
+            padding: 0.25rem 0.75rem;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 500;
+        }
+
+        .project-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .project-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+        }
+
+        .project-link:hover {
+            color: var(--light);
+        }
+
+        /* Contact Section */
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+
+        .contact-icon {
+            font-size: 1.25rem;
+            color: var(--primary);
+            margin-top: 0.25rem;
+        }
+
+        .contact-details h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .contact-details p, .contact-details a {
+            color: var(--gray);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-details a:hover {
+            color: var(--primary);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(16, 185, 129, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            background: var(--primary);
+            color: var(--darker);
+            transform: translateY(-3px);
+        }
+
+        .contact-form {
+            display: grid;
+            gap: 1.5rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .form-group label {
+            font-weight: 500;
+        }
+
+        .form-control {
+            padding: 0.75rem 1rem;
+            background: rgba(15, 23, 42, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 4px;
+            color: var(--light);
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            background: var(--primary);
+            color: var(--darker);
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 4px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: fit-content;
+        }
+
+        .submit-btn:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(16, 185, 129, 0.4);
+        }
+
+        /* References Section */
+        .references-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .reference-card {
+            background: rgba(15, 23, 42, 0.7);
+            border-radius: 8px;
+            padding: 1.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .reference-content {
+            font-style: italic;
+            color: var(--gray);
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+
+        .reference-content::before,
+        .reference-content::after {
+            content: '"';
+            font-size: 2rem;
+            color: var(--primary);
+            opacity: 0.3;
+            position: absolute;
+        }
+
+        .reference-content::before {
+            top: -10px;
+            left: -5px;
+        }
+
+        .reference-content::after {
+            bottom: -20px;
+            right: -5px;
+        }
+
+        .reference-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .reference-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .reference-info h4 {
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+
+        .reference-info p {
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            padding: 3rem 2rem;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .footer-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .footer-logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+
+        .footer-text {
+            color: var(--gray);
+            margin-bottom: 2rem;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: var(--gray);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary);
+        }
+
+        .copyright {
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .about-content,
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+
+            .projects-grid {
+                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .nav-links {
+                gap: 1.5rem;
+            }
+
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            .tagline {
+                font-size: 1.1rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            header {
+                padding: 4rem 1rem 3rem;
+            }
+
+            .profile-img {
+                width: 140px;
+                height: 140px;
+            }
+
+            .contact-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .nav-links {
+                gap: 1rem;
+            }
+
+            section {
+                margin-bottom: 3rem;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -282,7 +721,8 @@
             <img src="images/profile.jpg" alt="Porträttbild av Baraa Chalati" class="profile-img">
             <h1>Baraa Chalati</h1>
             <p class="tagline">Senior IT Support Specialist</p>
-            <div class="contact-buttons">
+            
+                </a>
                 <a href="docs/baraa-chalati-cv.pdf" download class="btn btn-outline">
                     <i class="fas fa-download"></i> Ladda Ner CV
                 </a>
@@ -314,10 +754,12 @@
                 <div class="about-text">
                     <p>Jag är en certifierad IT-professionell med över 3 års erfarenhet inom IT-support, systemadministration och infrastrukturhantering. Min expertis sträcker sig från första linjens support till avancerad systemadministration och virtualisering.</p>
                     <p>Med en stark teknisk bakgrund och exceptionella kundservicefärdigheter har jag hjälpt både små företag och stora enterprise-kunder att optimera sina IT-miljöer. Jag brinner för att skapa effektiva tekniska lösningar som ökar produktiviteten och minskar driftstopp.</p>
+                    
                     <div class="personal-letter">
                         <p>"Min passion för teknik började redan som barn när jag plockade isär min första dator. Idag kombinerar jag denna nyfikenhet med professionell expertis för att leverera lösningar som gör verklig skillnad. Jag tror på att bra IT inte bara ska fungera - det ska underlätta och inspirera."</p>
                     </div>
                 </div>
+                
                 <div>
                     <h3 style="margin-bottom: 1.5rem;">Mina nyckelkompetenser</h3>
                     <div class="skills-grid">
@@ -331,6 +773,7 @@
                                 <li>Virtualisering</li>
                             </ul>
                         </div>
+                        
                         <div class="skill-category">
                             <h3><i class="fas fa-network-wired"></i> Nätverk</h3>
                             <ul class="skill-list">
@@ -341,6 +784,7 @@
                                 <li>Brandväggar</li>
                             </ul>
                         </div>
+                        
                         <div class="skill-category">
                             <h3><i class="fas fa-code"></i> Automatisering</h3>
                             <ul class="skill-list">
@@ -350,6 +794,7 @@
                                 <li>API-integrationer</li>
                             </ul>
                         </div>
+                        
                         <div class="skill-category">
                             <h3><i class="fas fa-cloud"></i> Molntjänster</h3>
                             <ul class="skill-list">
@@ -362,6 +807,80 @@
                             </ul>
                         </div>
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills">
+            <h2>Teknisk Expertis</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 2rem;">
+                <div>
+                    <h3 style="margin-bottom: 1rem; color: var(--primary);">Operativsystem</h3>
+                    <ul style="list-style: none;">
+                        <li style="margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.5rem;">
+                            <i class="fab fa-windows" style="color: var(--primary);"></i>
+                            Windows 10/11 & Server
+                        </li>
+                        <li style="margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.5rem;">
+                            <i class="fab fa-linux" style="color: var(--primary);"></i>
+                            Linux (Ubuntu, CentOS)
+                        </li>
+                        <li style="margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.5rem;">
+                            <i class="fab fa-apple" style="color: var(--primary);"></i>
+                            macOS
+                        </li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 style="margin-bottom: 1rem; color: var(--primary);">Virtualisering</h3>
+                    <ul style="list-style: none;">
+                        <li style="margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.5rem;">
+                            <i class="fas fa-cubes" style="color: var(--primary);"></i>
+                            Hyper-V
+                        </li>
+                        <li style="margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.5rem;">
+                            <i class="fab fa-docker" style="color: var(--primary);"></i>
+                            Microsoft Azure 
+                        </li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 style="margin-bottom: 1rem; color: var(--primary);">Språk</h3>
+                    <ul style="list-style: none;">
+                        <li style="margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.5rem;">
+                            <i class="fas fa-language" style="color: var(--primary);"></i>
+                            Svenska - Flytande
+                        </li>
+                        <li style="margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.5rem;">
+                            <i class="fas fa-language" style="color: var(--primary);"></i>
+                            Engelska - Modersmål
+                        </li>
+                        <li style="margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.5rem;">
+                            <i class="fas fa-language" style="color: var(--primary);"></i>
+                            Arabiska - Modersmål
+                        </li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 style="margin-bottom: 1rem; color: var(--primary);">Certifieringar</h3>
+                    <ul style="list-style: none;">
+                        <li style="margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.5rem;">
+                            <i class="fas fa-certificate" style="color: var(--primary);"></i>
+                            Microsoft 365 Certified
+                        </li>
+                        <li style="margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.5rem;">
+                            <i class="fas fa-certificate" style="color: var(--primary);"></i>
+                            ITIL 4 Foundation
+                        </li>
+                        <li style="margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.5rem;">
+                            <i class="fas fa-certificate" style="color: var(--primary);"></i>
+                            Azure Fundamentals
+                        </li>
+                    </ul>
                 </div>
             </div>
         </section>
@@ -394,10 +913,10 @@
                     <div class="timeline-description">
                         <p>Ansvarade för hela IT-infrastrukturen för en organisation med 200+ användare.</p>
                         <ul>
-                            <li>Undervisning i ICDL-kurser på engelska och arabiska.</li>
-                            <li>Praktisk utbildning i datorprogram och grafisk design (Photoshop).</li>
-                            <li>Automatiserade användarhantering med PowerShell</li>
-                            <li>Utbildning i Microsoft Office-program för barn.</li>
+                            <li>• Undervisning i ICDL-kurser på engelska och arabiska.</li>
+                            <li>• Praktisk utbildning i datorprogram och grafisk design (Photoshop).</li>
+                            <li>• Automatiserade användarhantering med PowerShell</li>
+                            <li>• Utbildning i Microsoft Office-program för barn.</li>
                         </ul>
                     </div>
                 </div>
@@ -405,16 +924,16 @@
                 <div class="timeline-item">
                     <span class="timeline-date">2022-08 – 2022-10</span>
                     <h3 class="timeline-title">Flygplatskontrollant</h3>
-                    <span class="timeline-company">Arlanda, Stockholm</span>
+                    <span class="timeline-company">Arlanda,Stockholm</span>
                     <div class="timeline-description">
                         <p>Utförde säkerhetskontroller och hanterade röntgenmaskiner för bagagekontroll.</p>
                         <ul>
-                            <li>Säkerställde att säkerhetsföreskrifter efterlevdes och bidrog till en trygg miljö.</li>
+                            <li>• Säkerställde att säkerhetsföreskrifter efterlevdes och bidrog till en trygg miljö.</li>
                         </ul>
                     </div>
                 </div>
 
-                <div class="timeline-item">
+                 <div class="timeline-item">
                     <span class="timeline-date">2022-08 – 2022-10</span>
                     <h3 class="timeline-title">HR-assistent</h3>
                     <span class="timeline-company">Landstinget i Kalmar Län</span>
@@ -432,7 +951,7 @@
                         <ul>
                             <li>Hanterade helpdesk-ärenden och felsökningsprocesser</li>
                             <li>Implementerade Active Directory-strukturer</li>
-                            <li>Konfigurerade och underhåll nätverksutrustning</li>
+                            <li>Konfigurerade och underhöll nätverksutrustning</li>
                             <li>Utvecklade dokumentation och kunskapsbaser</li>
                         </ul>
                     </div>
@@ -578,47 +1097,45 @@
                         </div>
                     </div>
                     <div class="social-links">
-                        <a href="https://www.linkedin.com/in/baraachalati/" class="social-link" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
-                            <i class="fab fa-linkedin-in"></i>
-                        </a>
-                    </div>
+    <a href="https://www.linkedin.com/in/baraachalati/" class="social-link" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
+        <i class="fab fa-linkedin-in"></i> 
+    </a>
+</div>             
                 </div>
+                </section>
+        
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">Baraa Chalati</div>
+            <p class="footer-text">IT-infrastruktursexpert med passion för teknik och problemlösning</p>
+            <div class="footer-links">
+                <a href="#about">Om Mig</a>
+                <a href="#experience">Erfarenhet</a>
+                <a href="#contact">Kontakt</a>
+                <a href="docs/baraa-chalati-cv.pdf" download>Ladda Ner CV</a>
             </div>
-        </section>
+            <p class="copyright">&copy; 2023 Baraa Chalati. Alla rättigheter reserverade.</p>
+        </div>
+    </footer>
 
-        <!-- Footer -->
-        <footer>
-            <div class="footer-content">
-                <div class="footer-logo">Baraa Chalati</div>
-                <p class="footer-text">IT-infrastruktursexpert med passion för teknik och problemlösning</p>
-                <div class="footer-links">
-                    <a href="#about">Om Mig</a>
-                    <a href="#experience">Erfarenhet</a>
-                    <a href="#contact">Kontakt</a>
-                    <a href="docs/baraa-chalati-cv.pdf" download>Ladda Ner CV</a>
-                </div>
-                <p class="copyright">&copy; 2023 Baraa Chalati. Alla rättigheter reserverade.</p>
-            </div>
-        </footer>
-
-        <script>
-            // Smooth scrolling
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    document.querySelector(this.getAttribute('href')).scrollIntoView({
-                        behavior: 'smooth'
-                    });
+    <script>
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
                 });
             });
+        });
 
-            // Form submission
-            document.querySelector('form').addEventListener('submit', function(e) {
-                e.preventDefault();
-                alert('Tack för ditt meddelande! Jag återkommer inom 24 timmar.');
-                this.reset();
-            });
-        </script>
-    </main>
+        // Form submission
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Tack för ditt meddelande! Jag återkommer inom 24 timmar.');
+            this.reset();
+        });
+    </script>
 </body>
 </html>
