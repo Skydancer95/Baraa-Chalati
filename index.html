@@ -1203,16 +1203,16 @@
 <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
 
 <script>
-    // Initialize EmailJS with your PUBLIC KEY
+    // Initialize EmailJS with your NEW PUBLIC KEY
     (function () {
-        emailjs.init("48Kzgr03oIHtAWsU8"); // ✅ Your Public Key is set!
+        emailjs.init("H3PHcVQNX3Q96EI3w"); // ✅ Your new Public Key
     })();
 
-    // Submit handler
+    // Submit handler with NEW Service ID and Template ID
     document.getElementById('contact-form').addEventListener('submit', function (e) {
         e.preventDefault();
 
-        emailjs.sendForm('service_dx4oflb', 'template_9jbo72l', this)
+        emailjs.sendForm('service_unhga2e', 'template_vdfc19l', this)
             .then(function () {
                 alert("✅ Ditt meddelande har skickats!");
                 document.getElementById("contact-form").reset();
