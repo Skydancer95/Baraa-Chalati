@@ -1259,22 +1259,15 @@
             formMessage.style.display = 'none';
             
             try {
-                // 1. Skicka huvudmeddelandet till mig
-                await emailjs.sendForm('service_unhga2e', 'template_vdfc19l', contactForm);
-                
-                // 2. Skicka auto-svar till besökaren
-                const autoReplyParams = {
-                    to_email: contactForm.email.value,
-                    to_name: contactForm.name.value,
-                    title: contactForm.title.value,
-                    message: contactForm.message.value.substring(0, 500), // Visa del av meddelandet
-                    reply_to: "baraachalati@gmail.com"
-                };
-                
-                await emailjs.send('service_unhga2e', 'template_z8l4loh', autoReplyParams);
+                // Skicka endast huvudmeddelandet till mig
+                const response = await emailjs.sendForm(
+                    'service_unhga2e', 
+                    'template_vdfc19l', 
+                    contactForm
+                );
                 
                 // Visa succémeddelande
-                formMessage.innerHTML = '✅ Tack för ditt meddelande! Du har fått ett bekräftelsemail med en kopia på ditt meddelande.';
+                formMessage.innerHTML = '✅ Tack för ditt meddelande! Jag kommer återkomma så snart som möjligt.';
                 formMessage.className = 'success';
                 formMessage.style.display = 'block';
                 
