@@ -1170,7 +1170,7 @@
                     </div>
                 </div>
                 
-                <!-- Contact Form -->
+<!-- Contact Form -->
 <div class="contact-form">
     <form id="contact-form">
         <div class="form-group">
@@ -1190,7 +1190,7 @@
             <textarea id="message" name="message" class="form-control" required></textarea>
         </div>
 
-        <!-- Hidden honeypot field -->
+        <!-- Hidden field for spam bots -->
         <input type="text" name="_gotcha" style="display:none">
 
         <button type="submit" class="submit-btn">
@@ -1203,12 +1203,12 @@
 <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
 
 <script>
-    // Initialize EmailJS with your actual public key
+    // Initialize EmailJS with your PUBLIC KEY
     (function () {
-        emailjs.init("48Kzgr03oIHtAWsU8");
+        emailjs.init("48Kzgr03oIHtAWsU8"); // ✅ Your Public Key is set!
     })();
 
-    // Form submission
+    // Submit handler
     document.getElementById('contact-form').addEventListener('submit', function (e) {
         e.preventDefault();
 
