@@ -1171,28 +1171,36 @@
                 </div>
                 
                 <div class="contact-form">
-                    <form action="https://formspree.io/f/manoklkd" method="POST">
-                        <div class="form-group">
-                            <label for="name">Namn</label>
-                            <input type="text" id="name" name="name" class="form-control" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">E-post</label>
-                            <input type="email" id="email" name="email" class="form-control" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="subject">Ämne</label>
-                            <input type="text" id="subject" name="subject" class="form-control" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Meddelande</label>
-                            <textarea id="message" name="message" class="form-control" required></textarea>
-                        </div>
-                        <button type="submit" class="submit-btn">
-                            <i class="fas fa-paper-plane"></i> Skicka Meddelande
-                        </button>
-                    </form>
-                </div>
+    <form action="https://formspree.io/f/manoklkd" method="POST">
+        <!-- Important: Changed email field name to _replyto -->
+        <div class="form-group">
+            <label for="name">Namn</label>
+            <input type="text" id="name" name="name" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="email">E-post</label>
+            <input type="email" id="email" name="_replyto" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="subject">Ämne</label>
+            <input type="text" id="subject" name="_subject" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="message">Meddelande</label>
+            <textarea id="message" name="message" class="form-control" required></textarea>
+        </div>
+        
+        <!-- Added hidden honeypot field for spam prevention -->
+        <input type="text" name="_gotcha" style="display:none">
+        
+        <!-- Added hidden redirect confirmation (optional) -->
+        <input type="hidden" name="_next" value="https://yourwebsite.com/thanks.html">
+        
+        <button type="submit" class="submit-btn">
+            <i class="fas fa-paper-plane"></i> Skicka Meddelande
+        </button>
+    </form>
+</div>
             </div>
         </section>
     </main>
