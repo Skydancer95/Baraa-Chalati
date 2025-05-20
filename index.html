@@ -3,782 +3,146 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Baraa Chalati | Senior IT Support Engineer</title>
-    <meta name="description" content="Senior IT-supporttekniker med expertis inom systemadministration och infrastrukturhantering">
-    <meta property="og:title" content="Baraa Chalati | Senior IT-supportspecialist">
-    <meta property="og:description" content="Professionell IT-support och infrastrukturhantering med 5+ års erfarenhet">
+    <title>Baraa Chalati | Certified IT Specialist – Systemadmin, Microsoft 365, Automation Expert</title>
+    <meta name="description" content="Senior IT-supporttekniker med expertis inom systemadministration, Microsoft 365 och infrastrukturhantering. 5+ års erfarenhet av enterprise-support och processautomatisering.">
+    <meta name="keywords" content="IT-support, Systemadministration, PowerShell, Azure, Microsoft 365, Automation">
+    <meta name="author" content="Baraa Chalati">
+    
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:title" content="Baraa Chalati | Certified IT Specialist">
+    <meta property="og:description" content="Systemadministration, Microsoft 365 och processautomatiseringsexpert">
+    <meta property="og:image" content="https://yourdomain.com/images/og-image.webp">
+    <meta property="og:url" content="https://yourdomain.com">
+    <meta property="og:type" content="website">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:creator" content="@Darkskydancer95">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Baraa Chalati",
+      "jobTitle": "Senior IT Support Specialist",
+      "url": "https://yourdomain.com",
+      "sameAs": [
+        "https://www.linkedin.com/in/baraachalati",
+        "https://github.com/Skydancer95",
+        "https://x.com/Darkskydancer95"
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "August Södermans väg 98",
+        "addressLocality": "Uppsala",
+        "addressCountry": "SE"
+      },
+      "email": "mailto:baraachalati@gmail.com",
+      "telephone": "+46739551570"
+    }
+    </script>
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        :root {
-            --primary: #10b981;
-            --primary-dark: #059669;
-            --dark: #0f172a;
-            --darker: #020617;
-            --light: #f8fafc;
-            --gray: #94a3b8;
-        }
+        /* Minified CSS - Original preserved in separate stylesheet */
+        :root{--primary:#10b981;--primary-dark:#059669;--dark:#0f172a;--darker:#020617;--light:#f8fafc;--gray:#94a3b8}*{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',system-ui,sans-serif}body{background-color:var(--darker);color:var(--light);line-height:1.7}header{background:linear-gradient(135deg,var(--dark),var(--darker));padding:6rem 2rem 4rem;text-align:center;position:relative;overflow:hidden}header::before{content:"";position:absolute;top:0;left:0;width:100%;height:100%;background:url('images/tech-pattern.webp') center/cover;opacity:.05}.profile-container{position:relative;z-index:2;max-width:800px;margin:0 auto}.profile-img{width:180px;height:180px;border-radius:50%;object-fit:cover;border:5px solid var(--primary);margin:0 auto 1.5rem;box-shadow:0 10px 30px rgba(16,185,129,.3)}h1{font-size:3rem;font-weight:800;margin-bottom:.5rem;background:linear-gradient(to right,var(--primary),#3b82f6);-webkit-background-clip:text;-webkit-text-fill-color:transparent}.tagline{font-size:1.25rem;color:var(--gray);margin-bottom:2rem;font-weight:300}.contact-buttons{display:flex;justify-content:center;gap:1rem;margin-top:2rem;flex-wrap:wrap}.btn{display:inline-flex;align-items:center;gap:.5rem;padding:.75rem 1.5rem;border-radius:50px;text-decoration:none;font-weight:500;transition:all .3s ease}.btn-primary{background:var(--primary);color:var(--darker)}.btn-primary:hover{background:var(--primary-dark);transform:translateY(-2px);box-shadow:0 5px 15px rgba(16,185,129,.4)}.btn-outline{border:2px solid var(--primary);color:var(--primary)}.btn-outline:hover{background:var(--primary);color:var(--darker)}nav{background:rgba(15,23,42,.95);backdrop-filter:blur(10px);padding:1.5rem 2rem;position:sticky;top:0;z-index:100;border-bottom:1px solid rgba(255,255,255,.05)}.nav-container{display:flex;justify-content:space-between;align-items:center;max-width:1200px;margin:0 auto}.logo{font-weight:700;font-size:1.25rem;color:var(--primary)}.nav-links{display:flex;gap:2rem}.nav-links a{color:var(--light);text-decoration:none;font-weight:500;position:relative;padding:.5rem 0}.nav-links a::after{content:'';position:absolute;bottom:0;left:0;width:0;height:2px;background:var(--primary);transition:width .3s ease}.nav-links a:hover::after{width:100%}main{max-width:1200px;margin:0 auto;padding:4rem 2rem}section{margin-bottom:5rem;scroll-margin-top:100px}h2{font-size:2.5rem;font-weight:700;margin-bottom:2rem;color:var(--primary);position:relative;display:inline-block}h2::after{content:'';position:absolute;bottom:-10px;left:0;width:60px;height:4px;background:var(--primary);border-radius:2px}.about-content{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center}.about-text p{margin-bottom:1.5rem;color:var(--gray)}.personal-letter{background:rgba(15,23,42,.7);border-left:4px solid var(--primary);padding:2rem;border-radius:0 8px 8px 0;margin-top:2rem}.personal-letter p{font-style:italic;color:var(--light)}.skills-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:1.5rem}.skill-category{background:rgba(15,23,42,.7);border-radius:8px;padding:1.5rem;border:1px solid rgba(255,255,255,.05)}.skill-category h3{color:var(--primary);margin-bottom:1rem;font-size:1.1rem;display:flex;align-items:center;gap:.5rem}.skill-list{list-style:none}.skill-list li{margin-bottom:.75rem;display:flex;align-items:center;gap:.5rem}.skill-list li::before{content:'▹';color:var(--primary);font-size:.9rem}.education-timeline{position:relative;padding-left:2rem;margin-top:2rem}.education-timeline::before{content:'';position:absolute;left:7px;top:0;bottom:0;width:2px;background:var(--primary);opacity:.3}.education-item{position:relative;margin-bottom:2.5rem;padding-left:2rem}.education-item::before{content:'';position:absolute;left:0;top:5px;width:16px;height:16px;border-radius:50%;background:var(--darker);border:3px solid var(--primary)}.education-date{font-weight:500;color:var(--primary);display:block;margin-bottom:.25rem}.education-title{font-size:1.25rem;font-weight:600;margin:.5rem 0}.education-institution{color:var(--gray);margin-bottom:.5rem;display:block}.education-description{color:var(--gray)}.education-description ul{margin-top:.5rem;padding-left:1.5rem}.education-description li{margin-bottom:.5rem}.timeline{position:relative;padding-left:2rem}.timeline::before{content:'';position:absolute;left:7px;top:0;bottom:0;width:2px;background:var(--primary);opacity:.3}.timeline-item{position:relative;margin-bottom:3rem;padding-left:2rem}.timeline-item::before{content:'';position:absolute;left:0;top:5px;width:16px;height:16px;border-radius:50%;background:var(--darker);border:3px solid var(--primary)}.timeline-date{font-weight:500;color:var(--primary);display:block;margin-bottom:.25rem}.timeline-title{font-size:1.25rem;font-weight:600;margin:.5rem 0}.timeline-company{color:var(--gray);margin-bottom:.5rem;display:block}.timeline-description{color:var(--gray)}.timeline-description ul{margin-top:.5rem;padding-left:1.5rem}.timeline-description li{margin-bottom:.5rem}.projects-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(350px,1fr));gap:2rem}.project-card{background:rgba(15,23,42,.7);border-radius:8px;overflow:hidden;border:1px solid rgba(255,255,255,.05);transition:transform .3s ease,box-shadow .3s ease}.project-card:hover{transform:translateY(-10px);box-shadow:0 15px 30px rgba(0,0,0,.3);border-color:rgba(16,185,129,.3)}.project-image{width:100%;height:200px;object-fit:cover;border-bottom:1px solid rgba(255,255,255,.05)}.project-content{padding:1.5rem}.project-title{font-size:1.25rem;font-weight:600;margin-bottom:.5rem;color:var(--light)}.project-description{color:var(--gray);margin-bottom:1rem}.project-tech{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:1.5rem}.tech-tag{background:rgba(16,185,129,.1);color:var(--primary);padding:.25rem .75rem;border-radius:50px;font-size:.75rem;font-weight:500}.project-links{display:flex;gap:1rem}.project-link{display:inline-flex;align-items:center;gap:.5rem;color:var(--primary);text-decoration:none;font-weight:500;font-size:.9rem;transition:color .3s ease}.project-link:hover{color:var(--light)}.contact-container{display:grid;grid-template-columns:1fr 1fr;gap:3rem}.contact-info{display:flex;flex-direction:column;gap:1.5rem}.contact-item{display:flex;align-items:flex-start;gap:1rem}.contact-icon{font-size:1.25rem;color:var(--primary);margin-top:.25rem}.contact-details h3{font-size:1.1rem;margin-bottom:.25rem}.contact-details p,.contact-details a{color:var(--gray);text-decoration:none;transition:color .3s ease}.contact-details a:hover{color:var(--primary)}.social-links{display:flex;gap:1rem;margin-top:1rem}.social-link{width:40px;height:40px;border-radius:50%;background:rgba(16,185,129,.1);display:flex;align-items:center;justify-content:center;color:var(--primary);transition:all .3s ease}.social-link:hover{background:var(--primary);color:var(--darker);transform:translateY(-3px)}.contact-form{display:grid;gap:1.5rem}.form-group{display:flex;flex-direction:column;gap:.5rem}.form-group label{font-weight:500}.form-control{padding:.75rem 1rem;background:rgba(15,23,42,.7);border:1px solid rgba(255,255,255,.05);border-radius:4px;color:var(--light);font-size:1rem;transition:border-color .3s ease}.form-control:focus{outline:none;border-color:var(--primary)}textarea.form-control{min-height:150px;resize:vertical}.submit-btn{background:var(--primary);color:var(--darker);border:none;padding:.75rem 1.5rem;border-radius:4px;font-weight:600;cursor:pointer;transition:all .3s ease;width:fit-content}.submit-btn:hover{background:var(--primary-dark);transform:translateY(-2px);box-shadow:0 5px 15px rgba(16,185,129,.4)}.references-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:2rem}.reference-card{background:rgba(15,23,42,.7);border-radius:8px;padding:1.5rem;border:1px solid rgba(255,255,255,.05)}.reference-content{font-style:italic;color:var(--gray);margin-bottom:1.5rem;position:relative}.reference-content::before,.reference-content::after{content:'"';font-size:2rem;color:var(--primary);opacity:.3;position:absolute}.reference-content::before{top:-10px;left:-5px}.reference-content::after{bottom:-20px;right:-5px}.reference-author{display:flex;align-items:center;gap:1rem}.reference-avatar{width:50px;height:50px;border-radius:50%;object-fit:cover}.reference-info h4{font-weight:600;margin-bottom:.25rem}.reference-info p{color:var(--gray);font-size:.9rem}footer{background:var(--dark);padding:3rem 2rem;text-align:center;border-top:1px solid rgba(255,255,255,.05)}.footer-content{max-width:600px;margin:0 auto}.footer-logo{font-size:1.5rem;font-weight:700;margin-bottom:1rem;color:var(--primary)}.footer-text{color:var(--gray);margin-bottom:2rem}.footer-links{display:flex;justify-content:center;gap:2rem;margin-bottom:2rem;flex-wrap:wrap}.footer-links a{color:var(--gray);text-decoration:none;transition:color .3s ease}.footer-links a:hover{color:var(--primary)}.copyright{color:var(--gray);font-size:.9rem}@media (max-width:992px){.about-content,.contact-container{grid-template-columns:1fr}.projects-grid{grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}}@media (max-width:768px){.nav-container{flex-direction:column;gap:1rem}.nav-links{gap:1.5rem}h1{font-size:2.5rem}.tagline{font-size:1.1rem}}@media (max-width:576px){header{padding:4rem 1rem 3rem}.profile-img{width:140px;height:140px}.contact-buttons{flex-direction:column;align-items:center}.btn{width:100%;justify-content:center}.nav-links{gap:1rem}section{margin-bottom:3rem}h2{font-size:2rem}}
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Inter', system-ui, sans-serif;
-        }
-
-        body {
-            background-color: var(--darker);
-            color: var(--light);
-            line-height: 1.7;
-        }
-
-        /* Header Styles */
-        header {
-            background: linear-gradient(135deg, var(--dark), var(--darker));
-            padding: 6rem 2rem 4rem;
+        /* New Stats Bar */
+        .stats-bar {
+            background: rgba(16, 185, 129, 0.1);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 1rem;
             text-align: center;
-            position: relative;
-            overflow: hidden;
+            border: 1px solid rgba(16, 185, 129, 0.2);
         }
-
-        header::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('images/tech-pattern.png') center/cover;
-            opacity: 0.05;
+        
+        .stats-item {
+            font-size: 1.1rem;
         }
-
-        .profile-container {
-            position: relative;
-            z-index: 2;
-            max-width: 800px;
-            margin: 0 auto;
+        
+        /* Success Stories */
+        .success-stories {
+            margin: 3rem 0;
         }
-
-        .profile-img {
-            width: 180px;
-            height: 180px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 5px solid var(--primary);
-            margin: 0 auto 1.5rem;
-            box-shadow: 0 10px 30px rgba(16, 185, 129, 0.3);
-        }
-
-        h1 {
-            font-size: 3rem;
-            font-weight: 800;
-            margin-bottom: 0.5rem;
-            background: linear-gradient(to right, var(--primary), #3b82f6);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .tagline {
-            font-size: 1.25rem;
-            color: var(--gray);
-            margin-bottom: 2rem;
-            font-weight: 300;
-        }
-
-        .contact-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-            margin-top: 2rem;
-            flex-wrap: wrap;
-        }
-
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.75rem 1.5rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 500;
-            transition: all 0.3s ease;
-        }
-
-        .btn-primary {
-            background: var(--primary);
-            color: var(--darker);
-        }
-
-        .btn-primary:hover {
-            background: var(--primary-dark);
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(16, 185, 129, 0.4);
-        }
-
-        .btn-outline {
-            border: 2px solid var(--primary);
-            color: var(--primary);
-        }
-
-        .btn-outline:hover {
-            background: var(--primary);
-            color: var(--darker);
-        }
-
-        /* Navigation */
-        nav {
-            background: rgba(15, 23, 42, 0.95);
-            backdrop-filter: blur(10px);
-            padding: 1.5rem 2rem;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-        }
-
-        .nav-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .logo {
-            font-weight: 700;
-            font-size: 1.25rem;
-            color: var(--primary);
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-        }
-
-        .nav-links a {
-            color: var(--light);
-            text-decoration: none;
-            font-weight: 500;
-            position: relative;
-            padding: 0.5rem 0;
-        }
-
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--primary);
-            transition: width 0.3s ease;
-        }
-
-        .nav-links a:hover::after {
-            width: 100%;
-        }
-
-        /* Main Content */
-        main {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 4rem 2rem;
-        }
-
-        section {
-            margin-bottom: 5rem;
-            scroll-margin-top: 100px;
-        }
-
-        h2 {
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 2rem;
-            color: var(--primary);
-            position: relative;
-            display: inline-block;
-        }
-
-        h2::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 0;
-            width: 60px;
-            height: 4px;
-            background: var(--primary);
-            border-radius: 2px;
-        }
-
-        /* About Section */
-        .about-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            align-items: center;
-        }
-
-        .about-text p {
-            margin-bottom: 1.5rem;
-            color: var(--gray);
-        }
-
-        .personal-letter {
+        
+        .success-card {
             background: rgba(15, 23, 42, 0.7);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
             border-left: 4px solid var(--primary);
-            padding: 2rem;
-            border-radius: 0 8px 8px 0;
-            margin-top: 2rem;
         }
-
-        .personal-letter p {
-            font-style: italic;
-            color: var(--light);
-        }
-
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            gap: 1.5rem;
-        }
-
-        .skill-category {
-            background: rgba(15, 23, 42, 0.7);
-            border-radius: 8px;
-            padding: 1.5rem;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-        }
-
-        .skill-category h3 {
-            color: var(--primary);
-            margin-bottom: 1rem;
-            font-size: 1.1rem;
+        
+        .success-card h3 {
             display: flex;
             align-items: center;
             gap: 0.5rem;
-        }
-
-        .skill-list {
-            list-style: none;
-        }
-
-        .skill-list li {
-            margin-bottom: 0.75rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .skill-list li::before {
-            content: '▹';
-            color: var(--primary);
-            font-size: 0.9rem;
-        }
-
-        /* Education Section */
-        .education-timeline {
-            position: relative;
-            padding-left: 2rem;
-            margin-top: 2rem;
-        }
-
-        .education-timeline::before {
-            content: '';
-            position: absolute;
-            left: 7px;
-            top: 0;
-            bottom: 0;
-            width: 2px;
-            background: var(--primary);
-            opacity: 0.3;
-        }
-
-        .education-item {
-            position: relative;
-            margin-bottom: 2.5rem;
-            padding-left: 2rem;
-        }
-
-        .education-item::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 5px;
-            width: 16px;
-            height: 16px;
-            border-radius: 50%;
-            background: var(--darker);
-            border: 3px solid var(--primary);
-        }
-
-        .education-date {
-            font-weight: 500;
-            color: var(--primary);
-            display: block;
-            margin-bottom: 0.25rem;
-        }
-
-        .education-title {
-            font-size: 1.25rem;
-            font-weight: 600;
-            margin: 0.5rem 0;
-        }
-
-        .education-institution {
-            color: var(--gray);
-            margin-bottom: 0.5rem;
-            display: block;
-        }
-
-        .education-description {
-            color: var(--gray);
-        }
-
-        .education-description ul {
-            margin-top: 0.5rem;
-            padding-left: 1.5rem;
-        }
-
-        .education-description li {
-            margin-bottom: 0.5rem;
-        }
-
-        /* Experience Section */
-        .timeline {
-            position: relative;
-            padding-left: 2rem;
-        }
-
-        .timeline::before {
-            content: '';
-            position: absolute;
-            left: 7px;
-            top: 0;
-            bottom: 0;
-            width: 2px;
-            background: var(--primary);
-            opacity: 0.3;
-        }
-
-        .timeline-item {
-            position: relative;
-            margin-bottom: 3rem;
-            padding-left: 2rem;
-        }
-
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 5px;
-            width: 16px;
-            height: 16px;
-            border-radius: 50%;
-            background: var(--darker);
-            border: 3px solid var(--primary);
-        }
-
-        .timeline-date {
-            font-weight: 500;
-            color: var(--primary);
-            display: block;
-            margin-bottom: 0.25rem;
-        }
-
-        .timeline-title {
-            font-size: 1.25rem;
-            font-weight: 600;
-            margin: 0.5rem 0;
-        }
-
-        .timeline-company {
-            color: var(--gray);
-            margin-bottom: 0.5rem;
-            display: block;
-        }
-
-        .timeline-description {
-            color: var(--gray);
-        }
-
-        .timeline-description ul {
-            margin-top: 0.5rem;
-            padding-left: 1.5rem;
-        }
-
-        .timeline-description li {
-            margin-bottom: 0.5rem;
-        }
-
-        /* Projects Section */
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-            gap: 2rem;
-        }
-
-        .project-card {
-            background: rgba(15, 23, 42, 0.7);
-            border-radius: 8px;
-            overflow: hidden;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .project-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
-            border-color: rgba(16, 185, 129, 0.3);
-        }
-
-        .project-image {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-        }
-
-        .project-content {
-            padding: 1.5rem;
-        }
-
-        .project-title {
-            font-size: 1.25rem;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-            color: var(--light);
-        }
-
-        .project-description {
-            color: var(--gray);
             margin-bottom: 1rem;
         }
-
-        .project-tech {
+        
+        /* Certifications */
+        .certifications {
             display: flex;
             flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-bottom: 1.5rem;
+            gap: 1rem;
+            margin: 1.5rem 0;
         }
-
-        .tech-tag {
+        
+        .cert-badge {
             background: rgba(16, 185, 129, 0.1);
-            color: var(--primary);
-            padding: 0.25rem 0.75rem;
+            border: 1px solid var(--primary);
             border-radius: 50px;
-            font-size: 0.75rem;
-            font-weight: 500;
-        }
-
-        .project-links {
+            padding: 0.5rem 1rem;
             display: flex;
-            gap: 1rem;
-        }
-
-        .project-link {
-            display: inline-flex;
             align-items: center;
             gap: 0.5rem;
-            color: var(--primary);
-            text-decoration: none;
-            font-weight: 500;
             font-size: 0.9rem;
-            transition: color 0.3s ease;
         }
-
-        .project-link:hover {
-            color: var(--light);
-        }
-
-        /* Contact Section */
-        .contact-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-        }
-
-        .contact-info {
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-        }
-
-        .contact-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 1rem;
-        }
-
-        .contact-icon {
-            font-size: 1.25rem;
-            color: var(--primary);
-            margin-top: 0.25rem;
-        }
-
-        .contact-details h3 {
-            font-size: 1.1rem;
-            margin-bottom: 0.25rem;
-        }
-
-        .contact-details p, .contact-details a {
-            color: var(--gray);
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        .contact-details a:hover {
-            color: var(--primary);
-        }
-
-        .social-links {
-            display: flex;
-            gap: 1rem;
-            margin-top: 1rem;
-        }
-
-        .social-link {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background: rgba(16, 185, 129, 0.1);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--primary);
-            transition: all 0.3s ease;
-        }
-
-        .social-link:hover {
-            background: var(--primary);
-            color: var(--darker);
-            transform: translateY(-3px);
-        }
-
-        .contact-form {
-            display: grid;
-            gap: 1.5rem;
-        }
-
-        .form-group {
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
-        }
-
-        .form-group label {
-            font-weight: 500;
-        }
-
-        .form-control {
-            padding: 0.75rem 1rem;
-            background: rgba(15, 23, 42, 0.7);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            border-radius: 4px;
-            color: var(--light);
-            font-size: 1rem;
-            transition: border-color 0.3s ease;
-        }
-
-        .form-control:focus {
-            outline: none;
-            border-color: var(--primary);
-        }
-
-        textarea.form-control {
-            min-height: 150px;
-            resize: vertical;
-        }
-
-        .submit-btn {
-            background: var(--primary);
-            color: var(--darker);
-            border: none;
-            padding: 0.75rem 1.5rem;
-            border-radius: 4px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            width: fit-content;
-        }
-
-        .submit-btn:hover {
-            background: var(--primary-dark);
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(16, 185, 129, 0.4);
-        }
-
-        /* References Section */
-        .references-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .reference-card {
-            background: rgba(15, 23, 42, 0.7);
-            border-radius: 8px;
-            padding: 1.5rem;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-        }
-
-        .reference-content {
-            font-style: italic;
-            color: var(--gray);
-            margin-bottom: 1.5rem;
-            position: relative;
-        }
-
-        .reference-content::before,
-        .reference-content::after {
-            content: '"';
-            font-size: 2rem;
-            color: var(--primary);
-            opacity: 0.3;
-            position: absolute;
-        }
-
-        .reference-content::before {
-            top: -10px;
-            left: -5px;
-        }
-
-        .reference-content::after {
-            bottom: -20px;
-            right: -5px;
-        }
-
-        .reference-author {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-
-        .reference-avatar {
+        
+        /* Back to top button */
+        .back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
             width: 50px;
             height: 50px;
             border-radius: 50%;
-            object-fit: cover;
-        }
-
-        .reference-info h4 {
-            font-weight: 600;
-            margin-bottom: 0.25rem;
-        }
-
-        .reference-info p {
-            color: var(--gray);
-            font-size: 0.9rem;
-        }
-
-        /* Footer */
-        footer {
-            background: var(--dark);
-            padding: 3rem 2rem;
-            text-align: center;
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
-        }
-
-        .footer-content {
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .footer-logo {
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            color: var(--primary);
-        }
-
-        .footer-text {
-            color: var(--gray);
-            margin-bottom: 2rem;
-        }
-
-        .footer-links {
+            background: var(--primary);
+            color: var(--darker);
             display: flex;
+            align-items: center;
             justify-content: center;
-            gap: 2rem;
-            margin-bottom: 2rem;
-            flex-wrap: wrap;
+            cursor: pointer;
+            opacity: 0;
+            transition: all 0.3s ease;
+            z-index: 99;
         }
-
-        .footer-links a {
-            color: var(--gray);
-            text-decoration: none;
-            transition: color 0.3s ease;
+        
+        .back-to-top.visible {
+            opacity: 1;
         }
-
-        .footer-links a:hover {
-            color: var(--primary);
-        }
-
-        .copyright {
-            color: var(--gray);
-            font-size: 0.9rem;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 992px) {
-            .about-content,
-            .contact-container {
-                grid-template-columns: 1fr;
-            }
-
-            .projects-grid {
-                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            }
-        }
-
-        @media (max-width: 768px) {
-            .nav-container {
-                flex-direction: column;
-                gap: 1rem;
-            }
-
-            .nav-links {
-                gap: 1.5rem;
-            }
-
-            h1 {
-                font-size: 2.5rem;
-            }
-
-            .tagline {
-                font-size: 1.1rem;
-            }
-        }
-
-        @media (max-width: 576px) {
-            header {
-                padding: 4rem 1rem 3rem;
-            }
-
-            .profile-img {
-                width: 140px;
-                height: 140px;
-            }
-
-            .contact-buttons {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .btn {
-                width: 100%;
-                justify-content: center;
-            }
-
-            .nav-links {
-                gap: 1rem;
-            }
-
-            section {
-                margin-bottom: 3rem;
-            }
-
-            h2 {
-                font-size: 2rem;
-            }
+        
+        /* Dark mode toggle */
+        .theme-toggle {
+            position: fixed;
+            bottom: 2rem;
+            left: 2rem;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--primary);
+            color: var(--darker);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 99;
         }
     </style>
 </head>
@@ -786,14 +150,22 @@
     <!-- Header Section -->
     <header>
         <div class="profile-container">
-            <img src="images/profile.jpg" alt="Porträttbild av Baraa Chalati" class="profile-img">
+            <img src="images/profile.webp" alt="Porträttbild av Baraa Chalati, IT-specialist" class="profile-img" loading="lazy">
             <h1>Baraa Chalati</h1>
-            <p class="tagline">Senior IT Support Specialist</p>
+            <p class="tagline">Certified IT Specialist – Systemadmin, Microsoft 365, Automation Expert</p>
+            
+            <!-- Stats Bar -->
+            <div class="stats-bar">
+                <div class="stats-item">👨‍💻 500+ användare supportade</div>
+                <div class="stats-item">🛠 200+ artiklar publicerade</div>
+                <div class="stats-item">💡 30% processautomatisering</div>
+            </div>
+            
             <div class="contact-buttons">
-                <a href="#contact" class="btn btn-primary">
+                <a href="#contact" class="btn btn-primary" aria-label="Kontakta mig via formulär">
                     <i class="fas fa-envelope"></i> Kontakta Mig
                 </a>
-                <a href="docs/baraa-chalati-cv.pdf" download class="btn btn-outline">
+                <a href="docs/baraa-chalati-cv.pdf" download class="btn btn-outline" aria-label="Ladda ner mitt CV">
                     <i class="fas fa-download"></i> Ladda Ner CV
                 </a>
             </div>
@@ -809,13 +181,14 @@
                 <a href="#education">Utbildning</a>
                 <a href="#experience">Erfarenhet</a>
                 <a href="#projects">Projekt</a>
+                <a href="#success">Framgångar</a>
                 <a href="#references">Referenser</a>
                 <a href="#contact">Kontakt</a>
             </div>
         </div>
     </nav>
 
-    <!-- Main Content -->
+<!-- Main Content -->
     <main role="main">
         <!-- About Section -->
         <section id="about">
@@ -829,7 +202,36 @@
                         <p>"Min passion för teknik började redan som barn när jag plockade isär min första dator. Idag kombinerar jag denna nyfikenhet med professionell expertis för att leverera lösningar som gör verklig skillnad. Jag tror på att bra IT inte bara ska fungera - det ska underlätta och inspirera."</p>
                     </div>
                 </div>
+                </div>
+        </section>
+
+        <!-- New Success Stories Section -->
+        <section id="success">
+            <h2>Framgångshistorier</h2>
+            <div class="success-stories">
+                <div class="success-card">
+                    <h3><span>🛠</span> Problem</h3>
+                    <p>Användare upplevde inloggningsfel varje måndag morgon på grund av en felkonfigurerad Group Policy som återställde behörigheter under helgen.</p>
+                    
+                    <h3><span>🧠</span> Lösning</h3>
+                    <p>Diagnosticerade problemet genom att analysera AD-loggarna och skrev om GPO:n med mer specifika behörighetsinställningar som bevarades mellan veckorna.</p>
+                    
+                    <h3><span>✅</span> Resultat</h3>
+                    <p>Eliminerade 100% av måndagens inloggningsproblem och minskade supportärenden relaterade till behörigheter med 75%.</p>
+                </div>
                 
+                <div class="success-card">
+                    <h3><span>🛠</span> Problem</h3>
+                    <p>Manuell skapelse av användarkonton tog i genomsnitt 15 minuter per användare med hög felmarginal.</p>
+                    
+                    <h3><span>🧠</span> Lösning</h3>
+                    <p>Utvecklade ett PowerShell-skript som automatiskt skapar användare i Active Directory och Microsoft 365 baserat på Excel-filer från HR.</p>
+                    
+                    <h3><span>✅</span> Resultat</span></h3>
+                    <p>Reducerade tid per användare till 2 minuter (87% besparing) och eliminerade manuella fel helt.</p>
+                </div>
+            </div>
+        </section>
                 <div>
                     <h3 style="margin-bottom: 1.5rem;">Mina nyckelkompetenser</h3>
                     <div class="skills-grid">
@@ -881,9 +283,25 @@
             </div>
         </section>
 
-        <!-- Education Section -->
+  <!-- Education Section with Certifications -->
         <section id="education">
-            <h2>Utbildning</h2>
+            <h2>Utbildning & Certifieringar</h2>
+            
+            <div class="certifications">
+                <span class="cert-badge">
+                    <i class="fas fa-certificate"></i> Microsoft 365 Fundamentals (MS-900)
+                </span>
+                <span class="cert-badge">
+                    <i class="fas fa-certificate"></i> ITIL Foundation
+                </span>
+                <span class="cert-badge">
+                    <i class="fas fa-certificate"></i> Azure AD Administration
+                </span>
+                <span class="cert-badge">
+                    <i class="fas fa-certificate"></i> PowerShell Automation
+                </span>
+            </div>
+            
             <div class="education-timeline">
                 <div class="education-item">
                     <span class="education-date">2025-02-10 – Pågående</span>
@@ -1085,6 +503,47 @@
                 </div>
             </div>
         </section>
+        <!-- New Knowledge Base Section -->
+        <section id="knowledge">
+            <h2>Kunskapsbank</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <img src="images/powershell.webp" alt="PowerShell automationsskript" class="project-image" loading="lazy">
+                    <div class="project-content">
+                        <h3 class="project-title">Användarautomatisering med PowerShell</h3>
+                        <p class="project-description">Samling av användbara skript för Active Directory och Microsoft 365 administration.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">PowerShell</span>
+                            <span class="tech-tag">Active Directory</span>
+                            <span class="tech-tag">Automation</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/Skydancer95/IT-Automation" class="project-link" aria-label="Visa PowerShell-skript på GitHub">
+                                <i class="fab fa-github"></i> Visa på GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <img src="images/troubleshooting.webp" alt="Felsökningsguide" class="project-image" loading="lazy">
+                    <div class="project-content">
+                        <h3 class="project-title">Felsökningsguider</h3>
+                        <p class="project-description">Mina samlade checklists och metodiker för effektiv felsökning.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Metodik</span>
+                            <span class="tech-tag">Checklistor</span>
+                            <span class="tech-tag">Best Practices</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="docs/troubleshooting-guides.pdf" class="project-link" aria-label="Ladda ner felsökningsguider">
+                                <i class="fas fa-download"></i> Ladda ner PDF
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
         <!-- References Section -->
         <section id="references">
@@ -1147,7 +606,7 @@
                         <i class="fas fa-envelope contact-icon"></i>
                         <div class="contact-details">
                             <h3>E-post</h3>
-                            <a href="mailto:kontakt@baraachalati.se">Baraachalati@icloud.com</a>
+                            <a href="mailto:kontakt@baraachalati.se">Baraachalati@outlook.com</a>
                         </div>
                     </div>
                     <div class="contact-item">
@@ -1170,32 +629,135 @@
                     </div>
                 </div>
                 
-                <div class="contact-form">
-                    <form action="#" method="POST">
-                        <div class="form-group">
-                            <label for="name">Namn</label>
-                            <input type="text" id="name" name="name" class="form-control" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">E-post</label>
-                            <input type="email" id="email" name="email" class="form-control" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="subject">Ämne</label>
-                            <input type="text" id="subject" name="subject" class="form-control" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Meddelande</label>
-                            <textarea id="message" name="message" class="form-control" required></textarea>
-                        </div>
-                        <button type="submit" class="submit-btn">
-                            <i class="fas fa-paper-plane"></i> Skicka Meddelande
-                        </button>
-                    </form>
-                </div>
+<!-- Kontaktformulär - Portfolio -->
+<div class="contact-form">
+    <form id="contact-form">
+        <div class="form-group">
+            <label for="name">Namn*</label>
+            <input type="text" id="name" name="name" class="form-control" required minlength="2">
+        </div>
+        <div class="form-group">
+            <label for="email">E-post*</label>
+            <input type="email" id="email" name="email" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="subject">Ämne*</label>
+            <input type="text" id="subject" name="title" class="form-control" required minlength="3">
+        </div>
+        <div class="form-group">
+            <label for="message">Meddelande*</label>
+            <textarea id="message" name="message" class="form-control" required minlength="10"></textarea>
+        </div>
+
+        <!-- Osynligt fält för spamskydd -->
+        <div style="position: absolute; left: -5000px;" aria-hidden="true">
+            <input type="text" name="_honey" tabindex="-1">
+        </div>
+
+        <button type="submit" class="submit-btn" id="submit-btn">
+            <i class="fas fa-paper-plane"></i> Skicka meddelande
+        </button>
+        
+        <!-- Laddningsanimation -->
+        <div id="loading" style="display: none;">
+            <div class="spinner"></div>
+            <p>Skickar ditt meddelande...</p>
+        </div>
+        
+        <!-- Responsmeddelande -->
+        <div id="form-message" style="display: none;"></div>
+    </form>
+</div>
+
+<style>
+    .spinner {
+        border: 3px solid #f3f3f3;
+        border-top: 3px solid #3498db;
+        border-radius: 50%;
+        width: 20px;
+        height: 20px;
+        animation: spin 1s linear infinite;
+        margin: 0 auto 10px;
+    }
+    @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+    }
+    #form-message {
+        margin-top: 15px;
+        padding: 12px;
+        border-radius: 4px;
+        font-size: 15px;
+    }
+    #form-message.success {
+        background: #e8f5e9;
+        color: #2e7d32;
+        border: 1px solid #c8e6c9;
+    }
+    #form-message.error {
+        background: #ffebee;
+        color: #c62828;
+        border: 1px solid #ffcdd2;
+    }
+    .form-group label:after {
+        content:"*";
+        color:red;
+        margin-left:3px;
+    }
+</style>
+
+<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script>
+    (function() {
+        emailjs.init("H3PHcVQNX3Q96EI3w");
+        
+        const contactForm = document.getElementById('contact-form');
+        const submitBtn = document.getElementById('submit-btn');
+        const loadingIndicator = document.getElementById('loading');
+        const formMessage = document.getElementById('form-message');
+        
+        contactForm.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            submitBtn.disabled = true;
+            loadingIndicator.style.display = 'block';
+            formMessage.style.display = 'none';
+            
+            try {
+                await emailjs.sendForm('service_unhga2e', 'template_vdfc19l', contactForm);
+                
+                formMessage.innerHTML = '✅ Tack för ditt meddelande! Jag återkommer inom 1-2 arbetsdagar.';
+                formMessage.className = 'success';
+                formMessage.style.display = 'block';
+                contactForm.reset();
+                
+            } catch (error) {
+                console.error("E-postfel:", error);
+                formMessage.innerHTML = '❌ Misslyckades med att skicka. Kontakta mig direkt via <a href="mailto:baraachalati@gmail.com">mail</a> eller <a href="tel:+46739551570">telefon</a>.';
+                formMessage.className = 'error';
+                formMessage.style.display = 'block';
+                
+            } finally {
+                submitBtn.disabled = false;
+                loadingIndicator.style.display = 'none';
+            }
+        });
+    })();
+</script>
+
             </div>
         </section>
-    </main>
+  </main>
+
+    <!-- Back to Top Button -->
+    <div class="back-to-top" id="backToTop" aria-label="Gå till toppen av sidan">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <!-- Theme Toggle -->
+    <div class="theme-toggle" id="themeToggle" aria-label="Växla mellan ljust och mörkt tema">
+        <i class="fas fa-moon"></i>
+    </div>
 
     <!-- Footer -->
     <footer>
@@ -1213,23 +775,41 @@
         </div>
     </footer>
 
+    !-- JavaScript -->
     <script>
+        // Back to top button
+        const backToTop = document.getElementById('backToTop');
+        window.addEventListener('scroll', () => {
+            backToTop.classList.toggle('visible', window.scrollY > 300);
+        });
+        
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+        
+        // Theme toggle
+        const themeToggle = document.getElementById('themeToggle');
+        themeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('light-theme');
+            const icon = themeToggle.querySelector('i');
+            icon.classList.toggle('fa-moon');
+            icon.classList.toggle('fa-sun');
+        });
+        
         // Smooth scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
+            anchor.addEventListener('click', function(e) {
                 e.preventDefault();
                 document.querySelector(this.getAttribute('href')).scrollIntoView({
                     behavior: 'smooth'
                 });
             });
         });
-
-        // Form submission
-        document.querySelector('form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Tack för ditt meddelande! Jag återkommer inom 24 timmar.');
-            this.reset();
-        });
+    </script>
+ <!-- Minified EmailJS Script -->
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script>
+        (function(){emailjs.init("H3PHcVQNX3Q96EI3w");const e=document.getElementById("contactForm"),t=document.getElementById("submitBtn"),n=document.getElementById("formMessage");let o=0;e.addEventListener("submit",async s=>{s.preventDefault();if(!e.checkValidity())return e.reportValidity();const a=Date.now();if(a-o<3e4)return showMessage("Var vänlig vänta 30 sekunder mellan förfrågningar","error"),void(o=a);o=a;const r=t.querySelector("#submitText"),i=t.querySelector("#loadingSpinner");r.style.display="none",i.style.display="inline-block",t.disabled=!0,n.style.display="none";try{await emailjs.sendForm("service_unhga2e","template_vdfc19l",e),showMessage("✅ Tack för ditt meddelande! Jag återkommer inom 1-2 arbetsdagar.","success"),e.reset()}catch(s){console.error("EmailJS Error:",s);let a="❌ Ett fel uppstod vid skickande. ";a+=s.text.includes("quota")?"Vänligen försök igen senare.":"Kontakta mig direkt via <a href='mailto:baraachalati@gmail.com'>email</a> eller <a href='tel:+46739551570'>telefon</a>.",showMessage(a,"error")}finally{r.style.display="inline-block",i.style.display="none",t.disabled=!1}});function showMessage(e,t){n.innerHTML=e,n.className=`alert alert-${t} mt-3`,n.style.display="block",n.setAttribute("role","alert"),n.focus(),"success"===t&&setTimeout(()=>{n.style.display="none"},1e4)}})();
     </script>
 </body>
 </html>
