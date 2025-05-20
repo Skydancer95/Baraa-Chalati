@@ -1174,19 +1174,19 @@
 <div class="contact-form">
     <form id="contact-form">
         <div class="form-group">
-            <label for="name">Namn</label>
+            <label for="name">Namn*</label>
             <input type="text" id="name" name="name" class="form-control" required minlength="2">
         </div>
         <div class="form-group">
-            <label for="email">E-post</label>
+            <label for="email">E-post*</label>
             <input type="email" id="email" name="email" class="form-control" required>
         </div>
         <div class="form-group">
-            <label for="subject">Ämne</label>
+            <label for="subject">Ämne*</label>
             <input type="text" id="subject" name="title" class="form-control" required minlength="3">
         </div>
         <div class="form-group">
-            <label for="message">Meddelande</label>
+            <label for="message">Meddelande*</label>
             <textarea id="message" name="message" class="form-control" required minlength="10"></textarea>
         </div>
 
@@ -1206,11 +1206,10 @@
         </div>
         
         <!-- Responsmeddelande -->
-        <div id="form-message" style="display: none; margin-top: 15px; padding: 10px; border-radius: 4px;"></div>
+        <div id="form-message" style="display: none;"></div>
     </form>
 </div>
 
-<!-- Styling för laddningsanimation -->
 <style>
     .spinner {
         border: 3px solid #f3f3f3;
@@ -1225,24 +1224,32 @@
         0% { transform: rotate(0deg); }
         100% { transform: rotate(360deg); }
     }
-    
+    #form-message {
+        margin-top: 15px;
+        padding: 12px;
+        border-radius: 4px;
+        font-size: 15px;
+    }
     #form-message.success {
-        background-color: #e8f5e9;
+        background: #e8f5e9;
         color: #2e7d32;
         border: 1px solid #c8e6c9;
     }
-    
     #form-message.error {
-        background-color: #ffebee;
+        background: #ffebee;
         color: #c62828;
         border: 1px solid #ffcdd2;
+    }
+    .form-group label:after {
+        content:"*";
+        color:red;
+        margin-left:3px;
     }
 </style>
 
 <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
 <script>
     (function() {
-        // Initiera EmailJS
         emailjs.init("H3PHcVQNX3Q96EI3w");
         
         const contactForm = document.getElementById('contact-form');
@@ -1253,35 +1260,25 @@
         contactForm.addEventListener('submit', async function(e) {
             e.preventDefault();
             
-            // Visa laddningsindikator
             submitBtn.disabled = true;
             loadingIndicator.style.display = 'block';
             formMessage.style.display = 'none';
             
             try {
-                // Skicka endast huvudmeddelandet till mig
-                const response = await emailjs.sendForm(
-                    'service_unhga2e', 
-                    'template_vdfc19l', 
-                    contactForm
-                );
+                await emailjs.sendForm('service_unhga2e', 'template_vdfc19l', contactForm);
                 
-                // Visa succémeddelande
-                formMessage.innerHTML = '✅ Tack för ditt meddelande! Jag kommer återkomma så snart som möjligt.';
+                formMessage.innerHTML = '✅ Tack för ditt meddelande! Jag återkommer inom 1-2 arbetsdagar.';
                 formMessage.className = 'success';
                 formMessage.style.display = 'block';
-                
-                // Återställ formuläret
                 contactForm.reset();
                 
             } catch (error) {
                 console.error("E-postfel:", error);
-                formMessage.innerHTML = '❌ Ett fel uppstod. Du kan även kontakta mig direkt på <a href="mailto:baraachalati@gmail.com">baraachalati@gmail.com</a> eller ringa <a href="tel:+46739551570">073-955 15 70</a>.';
+                formMessage.innerHTML = '❌ Misslyckades med att skicka. Kontakta mig direkt via <a href="mailto:baraachalati@gmail.com">mail</a> eller <a href="tel:+46739551570">telefon</a>.';
                 formMessage.className = 'error';
                 formMessage.style.display = 'block';
                 
             } finally {
-                // Återställ knapp och dölj laddning
                 submitBtn.disabled = false;
                 loadingIndicator.style.display = 'none';
             }
