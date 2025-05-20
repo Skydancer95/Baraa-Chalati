@@ -1170,12 +1170,12 @@
                     </div>
                 </div>
                 
-<!-- Contact Form -->
+<!-- Kontaktformulär - Portfolio -->
 <div class="contact-form">
     <form id="contact-form">
         <div class="form-group">
             <label for="name">Namn</label>
-            <input type="text" id="name" name="name" class="form-control" required>
+            <input type="text" id="name" name="name" class="form-control" required minlength="2">
         </div>
         <div class="form-group">
             <label for="email">E-post</label>
@@ -1183,44 +1183,106 @@
         </div>
         <div class="form-group">
             <label for="subject">Ämne</label>
-            <input type="text" id="subject" name="title" class="form-control" required>
+            <input type="text" id="subject" name="title" class="form-control" required minlength="3">
         </div>
         <div class="form-group">
             <label for="message">Meddelande</label>
-            <textarea id="message" name="message" class="form-control" required></textarea>
+            <textarea id="message" name="message" class="form-control" required minlength="10"></textarea>
         </div>
 
-        <!-- Hidden field for spam bots -->
-        <input type="text" name="_gotcha" style="display:none">
+        <!-- Osynligt fält för spamskydd -->
+        <div style="position: absolute; left: -5000px;" aria-hidden="true">
+            <input type="text" name="_honey" tabindex="-1">
+        </div>
 
-        <button type="submit" class="submit-btn">
-            <i class="fas fa-paper-plane"></i> Skicka Meddelande
+        <button type="submit" class="submit-btn" id="submit-btn">
+            <i class="fas fa-paper-plane"></i> Skicka meddelande
         </button>
+        
+        <!-- Laddningsanimation -->
+        <div id="loading" style="display: none;">
+            <div class="spinner"></div>
+            <p>Skickar ditt meddelande...</p>
+        </div>
+        
+        <!-- Responsmeddelande -->
+        <div id="form-message" style="display: none; margin-top: 15px; padding: 10px; border-radius: 4px;"></div>
     </form>
 </div>
 
-<!-- EmailJS SDK -->
+<!-- Styling för laddningsanimation -->
+<style>
+    .spinner {
+        border: 3px solid #f3f3f3;
+        border-top: 3px solid #3498db;
+        border-radius: 50%;
+        width: 20px;
+        height: 20px;
+        animation: spin 1s linear infinite;
+        margin: 0 auto 10px;
+    }
+    @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+    }
+</style>
+
 <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
-
 <script>
-    // Initialize EmailJS with your NEW PUBLIC KEY
-    (function () {
-        emailjs.init("H3PHcVQNX3Q96EI3w"); // ✅ Your new Public Key
+    (function() {
+        // Initiera EmailJS
+        emailjs.init("H3PHcVQNX3Q96EI3w");
+        
+        const contactForm = document.getElementById('contact-form');
+        const submitBtn = document.getElementById('submit-btn');
+        const loadingIndicator = document.getElementById('loading');
+        const formMessage = document.getElementById('form-message');
+        
+        contactForm.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            // Visa laddningsindikator
+            submitBtn.disabled = true;
+            loadingIndicator.style.display = 'block';
+            formMessage.style.display = 'none';
+            
+            try {
+                // 1. Skicka huvudmeddelandet till dig
+                await emailjs.sendForm('service_unhga2e', 'template_vdfc19l', contactForm);
+                
+                // 2. Skicka auto-svar till besökaren
+                const autoReplyParams = {
+                    to_email: contactForm.email.value,
+                    to_name: contactForm.name.value,
+                    title: contactForm.title.value,
+                    message: contactForm.message.value.substring(0, 100) // Visa del av meddelandet
+                };
+                
+                await emailjs.send('service_unhga2e', 'template_7sr1etf', autoReplyParams);
+                
+                // Visa succémeddelande
+                formMessage.innerHTML = 'Tack för ditt meddelande! Du har fått ett bekräftelsemail med kopiera på ditt meddelande.';
+                formMessage.style.display = 'block';
+                formMessage.style.backgroundColor = '#e8f5e9';
+                formMessage.style.color = '#2e7d32';
+                
+                // Återställ formuläret
+                contactForm.reset();
+                
+            } catch (error) {
+                console.error("E-postfel:", error);
+                formMessage.innerHTML = 'Ett fel uppstod. Du kan även kontakta mig direkt på <a href="mailto:baraachalati@gmail.com">baraachalati@gmail.com</a> eller ringa <a href="tel:+46739551570">073-955 15 70</a>.';
+                formMessage.style.display = 'block';
+                formMessage.style.backgroundColor = '#ffebee';
+                formMessage.style.color = '#c62828';
+                
+            } finally {
+                // Återställ knapp och dölj laddning
+                submitBtn.disabled = false;
+                loadingIndicator.style.display = 'none';
+            }
+        });
     })();
-
-    // Submit handler with NEW Service ID and Template ID
-    document.getElementById('contact-form').addEventListener('submit', function (e) {
-        e.preventDefault();
-
-        emailjs.sendForm('service_unhga2e', 'template_vdfc19l', this)
-            .then(function () {
-                alert("✅ Ditt meddelande har skickats!");
-                document.getElementById("contact-form").reset();
-            }, function (error) {
-                console.error("EmailJS Error:", error);
-                alert("❌ Kunde inte skicka meddelandet. Försök igen senare.");
-            });
-    });
 </script>
 
             </div>
