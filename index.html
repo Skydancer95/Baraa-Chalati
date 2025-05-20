@@ -1446,121 +1446,126 @@
             </div>
         </section>
 
-        <!-- Contact Section -->
-        <section id="contact">
-            <h2>Kontakt</h2>
-            <div class="contact-container">
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <i class="fas fa-map-marker-alt contact-icon"></i>
-                        <div class="contact-details">
-                            <h3>Adress</h3>
-                            <p>August Södermans väg 98<br>UPPSALA, Sverige</p>
-                        </div>
+ <!-- Contact Section -->
+<section id="contact">
+    <h2>Kontakt</h2>
+    <div class="contact-container">
+        <div class="contact-info">
+            <!-- Your contact info boxes remain unchanged -->
+            <div class="contact-item">
+                <i class="fas fa-map-marker-alt contact-icon"></i>
+                <div class="contact-details">
+                    <h3>Adress</h3>
+                    <p>August Södermans väg 98<br>UPPSALA, Sverige</p>
+                </div>
+            </div>
+            <div class="contact-item">
+                <i class="fas fa-envelope contact-icon"></i>
+                <div class="contact-details">
+                    <h3>E-post</h3>
+                    <a href="mailto:baraachalati@gmail.com">baraachalati@gmail.com</a>
+                </div>
+            </div>
+            <div class="contact-item">
+                <i class="fas fa-phone contact-icon"></i>
+                <div class="contact-details">
+                    <h3>Telefon</h3>
+                    <a href="tel:+46739551570">+46 73 955 15 70</a>
+                </div>
+            </div>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/baraachalati/" class="social-link" aria-label="Min LinkedIn-profil" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="https://github.com/Skydancer95" class="social-link" aria-label="Min GitHub-profil" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://x.com/Darkskydancer95" class="social-link" aria-label="Min Twitter-profil" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-twitter"></i>
+                </a>
+            </div>
+        </div>
+        
+        <div class="contact-form">
+            <form id="contactForm">
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="name">Ditt namn*</label>
+                        <input type="text" name="name" class="form-control" id="name" required minlength="2">
                     </div>
-                    <div class="contact-item">
-                        <i class="fas fa-envelope contact-icon"></i>
-                        <div class="contact-details">
-                            <h3>E-post</h3>
-                            <a href="mailto:baraachalati@gmail.com">baraachalati@gmail.com</a>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-phone contact-icon"></i>
-                        <div class="contact-details">
-                            <h3>Telefon</h3>
-                            <a href="tel:+46739551570">+46 73 955 15 70</a>
-                        </div>
-                    </div>
-                    <div class="social-links">
-                        <a href="https://www.linkedin.com/in/baraachalati/" class="social-link" aria-label="Min LinkedIn-profil" target="_blank" rel="noopener noreferrer">
-                            <i class="fab fa-linkedin-in"></i>
-                        </a>
-                        <a href="https://github.com/Skydancer95" class="social-link" aria-label="Min GitHub-profil" target="_blank" rel="noopener noreferrer">
-                            <i class="fab fa-github"></i>
-                        </a>
-                        <a href="https://x.com/Darkskydancer95" class="social-link" aria-label="Min Twitter-profil" target="_blank" rel="noopener noreferrer">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                        <a href="mailto:baraachalati@gmail.com" class="social-link" aria-label="Skicka email" target="_blank" rel="noopener noreferrer">
-                            <i class="fas fa-envelope"></i>
-                        </a>
+                    <div class="form-group col-md-6">
+                        <label for="email">Din email*</label>
+                        <input type="email" class="form-control" name="email" id="email" required>
                     </div>
                 </div>
                 
-<div class="contact-form">
-    <form id="contact-form">
-        <div class="form-group">
-            <label for="name">Namn*</label>
-            <input type="text" id="name" name="name" class="form-control" required minlength="2">
+                <div class="form-group">
+                    <label for="subject">Ämne*</label>
+                    <input type="text" class="form-control" name="subject" id="subject" required minlength="3">
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">Meddelande*</label>
+                    <textarea class="form-control" name="message" rows="5" required minlength="10"></textarea>
+                </div>
+                
+                <!-- Hidden spam protection fields -->
+                <input type="hidden" name="_gotcha" style="display:none">
+                <input type="text" name="_honey" style="display:none" tabindex="-1">
+                
+                <button type="submit" class="submit-btn">
+                    <i class="fas fa-paper-plane"></i> Skicka meddelande
+                </button>
+                
+                <div id="form-message" style="display: none;"></div>
+            </form>
         </div>
-        <div class="form-group">
-            <label for="email">E-post*</label>
-            <input type="email" id="email" name="email" class="form-control" required>
-        </div>
-        <div class="form-group">
-            <label for="subject">Ämne*</label>
-            <input type="text" id="subject" name="title" class="form-control" required minlength="3">
-        </div>
-        <div class="form-group">
-            <label for="message">Meddelande*</label>
-            <textarea id="message" name="message" class="form-control" required minlength="10"></textarea>
-        </div>
-
-        <!-- Osynligt fält för spamskydd -->
-        <div style="position: absolute; left: -5000px;" aria-hidden="true">
-            <input type="text" name="_honey" tabindex="-1">
-        </div>
-
-        <button type="submit" class="submit-btn" id="submit-btn">
-            <i class="fas fa-paper-plane"></i> Skicka meddelande
-        </button>
-        
-        <!-- Laddningsanimation -->
-        <div id="loading" style="display: none;">
-            <div class="spinner"></div>
-            <p>Skickar ditt meddelande...</p>
-        </div>
-        
-        <!-- Responsmeddelande -->
-        <div id="form-message" style="display: none;"></div>
-    </form>
-</div>
+    </div>
+</section>
 
 <style>
-    .spinner {
-        border: 3px solid #f3f3f3;
-        border-top: 3px solid #3498db;
-        border-radius: 50%;
-        width: 20px;
-        height: 20px;
-        animation: spin 1s linear infinite;
-        margin: 0 auto 10px;
-    }
-    @keyframes spin {
-        0% { transform: rotate(0deg); }
-        100% { transform: rotate(360deg); }
-    }
-    #form-message {
-        margin-top: 15px;
-        padding: 12px;
+    /* Form styling to match original */
+    .submit-btn {
+        background: var(--primary);
+        color: var(--darker);
+        border: none;
+        padding: 0.75rem 1.5rem;
         border-radius: 4px;
-        font-size: 15px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
     }
+    
+    .submit-btn:hover {
+        background: var(--primary-dark);
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(16, 185, 129, 0.4);
+    }
+    
+    .submit-btn:disabled {
+        opacity: 0.7;
+        cursor: not-allowed;
+    }
+    
+    #form-message {
+        margin-top: 1rem;
+        padding: 1rem;
+        border-radius: 4px;
+    }
+    
     #form-message.success {
-        background: #e8f5e9;
-        color: #2e7d32;
-        border: 1px solid #c8e6c9;
+        background: rgba(16, 185, 129, 0.1);
+        color: var(--primary);
+        border: 1px solid rgba(16, 185, 129, 0.3);
     }
+    
     #form-message.error {
-        background: #ffebee;
-        color: #c62828;
-        border: 1px solid #ffcdd2;
-    }
-    .form-group label:after {
-        content:"*";
-        color:red;
-        margin-left:3px;
+        background: rgba(239, 68, 68, 0.1);
+        color: #ef4444;
+        border: 1px solid rgba(239, 68, 68, 0.3);
     }
 </style>
 
