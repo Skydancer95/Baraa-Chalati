@@ -1569,41 +1569,43 @@
     }
 </style>
 
-<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
 <script>
+    // EmailJS initialization and form handling
     (function() {
         emailjs.init("H3PHcVQNX3Q96EI3w");
         
-        const contactForm = document.getElementById('contact-form');
-        const submitBtn = document.getElementById('submit-btn');
-        const loadingIndicator = document.getElementById('loading');
+        const contactForm = document.getElementById('contactForm');
+        const submitBtn = contactForm.querySelector('.submit-btn');
         const formMessage = document.getElementById('form-message');
         
-        contactForm.addEventListener('submit', async function(e) {
+        contactForm.addEventListener('submit', function(e) {
             e.preventDefault();
             
+            // Store original button content
+            const originalBtnContent = submitBtn.innerHTML;
+            
+            // Update button state
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Skickar...';
             submitBtn.disabled = true;
-            loadingIndicator.style.display = 'block';
             formMessage.style.display = 'none';
             
-            try {
-                await emailjs.sendForm('service_unhga2e', 'template_vdfc19l', contactForm);
-                
-                formMessage.innerHTML = '✅ Tack för ditt meddelande! Jag återkommer inom 1-2 arbetsdagar.';
-                formMessage.className = 'success';
-                formMessage.style.display = 'block';
-                contactForm.reset();
-                
-            } catch (error) {
-                console.error("E-postfel:", error);
-                formMessage.innerHTML = '❌ Misslyckades med att skicka. Kontakta mig direkt via <a href="mailto:baraachalati@gmail.com">mail</a> eller <a href="tel:+46739551570">telefon</a>.';
-                formMessage.className = 'error';
-                formMessage.style.display = 'block';
-                
-            } finally {
-                submitBtn.disabled = false;
-                loadingIndicator.style.display = 'none';
-            }
+            emailjs.sendForm('service_unhga2e', 'template_vdfc19l', contactForm)
+                .then(function() {
+                    formMessage.innerHTML = '✅ Tack för ditt meddelande! Jag återkommer så snart som möjligt.';
+                    formMessage.style.display = 'block';
+                    formMessage.className = 'success';
+                    contactForm.reset();
+                }, function(error) {
+                    console.error('EmailJS Error:', error);
+                    formMessage.innerHTML = '❌ Ett fel uppstod. Du kan även kontakta mig direkt via <a href="mailto:baraachalati@gmail.com">email</a> eller <a href="tel:+46739551570">telefon</a>.';
+                    formMessage.style.display = 'block';
+                    formMessage.className = 'error';
+                })
+                .finally(function() {
+                    // Restore original button state
+                    submitBtn.innerHTML = originalBtnContent;
+                    submitBtn.disabled = false;
+                });
         });
     })();
 </script>
