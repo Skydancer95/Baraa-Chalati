@@ -1225,6 +1225,18 @@
         0% { transform: rotate(0deg); }
         100% { transform: rotate(360deg); }
     }
+    
+    #form-message.success {
+        background-color: #e8f5e9;
+        color: #2e7d32;
+        border: 1px solid #c8e6c9;
+    }
+    
+    #form-message.error {
+        background-color: #ffebee;
+        color: #c62828;
+        border: 1px solid #ffcdd2;
+    }
 </style>
 
 <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
@@ -1247,7 +1259,7 @@
             formMessage.style.display = 'none';
             
             try {
-                // 1. Skicka huvudmeddelandet till dig
+                // 1. Skicka huvudmeddelandet till mig
                 await emailjs.sendForm('service_unhga2e', 'template_vdfc19l', contactForm);
                 
                 // 2. Skicka auto-svar till besökaren
@@ -1255,26 +1267,25 @@
                     to_email: contactForm.email.value,
                     to_name: contactForm.name.value,
                     title: contactForm.title.value,
-                    message: contactForm.message.value.substring(0, 100) // Visa del av meddelandet
+                    message: contactForm.message.value.substring(0, 500), // Visa del av meddelandet
+                    reply_to: "baraachalati@gmail.com"
                 };
                 
-                await emailjs.send('service_unhga2e', 'template_7sr1etf', autoReplyParams);
+                await emailjs.send('service_unhga2e', 'template_z8l4loh', autoReplyParams);
                 
                 // Visa succémeddelande
-                formMessage.innerHTML = 'Tack för ditt meddelande! Du har fått ett bekräftelsemail med kopiera på ditt meddelande.';
+                formMessage.innerHTML = '✅ Tack för ditt meddelande! Du har fått ett bekräftelsemail med en kopia på ditt meddelande.';
+                formMessage.className = 'success';
                 formMessage.style.display = 'block';
-                formMessage.style.backgroundColor = '#e8f5e9';
-                formMessage.style.color = '#2e7d32';
                 
                 // Återställ formuläret
                 contactForm.reset();
                 
             } catch (error) {
                 console.error("E-postfel:", error);
-                formMessage.innerHTML = 'Ett fel uppstod. Du kan även kontakta mig direkt på <a href="mailto:baraachalati@gmail.com">baraachalati@gmail.com</a> eller ringa <a href="tel:+46739551570">073-955 15 70</a>.';
+                formMessage.innerHTML = '❌ Ett fel uppstod. Du kan även kontakta mig direkt på <a href="mailto:baraachalati@gmail.com">baraachalati@gmail.com</a> eller ringa <a href="tel:+46739551570">073-955 15 70</a>.';
+                formMessage.className = 'error';
                 formMessage.style.display = 'block';
-                formMessage.style.backgroundColor = '#ffebee';
-                formMessage.style.color = '#c62828';
                 
             } finally {
                 // Återställ knapp och dölj laddning
