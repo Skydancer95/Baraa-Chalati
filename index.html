@@ -1486,126 +1486,118 @@
             </div>
         </div>
         
-        <div class="contact-form">
-            <form id="contactForm">
-                <div class="form-row">
-                    <div class="form-group col-md-6">
-                        <label for="name">Ditt namn*</label>
-                        <input type="text" name="name" class="form-control" id="name" required minlength="2">
-                    </div>
-                    <div class="form-group col-md-6">
-                        <label for="email">Din email*</label>
-                        <input type="email" class="form-control" name="email" id="email" required>
-                    </div>
-                </div>
-                
-                <div class="form-group">
-                    <label for="subject">Ämne*</label>
-                    <input type="text" class="form-control" name="subject" id="subject" required minlength="3">
-                </div>
-                
-                <div class="form-group">
-                    <label for="message">Meddelande*</label>
-                    <textarea class="form-control" name="message" rows="5" required minlength="10"></textarea>
-                </div>
-                
-                <!-- Hidden spam protection fields -->
-                <input type="hidden" name="_gotcha" style="display:none">
-                <input type="text" name="_honey" style="display:none" tabindex="-1">
-                
-                <button type="submit" class="submit-btn">
-                    <i class="fas fa-paper-plane"></i> Skicka meddelande
-                </button>
-                
-                <div id="form-message" style="display: none;"></div>
-            </form>
+<!-- Kontaktformulär - Portfolio -->
+<div class="contact-form">
+    <form id="contact-form">
+        <div class="form-group">
+            <label for="name">Namn*</label>
+            <input type="text" id="name" name="name" class="form-control" required minlength="2">
         </div>
-    </div>
-</section>
+        <div class="form-group">
+            <label for="email">E-post*</label>
+            <input type="email" id="email" name="email" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="subject">Ämne*</label>
+            <input type="text" id="subject" name="title" class="form-control" required minlength="3">
+        </div>
+        <div class="form-group">
+            <label for="message">Meddelande*</label>
+            <textarea id="message" name="message" class="form-control" required minlength="10"></textarea>
+        </div>
+
+        <!-- Osynligt fält för spamskydd -->
+        <div style="position: absolute; left: -5000px;" aria-hidden="true">
+            <input type="text" name="_honey" tabindex="-1">
+        </div>
+
+        <button type="submit" class="submit-btn" id="submit-btn">
+            <i class="fas fa-paper-plane"></i> Skicka meddelande
+        </button>
+        
+        <!-- Laddningsanimation -->
+        <div id="loading" style="display: none;">
+            <div class="spinner"></div>
+            <p>Skickar ditt meddelande...</p>
+        </div>
+        
+        <!-- Responsmeddelande -->
+        <div id="form-message" style="display: none;"></div>
+    </form>
+</div>
 
 <style>
-    /* Form styling to match original */
-    .submit-btn {
-        background: var(--primary);
-        color: var(--darker);
-        border: none;
-        padding: 0.75rem 1.5rem;
-        border-radius: 4px;
-        font-weight: 600;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        display: inline-flex;
-        align-items: center;
-        gap: 0.5rem;
+    .spinner {
+        border: 3px solid #f3f3f3;
+        border-top: 3px solid #3498db;
+        border-radius: 50%;
+        width: 20px;
+        height: 20px;
+        animation: spin 1s linear infinite;
+        margin: 0 auto 10px;
     }
-    
-    .submit-btn:hover {
-        background: var(--primary-dark);
-        transform: translateY(-2px);
-        box-shadow: 0 5px 15px rgba(16, 185, 129, 0.4);
+    @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
     }
-    
-    .submit-btn:disabled {
-        opacity: 0.7;
-        cursor: not-allowed;
-    }
-    
     #form-message {
-        margin-top: 1rem;
-        padding: 1rem;
+        margin-top: 15px;
+        padding: 12px;
         border-radius: 4px;
+        font-size: 15px;
     }
-    
     #form-message.success {
-        background: rgba(16, 185, 129, 0.1);
-        color: var(--primary);
-        border: 1px solid rgba(16, 185, 129, 0.3);
+        background: #e8f5e9;
+        color: #2e7d32;
+        border: 1px solid #c8e6c9;
     }
-    
     #form-message.error {
-        background: rgba(239, 68, 68, 0.1);
-        color: #ef4444;
-        border: 1px solid rgba(239, 68, 68, 0.3);
+        background: #ffebee;
+        color: #c62828;
+        border: 1px solid #ffcdd2;
+    }
+    .form-group label:after {
+        content:"*";
+        color:red;
+        margin-left:3px;
     }
 </style>
 
+<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
 <script>
-    // EmailJS initialization and form handling
     (function() {
         emailjs.init("H3PHcVQNX3Q96EI3w");
         
-        const contactForm = document.getElementById('contactForm');
-        const submitBtn = contactForm.querySelector('.submit-btn');
+        const contactForm = document.getElementById('contact-form');
+        const submitBtn = document.getElementById('submit-btn');
+        const loadingIndicator = document.getElementById('loading');
         const formMessage = document.getElementById('form-message');
         
-        contactForm.addEventListener('submit', function(e) {
+        contactForm.addEventListener('submit', async function(e) {
             e.preventDefault();
             
-            // Store original button content
-            const originalBtnContent = submitBtn.innerHTML;
-            
-            // Update button state
-            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Skickar...';
             submitBtn.disabled = true;
+            loadingIndicator.style.display = 'block';
             formMessage.style.display = 'none';
             
-            emailjs.sendForm('service_unhga2e', 'template_vdfc19l', contactForm)
-                .then(function() {
-                    formMessage.innerHTML = '✅ Tack för ditt meddelande! Jag återkommer så snart som möjligt.';
-                    formMessage.style.display = 'block';
-                    formMessage.className = 'success';
-                    contactForm.reset();
-                }, function(error) {
-                    console.error('EmailJS Error:', error);
-                    formMessage.innerHTML = '❌ Ett fel uppstod. Du kan även kontakta mig direkt via <a href="mailto:baraachalati@gmail.com">email</a> eller <a href="tel:+46739551570">telefon</a>.';
-                    formMessage.style.display = 'block';
-                    formMessage.className = 'error';
-                })
-                .finally(function() {
-                    // Restore original button state
-                    submitBtn.innerHTML = originalBtnContent;
-                    submitBtn.disabled = false;
-                });
+            try {
+                await emailjs.sendForm('service_unhga2e', 'template_vdfc19l', contactForm);
+                
+                formMessage.innerHTML = '✅ Tack för ditt meddelande! Jag återkommer inom 1-2 arbetsdagar.';
+                formMessage.className = 'success';
+                formMessage.style.display = 'block';
+                contactForm.reset();
+                
+            } catch (error) {
+                console.error("E-postfel:", error);
+                formMessage.innerHTML = '❌ Misslyckades med att skicka. Kontakta mig direkt via <a href="mailto:baraachalati@gmail.com">mail</a> eller <a href="tel:+46739551570">telefon</a>.';
+                formMessage.className = 'error';
+                formMessage.style.display = 'block';
+                
+            } finally {
+                submitBtn.disabled = false;
+                loadingIndicator.style.display = 'none';
+            }
         });
     })();
 </script>
@@ -1613,8 +1605,6 @@
             </div>
         </section>
     </main>
-
-
     <!-- Back to Top Button -->
     <button class="back-to-top" id="backToTop" aria-label="Gå till toppen av sidan">
         <i class="fas fa-arrow-up"></i>
@@ -1657,125 +1647,5 @@
             </p>
         </div>
     </footer>
-
-    <!-- EmailJS Script -->
-    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
-    <script>
-        // Initialize EmailJS
-        (function() {
-            emailjs.init("H3PHcVQNX3Q96EI3w");
-            
-            const contactForm = document.getElementById('contactForm');
-            const submitBtn = document.getElementById('submitBtn');
-            const submitText = document.getElementById('submitText');
-            const loadingSpinner = document.getElementById('loadingSpinner');
-            const formMessage = document.getElementById('formMessage');
-            
-            // Back to top button
-            const backToTop = document.getElementById('backToTop');
-            window.addEventListener('scroll', () => {
-                backToTop.classList.toggle('visible', window.scrollY > 300);
-            });
-            
-            backToTop.addEventListener('click', () => {
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-            });
-            
-            // Theme toggle
-            const themeToggle = document.getElementById('themeToggle');
-            themeToggle.addEventListener('click', () => {
-                document.body.classList.toggle('light-theme');
-                const icon = themeToggle.querySelector('i');
-                icon.classList.toggle('fa-moon');
-                icon.classList.toggle('fa-sun');
-            });
-            
-            // Smooth scrolling
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    document.querySelector(this.getAttribute('href')).scrollIntoView({
-                        behavior: 'smooth'
-                    });
-                });
-            });
-            
-            // Auto-update copyright year
-            document.getElementById('currentYear').textContent = new Date().getFullYear();
-            
-            // Form submission
-            let lastSubmission = 0;
-            const SUBMISSION_DELAY = 30000; // 30 seconds
-            
-            contactForm.addEventListener('submit', async function(e) {
-                e.preventDefault();
-                
-                // Validate form
-                if (!contactForm.checkValidity()) {
-                    contactForm.reportValidity();
-                    return;
-                }
-                
-                // Check rate limit
-                const now = Date.now();
-                if (now - lastSubmission < SUBMISSION_DELAY) {
-                    showMessage('Var vänlig vänta 30 sekunder mellan förfrågningar', 'error');
-                    return;
-                }
-                lastSubmission = now;
-                
-                // Change button state
-                submitText.style.display = 'none';
-                loadingSpinner.style.display = 'inline-block';
-                submitBtn.disabled = true;
-                formMessage.style.display = 'none';
-                
-                try {
-                    // Send email
-                    const response = await emailjs.sendForm(
-                        'service_unhga2e', 
-                        'template_vdfc19l', 
-                        contactForm
-                    );
-                    
-                    // Success
-                    showMessage('✅ Tack för ditt meddelande! Jag återkommer inom 1-2 arbetsdagar.', 'success');
-                    contactForm.reset();
-                    
-                } catch (error) {
-                    console.error('EmailJS Error:', error);
-                    
-                    let errorMsg = '❌ Ett fel uppstod vid skickande. ';
-                    if (error.text.includes('quota')) {
-                        errorMsg += 'Vänligen försök igen senare.';
-                    } else {
-                        errorMsg += 'Kontakta mig direkt via <a href="mailto:baraachalati@gmail.com">email</a> eller <a href="tel:+46739551570">telefon</a>.';
-                    }
-                    
-                    showMessage(errorMsg, 'error');
-                    
-                } finally {
-                    submitText.style.display = 'inline-block';
-                    loadingSpinner.style.display = 'none';
-                    submitBtn.disabled = false;
-                }
-            });
-            
-            function showMessage(message, type) {
-                formMessage.innerHTML = message;
-                formMessage.className = `form-message ${type}`;
-                formMessage.style.display = 'block';
-                formMessage.setAttribute('role', 'alert');
-                formMessage.focus();
-                
-                // Auto-hide success messages after 10 seconds
-                if (type === 'success') {
-                    setTimeout(() => {
-                        formMessage.style.display = 'none';
-                    }, 10000);
-                }
-            }
-        })();
-    </script>
 </body>
 </html>
