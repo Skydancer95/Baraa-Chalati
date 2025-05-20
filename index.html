@@ -1147,7 +1147,7 @@
                         <i class="fas fa-envelope contact-icon"></i>
                         <div class="contact-details">
                             <h3>E-post</h3>
-                            <a href="mailto:kontakt@baraachalati.se">Baraachalati@icloud.com</a>
+                            <a href="mailto:kontakt@baraachalati.se">Baraachalati@outlook.com</a>
                         </div>
                     </div>
                     <div class="contact-item">
@@ -1170,37 +1170,59 @@
                     </div>
                 </div>
                 
-                <div class="contact-form">
-    <form action="https://formspree.io/f/manoklkd" method="POST">
-        <!-- Important: Changed email field name to _replyto -->
+                <!-- Contact Form -->
+<div class="contact-form">
+    <form id="contact-form">
         <div class="form-group">
             <label for="name">Namn</label>
             <input type="text" id="name" name="name" class="form-control" required>
         </div>
         <div class="form-group">
             <label for="email">E-post</label>
-            <input type="email" id="email" name="_replyto" class="form-control" required>
+            <input type="email" id="email" name="email" class="form-control" required>
         </div>
         <div class="form-group">
             <label for="subject">Ämne</label>
-            <input type="text" id="subject" name="_subject" class="form-control" required>
+            <input type="text" id="subject" name="title" class="form-control" required>
         </div>
         <div class="form-group">
             <label for="message">Meddelande</label>
             <textarea id="message" name="message" class="form-control" required></textarea>
         </div>
-        
-        <!-- Added hidden honeypot field for spam prevention -->
+
+        <!-- Hidden honeypot field -->
         <input type="text" name="_gotcha" style="display:none">
-        
-        <!-- Added hidden redirect confirmation (optional) -->
-        <input type="hidden" name="_next" value="https://yourwebsite.com/thanks.html">
-        
+
         <button type="submit" class="submit-btn">
             <i class="fas fa-paper-plane"></i> Skicka Meddelande
         </button>
     </form>
 </div>
+
+<!-- EmailJS SDK -->
+<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+
+<script>
+    // Initialize EmailJS with your actual public key
+    (function () {
+        emailjs.init("48Kzgr03oIHtAWsU8");
+    })();
+
+    // Form submission
+    document.getElementById('contact-form').addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        emailjs.sendForm('service_dx4oflb', 'template_9jbo72l', this)
+            .then(function () {
+                alert("✅ Ditt meddelande har skickats!");
+                document.getElementById("contact-form").reset();
+            }, function (error) {
+                console.error("EmailJS Error:", error);
+                alert("❌ Kunde inte skicka meddelandet. Försök igen senare.");
+            });
+    });
+</script>
+
             </div>
         </section>
     </main>
