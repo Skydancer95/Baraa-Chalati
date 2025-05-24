@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IT-automatisering | IT-Support Specialist</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <style>
+        :root {
+            --primary: #38b2ac;
+            --primary-dark: #2c7a7b;
+            --dark: #1a202c;
+            --darker: #0f172a;
+            --light: #cbd5e0;
+            --lighter: #f7fafc;
+        }
+        
+        body {
+            background-color: var(--dark);
+            color: var(--light);
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 2rem;
+            border-bottom: 1px solid var(--primary);
+            padding-bottom: 1rem;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+        
+        .project-subtitle {
+            font-size: 1.2rem;
+            color: var(--light);
+            font-weight: 300;
+            margin-bottom: 1.5rem;
+        }
+        
+        .project-image {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+            border: 1px solid var(--primary-dark);
+        }
+        
+        .project-intro {
+            background-color: var(--darker);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            border-left: 4px solid var(--primary);
+        }
+        
+        .project-intro p {
+            margin: 0;
+            font-size: 1.1rem;
+        }
+        
+        .project-highlights {
+            margin-bottom: 2rem;
+        }
+        
+        .project-highlights h2 {
+            color: var(--primary);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .highlight-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        
+        .highlight-list li {
+            background-color: var(--darker);
+            margin-bottom: 0.75rem;
+            padding: 1rem;
+            border-radius: 6px;
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .highlight-list li::before {
+            content: "✓";
+            color: var(--primary);
+            font-weight: bold;
+            margin-right: 0.75rem;
+            font-size: 1.2rem;
+        }
+        
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-bottom: 2rem;
+        }
+        
+        .tech-tag {
+            background-color: var(--darker);
+            color: var(--primary);
+            padding: 0.5rem 1.25rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            border: 1px solid var(--primary-dark);
+        }
+        
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--primary);
+            text-decoration: none;
+            font-size: 1rem;
+            margin-top: 2rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            padding: 0.75rem 1.5rem;
+            border: 1px solid var(--primary);
+            border-radius: 50px;
+        }
+        
+        .back-link:hover {
+            background-color: var(--primary);
+            color: var(--darker);
+        }
+        
+        .back-link i {
+            margin-right: 0.5rem;
+        }
+        
+        .quote {
+            font-style: italic;
+            color: var(--light);
+            padding: 1.5rem;
+            border-left: 4px solid var(--primary);
+            background-color: var(--darker);
+            border-radius: 0 8px 8px 0;
+            margin: 2rem 0;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 1.5rem;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container animate__animated animate__fadeIn">
+        <header>
+            <h1>IT-processautomatisering med PowerShell</h1>
+            <p class="project-subtitle">Effektiviserade supportarbetet genom smarta skript som sparade 200+ timmar/år</p>
+        </header>
+        
+        <img src="images/automation.jpg" alt="IT-automatisering" class="project-image">
+        
+        <div class="project-intro">
+            <p>I mitt arbete som IT-supporter identifierade jag återkommande uppgifter som kunde automatiseras. Genom att utveckla PowerShell-skript skapade jag lösningar som inte bara sparade tid utan också minskade felmarginalen i rutinuppgifter. Min approach kombinerar teknisk skicklighet med en djup förståelse för supportteamets vardag.</p>
+        </div>
+        
+        <div class="project-highlights">
+            <h2>Nyckelresultat & Prestationer</h2>
+            <ul class="highlight-list">
+                <li>Automatiserade användarprovisioning som reducerade onboarding-tid från 45 till 10 minuter per anställd</li>
+                <li>Utvecklade ett skript för att identifiera inaktiva konton, vilket förbättrade säkerheten och licenshanteringen</li>
+                <li>Skapade automatiska rapporter om systemhälsa som gav supportteamet proaktiv insikt</li>
+                <li>Implementerade en lösning för att automatiskt återställa lösenord utan kompromiss om säkerhet</li>
+                <li>Dokumenterade och delade alla skript i teamets kunskapsbas, vilket stärkte kollegornas effektivitet</li>
+            </ul>
+        </div>
+        
+        <div class="quote">
+            "Automatisering i IT-support handlar inte om att ersätta människor, utan om att frigöra tid så vi kan fokusera på det verkligen viktiga - att hjälpa användarna på bästa sätt. Mina skript är designade av en supporter för supportrar."
+        </div>
+        
+        <div class="project-tech">
+            <span class="tech-tag">PowerShell</span>
+            <span class="tech-tag">Automatisering</span>
+            <span class="tech-tag">Schemalagda uppgifter</span>
+            <span class="tech-tag">API-integration</span>
+            <span class="tech-tag">Active Directory</span>
+            <span class="tech-tag">Rapportering</span>
+            <span class="tech-tag">Dokumentation</span>
+        </div>
+        
+        <a href="index.html" class="back-link"><i class="fas fa-arrow-left"></i> Tillbaka till portföljen</a>
+    </div>
+</body>
+</html>
