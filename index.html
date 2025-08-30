@@ -1031,7 +1031,13 @@
     <!-- Navigation -->
     <nav aria-label="Huvudnavigation">
         <div class="nav-container">
-            <div class="logo" aria-label="Huvudmeny">Huvudmeny</div>
+            <a href="#" class="logo" aria-label="Startsida">Portfolio</a>
+            <input type="checkbox" id="nav-toggle" style="display:none;">
+            <label for="nav-toggle" class="nav-toggle-label" aria-label="Öppna meny">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
             <div class="nav-links">
                 <a href="#about">Om Mig</a>
                 <a href="#education">Utbildning</a>
@@ -1043,6 +1049,49 @@
             </div>
         </div>
     </nav>
+    <style>
+        .nav-toggle-label {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            width: 32px;
+            height: 32px;
+            justify-content: center;
+            align-items: center;
+        }
+        .nav-toggle-label span {
+            display: block;
+            width: 24px;
+            height: 3px;
+            margin: 4px 0;
+            background: var(--primary);
+            border-radius: 2px;
+            transition: 0.3s;
+        }
+        @media (max-width: 768px) {
+            .nav-links {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: var(--dark);
+                flex-direction: column;
+                gap: 0;
+                display: none;
+                z-index: 101;
+            }
+            .nav-links a {
+                padding: 1rem 2rem;
+                border-bottom: 1px solid rgba(255,255,255,0.05);
+            }
+            #nav-toggle:checked ~ .nav-links {
+                display: flex;
+            }
+            .nav-toggle-label {
+                display: flex;
+            }
+        }
+    </style>
 
     <!-- Main Content -->
     <main role="main">
