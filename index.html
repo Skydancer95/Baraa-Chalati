@@ -1698,3 +1698,20 @@
     </footer>
 </body>
 </html>
+
+</csstyle>
+/* Make LIGHT the default */
+:root{
+  --bg:#f6f8fc; --surface:#ffffff; --elev:#ffffff;
+  --text:#0f172a; --muted:#475569; --border:#e2e8f0;
+  --brand:#3b82f6; --accent:#06b6d4;
+}
+
+/* Use DARK only when the OS prefers dark */
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#0b1220; --surface:#0f172a; --elev:#131c31;
+    --text:#e6edf6; --muted:#9fb0c3; --border:#22304b;
+    --brand:#3b82f6; --accent:#06b6d4;
+  }
+}
