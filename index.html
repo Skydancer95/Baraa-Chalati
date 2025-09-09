@@ -1000,6 +1000,85 @@
                 font-size: 2rem;
             }
         }
+
+        /* Mobile Navigation */
+        .nav-toggle-label {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            width: 32px;
+            height: 32px;
+            justify-content: center;
+            align-items: center;
+        }
+        .nav-toggle-label span {
+            display: block;
+            width: 24px;
+            height: 3px;
+            margin: 4px 0;
+            background: var(--primary);
+            border-radius: 2px;
+            transition: 0.3s;
+        }
+        @media (max-width: 768px) {
+            .nav-links {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: var(--dark);
+                flex-direction: column;
+                gap: 0;
+                display: none;
+                z-index: 101;
+            }
+            .nav-links a {
+                padding: 1rem 2rem;
+                border-bottom: 1px solid rgba(255,255,255,0.05);
+            }
+            #nav-toggle:checked ~ .nav-links {
+                display: flex;
+            }
+            .nav-toggle-label {
+                display: flex;
+            }
+        }
+
+        /* Form spinner */
+        .spinner {
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid #3498db;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 10px;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        #form-message {
+            margin-top: 15px;
+            padding: 12px;
+            border-radius: 4px;
+            font-size: 15px;
+        }
+        #form-message.success {
+            background: #e8f5e9;
+            color: #2e7d32;
+            border: 1px solid #c8e6c9;
+        }
+        #form-message.error {
+            background: #ffebee;
+            color: #c62828;
+            border: 1px solid #ffcdd2;
+        }
+        .form-group label:after {
+            content:"*";
+            color:red;
+            margin-left:3px;
+        }
     </style>
 </head>
 <body>
@@ -1049,49 +1128,6 @@
             </div>
         </div>
     </nav>
-    <style>
-        .nav-toggle-label {
-            display: none;
-            flex-direction: column;
-            cursor: pointer;
-            width: 32px;
-            height: 32px;
-            justify-content: center;
-            align-items: center;
-        }
-        .nav-toggle-label span {
-            display: block;
-            width: 24px;
-            height: 3px;
-            margin: 4px 0;
-            background: var(--primary);
-            border-radius: 2px;
-            transition: 0.3s;
-        }
-        @media (max-width: 768px) {
-            .nav-links {
-                position: absolute;
-                top: 100%;
-                left: 0;
-                right: 0;
-                background: var(--dark);
-                flex-direction: column;
-                gap: 0;
-                display: none;
-                z-index: 101;
-            }
-            .nav-links a {
-                padding: 1rem 2rem;
-                border-bottom: 1px solid rgba(255,255,255,0.05);
-            }
-            #nav-toggle:checked ~ .nav-links {
-                display: flex;
-            }
-            .nav-toggle-label {
-                display: flex;
-            }
-        }
-    </style>
 
     <!-- Main Content -->
     <main role="main">
@@ -1246,7 +1282,7 @@
                         <p>Universitetsstudier som ledde till en passion för IT och teknik. Under denna tid utvecklade jag:</p>
                         <ul>
                             <li>Strukturerat tänkande och problemlösningsförmåga</li>
-                            <li>Vetenskapligt arbetssätt och noggrannhet</li>
+                            <li>Vetenskapligt arbetssätt och noggrannity</li>
                             <li>Kundfokus och kommunikationsfärdigheter</li>
                         </ul>
                     </div>
@@ -1495,165 +1531,88 @@
             </div>
         </section>
 
- <!-- Contact Section -->
-<section id="contact">
-    <h2>Kontakt</h2>
-    <div class="contact-container">
-        <div class="contact-info">
-            <!-- Your contact info boxes remain unchanged -->
-            <div class="contact-item">
-                <i class="fas fa-map-marker-alt contact-icon"></i>
-                <div class="contact-details">
-                    <h3>Adress</h3>
-                    <p>August Södermans väg 98<br>UPPSALA, Sverige</p>
+        <!-- Contact Section -->
+        <section id="contact">
+            <h2>Kontakt</h2>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt contact-icon"></i>
+                        <div class="contact-details">
+                            <h3>Adress</h3>
+                            <p>August Södermans väg 98<br>UPPSALA, Sverige</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope contact-icon"></i>
+                        <div class="contact-details">
+                            <h3>E-post</h3>
+                            <a href="mailto:baraachalati@gmail.com">baraachalati@gmail.com</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone contact-icon"></i>
+                        <div class="contact-details">
+                            <h3>Telefon</h3>
+                            <a href="tel:+46739551570">+46 73 955 15 70</a>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/baraachalati/" class="social-link" aria-label="Min LinkedIn-profil" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://github.com/Skydancer95" class="social-link" aria-label="Min GitHub-profil" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://x.com/Darkskydancer95" class="social-link" aria-label="Min Twitter-profil" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </div>
                 </div>
-            </div>
-            <div class="contact-item">
-                <i class="fas fa-envelope contact-icon"></i>
-                <div class="contact-details">
-                    <h3>E-post</h3>
-                    <a href="mailto:baraachalati@gmail.com">baraachalati@gmail.com</a>
+                
+                <!-- Kontaktformulär - Portfolio -->
+                <div class="contact-form">
+                    <form id="contact-form">
+                        <div class="form-group">
+                            <label for="name">Namn*</label>
+                            <input type="text" id="name" name="name" class="form-control" required minlength="2">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">E-post*</label>
+                            <input type="email" id="email" name="email" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Ämne*</label>
+                            <input type="text" id="subject" name="title" class="form-control" required minlength="3">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Meddelande*</label>
+                            <textarea id="message" name="message" class="form-control" required minlength="10"></textarea>
+                        </div>
+
+                        <!-- Osynligt fält för spamskydd -->
+                        <div style="position: absolute; left: -5000px;" aria-hidden="true">
+                            <input type="text" name="_honey" tabindex="-1">
+                        </div>
+
+                        <button type="submit" class="submit-btn" id="submit-btn">
+                            <i class="fas fa-paper-plane"></i> Skicka meddelande
+                        </button>
+                        
+                        <!-- Laddningsanimation -->
+                        <div id="loading" style="display: none;">
+                            <div class="spinner"></div>
+                            <p>Skickar ditt meddelande...</p>
+                        </div>
+                        
+                        <!-- Responsmeddelande -->
+                        <div id="form-message" style="display: none;"></div>
+                    </form>
                 </div>
-            </div>
-            <div class="contact-item">
-                <i class="fas fa-phone contact-icon"></i>
-                <div class="contact-details">
-                    <h3>Telefon</h3>
-                    <a href="tel:+46739551570">+46 73 955 15 70</a>
-                </div>
-            </div>
-            <div class="social-links">
-                <a href="https://www.linkedin.com/in/baraachalati/" class="social-link" aria-label="Min LinkedIn-profil" target="_blank" rel="noopener noreferrer">
-                    <i class="fab fa-linkedin-in"></i>
-                </a>
-                <a href="https://github.com/Skydancer95" class="social-link" aria-label="Min GitHub-profil" target="_blank" rel="noopener noreferrer">
-                    <i class="fab fa-github"></i>
-                </a>
-                <a href="https://x.com/Darkskydancer95" class="social-link" aria-label="Min Twitter-profil" target="_blank" rel="noopener noreferrer">
-                    <i class="fab fa-twitter"></i>
-                </a>
-            </div>
-        </div>
-        
-<!-- Kontaktformulär - Portfolio -->
-<div class="contact-form">
-    <form id="contact-form">
-        <div class="form-group">
-            <label for="name">Namn*</label>
-            <input type="text" id="name" name="name" class="form-control" required minlength="2">
-        </div>
-        <div class="form-group">
-            <label for="email">E-post*</label>
-            <input type="email" id="email" name="email" class="form-control" required>
-        </div>
-        <div class="form-group">
-            <label for="subject">Ämne*</label>
-            <input type="text" id="subject" name="title" class="form-control" required minlength="3">
-        </div>
-        <div class="form-group">
-            <label for="message">Meddelande*</label>
-            <textarea id="message" name="message" class="form-control" required minlength="10"></textarea>
-        </div>
-
-        <!-- Osynligt fält för spamskydd -->
-        <div style="position: absolute; left: -5000px;" aria-hidden="true">
-            <input type="text" name="_honey" tabindex="-1">
-        </div>
-
-        <button type="submit" class="submit-btn" id="submit-btn">
-            <i class="fas fa-paper-plane"></i> Skicka meddelande
-        </button>
-        
-        <!-- Laddningsanimation -->
-        <div id="loading" style="display: none;">
-            <div class="spinner"></div>
-            <p>Skickar ditt meddelande...</p>
-        </div>
-        
-        <!-- Responsmeddelande -->
-        <div id="form-message" style="display: none;"></div>
-    </form>
-</div>
-
-<style>
-    .spinner {
-        border: 3px solid #f3f3f3;
-        border-top: 3px solid #3498db;
-        border-radius: 50%;
-        width: 20px;
-        height: 20px;
-        animation: spin 1s linear infinite;
-        margin: 0 auto 10px;
-    }
-    @keyframes spin {
-        0% { transform: rotate(0deg); }
-        100% { transform: rotate(360deg); }
-    }
-    #form-message {
-        margin-top: 15px;
-        padding: 12px;
-        border-radius: 4px;
-        font-size: 15px;
-    }
-    #form-message.success {
-        background: #e8f5e9;
-        color: #2e7d32;
-        border: 1px solid #c8e6c9;
-    }
-    #form-message.error {
-        background: #ffebee;
-        color: #c62828;
-        border: 1px solid #ffcdd2;
-    }
-    .form-group label:after {
-        content:"*";
-        color:red;
-        margin-left:3px;
-    }
-</style>
-
-<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
-<script>
-    (function() {
-        emailjs.init("H3PHcVQNX3Q96EI3w");
-        
-        const contactForm = document.getElementById('contact-form');
-        const submitBtn = document.getElementById('submit-btn');
-        const loadingIndicator = document.getElementById('loading');
-        const formMessage = document.getElementById('form-message');
-        
-        contactForm.addEventListener('submit', async function(e) {
-            e.preventDefault();
-            
-            submitBtn.disabled = true;
-            loadingIndicator.style.display = 'block';
-            formMessage.style.display = 'none';
-            
-            try {
-                await emailjs.sendForm('service_unhga2e', 'template_vdfc19l', contactForm);
-                
-                formMessage.innerHTML = '✅ Tack för ditt meddelande! Jag återkommer inom 1-2 arbetsdagar.';
-                formMessage.className = 'success';
-                formMessage.style.display = 'block';
-                contactForm.reset();
-                
-            } catch (error) {
-                console.error("E-postfel:", error);
-                formMessage.innerHTML = '❌ Misslyckades med att skicka. Kontakta mig direkt via <a href="mailto:baraachalati@gmail.com">mail</a> eller <a href="tel:+46739551570">telefon</a>.';
-                formMessage.className = 'error';
-                formMessage.style.display = 'block';
-                
-            } finally {
-                submitBtn.disabled = false;
-                loadingIndicator.style.display = 'none';
-            }
-        });
-    })();
-</script>
-
             </div>
         </section>
     </main>
+    
     <!-- Back to Top Button -->
     <button class="back-to-top" id="backToTop" aria-label="Gå till toppen av sidan">
         <i class="fas fa-arrow-up"></i>
@@ -1696,5 +1655,76 @@
             </p>
         </div>
     </footer>
+
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script>
+        // Initialize EmailJS
+        (function() {
+            emailjs.init("H3PHcVQNX3Q96EI3w");
+            
+            const contactForm = document.getElementById('contact-form');
+            const submitBtn = document.getElementById('submit-btn');
+            const loadingIndicator = document.getElementById('loading');
+            const formMessage = document.getElementById('form-message');
+            
+            contactForm.addEventListener('submit', async function(e) {
+                e.preventDefault();
+                
+                submitBtn.disabled = true;
+                loadingIndicator.style.display = 'block';
+                formMessage.style.display = 'none';
+                
+                try {
+                    await emailjs.sendForm('service_unhga2e', 'template_vdfc19l', contactForm);
+                    
+                    formMessage.innerHTML = '✅ Tack för ditt meddelande! Jag återkommer inom 1-2 arbetsdagar.';
+                    formMessage.className = 'success';
+                    formMessage.style.display = 'block';
+                    contactForm.reset();
+                    
+                } catch (error) {
+                    console.error("E-postfel:", error);
+                    formMessage.innerHTML = '❌ Misslyckades med att skicka. Kontakta mig direkt via <a href="mailto:baraachalati@gmail.com">mail</a> eller <a href="tel:+46739551570">telefon</a>.';
+                    formMessage.className = 'error';
+                    formMessage.style.display = 'block';
+                    
+                } finally {
+                    submitBtn.disabled = false;
+                    loadingIndicator.style.display = 'none';
+                }
+            });
+        })();
+
+        // Back to top button functionality
+        const backToTopButton = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.add('visible');
+            } else {
+                backToTopButton.classList.remove('visible');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Set current year in footer
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        // Mobile navigation toggle
+        const navToggle = document.getElementById('nav-toggle');
+        const navLinks = document.querySelector('.nav-links');
+        
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navToggle.checked = false;
+            });
+        });
+    </script>
 </body>
 </html>
