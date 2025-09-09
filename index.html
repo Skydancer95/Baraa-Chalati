@@ -1700,10 +1700,10 @@
             <p class="copyright">
                 &copy; <span id="currentYear"></span> Baraa Chalati. Alla rättigheter reserverade.
 <script>
-    // Set light theme by default, switch to dark if OS prefers dark
-    function applyTheme() {
+    // Theme logic
+    function setTheme(mode) {
         const root = document.documentElement;
-        if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        if (mode === 'dark') {
             root.style.setProperty('--bg', '#0b1220');
             root.style.setProperty('--surface', '#0f172a');
             root.style.setProperty('--elev', '#131c31');
@@ -1723,6 +1723,47 @@
             root.style.setProperty('--accent', '#06b6d4');
         }
     }
+
+    // Detect system preference or saved user choice
+    function getPreferredTheme() {
+        return localStorage.getItem('theme') ||
+            (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    }
+
+    function applyTheme() {
+        setTheme(getPreferredTheme());
+    }
+
     applyTheme();
-    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', applyTheme);
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function(e) {
+        if (!localStorage.getItem('theme')) applyTheme();
+    });
+
+    // Theme switch button
+    document.addEventListener('DOMContentLoaded', function() {
+        // Create button if not present
+        if (!document.getElementById('themeToggleBtn')) {
+            const btn = document.createElement('button');
+            btn.id = 'themeToggleBtn';
+            btn.className = 'theme-toggle';
+            btn.type = 'button';
+            btn.setAttribute('aria-label', 'Växla tema');
+            btn.innerHTML = '<i class="fas fa-moon"></i>';
+            document.body.appendChild(btn);
+        }
+        const btn = document.getElementById('themeToggleBtn');
+        function updateIcon() {
+            btn.innerHTML = getPreferredTheme() === 'dark'
+                ? '<i class="fas fa-sun"></i>'
+                : '<i class="fas fa-moon"></i>';
+        }
+        btn.addEventListener('click', function() {
+            const current = getPreferredTheme();
+            const next = current === 'dark' ? 'light' : 'dark';
+            localStorage.setItem('theme', next);
+            setTheme(next);
+            updateIcon();
+        });
+        updateIcon();
+    });
 </script>
