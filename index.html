@@ -54,6 +54,14 @@
             --gray: #94a3b8;
             --error: #ef4444;
             --success: #10b981;
+            --bg: #f6f8fc;
+            --surface: #ffffff;
+            --elev: #ffffff;
+            --text: #0f172a;
+            --muted: #475569;
+            --border: #e2e8f0;
+            --brand: #3b82f6;
+            --accent: #06b6d4;
         }
 
         * {
@@ -1691,27 +1699,26 @@
             
             <p class="copyright">
                 &copy; <span id="currentYear"></span> Baraa Chalati. Alla rättigheter reserverade.
-                <br>
-                <small>Uppdaterad: Maj 2024</small>
-            </p>
-        </div>
-    </footer>
+/* Make LIGHT the default and DARK when OS prefers dark */
+:root {
+    --primary: #10b981;
+    --primary-dark: #059669;
+    --dark: #0f172a;
 </body>
 </html>
-
-</csstyle>
-/* Make LIGHT the default */
-:root{
-  --bg:#f6f8fc; --surface:#ffffff; --elev:#ffffff;
-  --text:#0f172a; --muted:#475569; --border:#e2e8f0;
-  --brand:#3b82f6; --accent:#06b6d4;
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg: #0b1220;
+        --surface: #0f172a;
+        --elev: #131c31;
+        --text: #e6edf6;
+        --muted: #9fb0c3;
+        --border: #22304b;
+        --brand: #3b82f6;
+        --accent: #06b6d4;
+    }
 }
-
-/* Use DARK only when the OS prefers dark */
-@media (prefers-color-scheme: dark){
-  :root{
-    --bg:#0b1220; --surface:#0f172a; --elev:#131c31;
-    --text:#e6edf6; --muted:#9fb0c3; --border:#22304b;
     --brand:#3b82f6; --accent:#06b6d4;
   }
 }
+</style>
