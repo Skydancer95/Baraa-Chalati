@@ -1699,26 +1699,30 @@
             
             <p class="copyright">
                 &copy; <span id="currentYear"></span> Baraa Chalati. Alla rättigheter reserverade.
-/* Make LIGHT the default and DARK when OS prefers dark */
-:root {
-    --primary: #10b981;
-    --primary-dark: #059669;
-    --dark: #0f172a;
-</body>
-</html>
-@media (prefers-color-scheme: dark) {
-    :root {
-        --bg: #0b1220;
-        --surface: #0f172a;
-        --elev: #131c31;
-        --text: #e6edf6;
-        --muted: #9fb0c3;
-        --border: #22304b;
-        --brand: #3b82f6;
-        --accent: #06b6d4;
+<script>
+    // Set light theme by default, switch to dark if OS prefers dark
+    function applyTheme() {
+        const root = document.documentElement;
+        if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            root.style.setProperty('--bg', '#0b1220');
+            root.style.setProperty('--surface', '#0f172a');
+            root.style.setProperty('--elev', '#131c31');
+            root.style.setProperty('--text', '#e6edf6');
+            root.style.setProperty('--muted', '#9fb0c3');
+            root.style.setProperty('--border', '#22304b');
+            root.style.setProperty('--brand', '#3b82f6');
+            root.style.setProperty('--accent', '#06b6d4');
+        } else {
+            root.style.setProperty('--bg', '#f6f8fc');
+            root.style.setProperty('--surface', '#ffffff');
+            root.style.setProperty('--elev', '#ffffff');
+            root.style.setProperty('--text', '#0f172a');
+            root.style.setProperty('--muted', '#475569');
+            root.style.setProperty('--border', '#e2e8f0');
+            root.style.setProperty('--brand', '#3b82f6');
+            root.style.setProperty('--accent', '#06b6d4');
+        }
     }
-}
-    --brand:#3b82f6; --accent:#06b6d4;
-  }
-}
-</style>
+    applyTheme();
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', applyTheme);
+</script>
