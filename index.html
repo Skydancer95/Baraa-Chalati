@@ -1742,8 +1742,9 @@
     // Theme switch button
     document.addEventListener('DOMContentLoaded', function() {
         // Create button if not present
-        if (!document.getElementById('themeToggleBtn')) {
-            const btn = document.createElement('button');
+        let btn = document.getElementById('themeToggleBtn');
+        if (!btn) {
+            btn = document.createElement('button');
             btn.id = 'themeToggleBtn';
             btn.className = 'theme-toggle';
             btn.type = 'button';
@@ -1751,19 +1752,18 @@
             btn.innerHTML = '<i class="fas fa-moon"></i>';
             document.body.appendChild(btn);
         }
-        const btn = document.getElementById('themeToggleBtn');
         function updateIcon() {
             btn.innerHTML = getPreferredTheme() === 'dark'
                 ? '<i class="fas fa-sun"></i>'
                 : '<i class="fas fa-moon"></i>';
         }
-        btn.addEventListener('click', function() {
+        btn.onclick = function() {
             const current = getPreferredTheme();
             const next = current === 'dark' ? 'light' : 'dark';
             localStorage.setItem('theme', next);
             setTheme(next);
             updateIcon();
-        });
+        };
         updateIcon();
     });
 </script>
