@@ -1666,6 +1666,10 @@
     <button class="back-to-top" id="backToTop" aria-label="Gå till toppen av sidan">
         <i class="fas fa-arrow-up"></i>
     </button>
+    <!-- Theme Toggle Button -->
+    <button id="themeToggleBtn" class="theme-toggle" type="button" aria-label="Växla tema">
+        <i id="themeIcon" class="fas fa-moon"></i>
+    </button>
 
     <!-- Footer -->
     <footer>
@@ -1698,7 +1702,12 @@
             </div>
             
             <p class="copyright">
-                &copy; <span id="currentYear"></span> Baraa Chalati. Alla rättigheter reserverade.
+<!--
+    Theme Toggle Script
+    This script enables users to switch between dark and light themes.
+    It saves the user's preference in localStorage and updates CSS variables accordingly.
+    The theme icon is also updated based on the current theme.
+-->
 <script>
     function setTheme(mode) {
         const root = document.documentElement;
@@ -1722,6 +1731,8 @@
             root.style.setProperty('--accent', '#06b6d4');
         }
     }
+        }
+    }
 
     function getPreferredTheme() {
         return localStorage.getItem('theme') ||
@@ -1735,24 +1746,14 @@
     }
 
     function updateIcon(theme) {
-        const btn = document.getElementById('themeToggleBtn');
-        if (btn) {
-            btn.innerHTML = theme === 'dark'
-                ? '<i class="fas fa-sun"></i>'
-                : '<i class="fas fa-moon"></i>';
+        const icon = document.getElementById('themeIcon');
+        if (icon) {
+            icon.classList.remove('fa-sun', 'fa-moon');
+            icon.classList.add(theme === 'dark' ? 'fa-sun' : 'fa-moon');
         }
     }
-
     document.addEventListener('DOMContentLoaded', function() {
-        let btn = document.getElementById('themeToggleBtn');
-        if (!btn) {
-            btn = document.createElement('button');
-            btn.id = 'themeToggleBtn';
-            btn.className = 'theme-toggle';
-            btn.type = 'button';
-            btn.setAttribute('aria-label', 'Växla tema');
-            document.body.appendChild(btn);
-        }
+        const btn = document.getElementById('themeToggleBtn');
         applyTheme();
         btn.onclick = function() {
             const current = getPreferredTheme();
@@ -1762,9 +1763,15 @@
             updateIcon(next);
         };
     });
+    });
 
     window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function(e) {
         if (!localStorage.getItem('theme')) applyTheme();
     });
 </script>
 
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function(e) {
+        if (!localStorage.getItem('theme')) {
+            applyTheme();
+        }
+    });
