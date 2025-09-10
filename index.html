@@ -2011,3 +2011,16 @@ Bank-ID, identitetsverifiering, dokumentforensik, kundsupport, felsökning.</li>
                     }
                 });
             });
+        })();
+    </script>
+    <script>
+    // Lazy load images
+    document.addEventListener("DOMContentLoaded", function() {
+        const lazyImages = document.querySelectorAll("img[loading='lazy']");
+        lazyImages.forEach(img => {
+            img.src = img.dataset.src || img.src;
+        });
+    });
+    </script>
+</body>
+</html>
