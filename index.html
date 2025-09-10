@@ -1352,7 +1352,7 @@
                     <p>Universitetsstudier som ledde till en passion för IT och teknik. Under denna tid utvecklade jag:</p>
                     <ul>
                         <li>Strukturerat tänkande och problemlösningsförmåga</li>
-                        <li>Vetenskapligt arbetssätt och noggrannity</li>
+                        <li>Vetenskapligt arbetssätt och noggrannhet</li>
                         <li>Kundfokus och kommunikationsfärdigheter</li>
                     </ul>
                 </div>
@@ -1681,15 +1681,14 @@ Bank-ID, identitetsverifiering, dokumentforensik, kundsupport, felsökning.</li>
                             <i class="fas fa-paper-plane"></i> Skicka meddelande
                         </button>
                         
-                        <!-- Laddningsanimation -->
-                        <div id="loading" style="display: none;">
-                            <div class="spinner"></div>
-                            <p>Skickar ditt meddelande...</p>
-                        </div>
-                        
                         <!-- Responsmeddelande -->
                         <div id="form-message" style="display: none;"></div>
                     </form>
+                    <!-- Laddningsanimation placerad utanför formuläret för synlighet -->
+                    <div id="loading" style="display: none;">
+                        <div class="spinner"></div>
+                        <p>Skickar ditt meddelande...</p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -1701,7 +1700,7 @@ Bank-ID, identitetsverifiering, dokumentforensik, kundsupport, felsökning.</li>
     </button>
     
     <!-- Theme Toggle Button -->
-    <button class="theme-toggle" onclick="toggleTheme()">🌗</button>
+    <button class="theme-toggle" id="theme-toggle" onclick="toggleTheme()" aria-pressed="false">🌗</button>
 
     <!-- Footer -->
     <footer>
@@ -1738,7 +1737,7 @@ Bank-ID, identitetsverifiering, dokumentforensik, kundsupport, felsökning.</li>
             <p class="copyright">
                 &copy; <span id="currentYear"></span> Baraa Chalati. Alla rättigheter reserverade.
                 <br>
-                <small>Uppdaterad: Septemper 2025</small>
+                <small>Uppdaterad: September 2025</small>
         </div>
     </footer>
 
@@ -1781,6 +1780,20 @@ Bank-ID, identitetsverifiering, dokumentforensik, kundsupport, felsökning.</li>
                     }
                 });
             }
+
+            // Global handler for unhandled promise rejections
+            window.addEventListener('unhandledrejection', function(event) {
+                console.error('Unhandled promise rejection:', event.reason);
+                if (formMessage) {
+                    formMessage.innerHTML = '❌ Ett oväntat fel uppstod. Kontakta mig direkt via <a href="mailto:baraachalati@gmail.com">mail</a> eller <a href="tel:+46739551570">telefon</a>.';
+                    formMessage.className = 'form-message error';
+                    formMessage.style.display = 'block';
+                }
+                if (submitBtn) submitBtn.disabled = false;
+                if (loadingIndicator) loadingIndicator.style.display = 'none';
+            });
+        })();
+</script>
         })();
 
 <script>
@@ -1903,26 +1916,24 @@ Bank-ID, identitetsverifiering, dokumentforensik, kundsupport, felsökning.</li>
 
     // Mobile nav toggle
     const navToggle = $id('nav-toggle');
-    if (navToggle) {
-      document.querySelectorAll('.nav-links a').forEach(link => {
-        link.addEventListener('click', () => {
-          if (navToggle.type === 'checkbox') {
-            navToggle.checked = false;
-          } else {
-            navToggle.classList.remove('open');
-          }
-        });
-      });
-    }
-
     // Apply saved theme (or system preference)
     const savedTheme = localStorage.getItem('theme');
+    let initialTheme;
     if (savedTheme === 'dark' || savedTheme === 'light') {
+      initialTheme = savedTheme;
       setTheme(savedTheme);
     } else {
       const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-      setTheme(prefersDark ? 'dark' : 'light');
+      initialTheme = prefersDark ? 'dark' : 'light';
+      setTheme(initialTheme);
+    }
+    // Set theme toggle button icon to match current theme
+    const themeToggleBtn = $id('theme-toggle');
+    if (themeToggleBtn) {
+      themeToggleBtn.innerHTML = initialTheme === 'dark' ? '🌞' : '🌙';
+      themeToggleBtn.setAttribute('aria-pressed', String(initialTheme === 'dark'));
     }
   });
-})();
+      });
+// (No replacement needed; this block should be removed)
 </script>
