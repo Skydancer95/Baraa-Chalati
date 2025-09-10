@@ -1823,10 +1823,10 @@ Bank-ID, identitetsverifiering, dokumentforensik, kundsupport, felsökning.</li>
             root.style.setProperty('--primary-dark', '#059669');
             root.style.setProperty('--dark', '#f8fafc');
             root.style.setProperty('--darker', '#e2e8f0');
-            root.style.setProperty('--light', '#18181b'); // background color for light mode
+            root.style.setProperty('--light', '#18181b');
             root.style.setProperty('--gray', '#475569');
             document.body.style.backgroundColor = '#f8fafc';
-            document.body.style.color = '#18181b'; // dark text for light mode
+            document.body.style.color = '#000'; // <-- force all text to black in light mode
             root.setAttribute('data-theme', 'light');
         }
 
@@ -1847,16 +1847,15 @@ Bank-ID, identitetsverifiering, dokumentforensik, kundsupport, felsökning.</li>
         const headingSelectors = [
             'h1', 'h2', 'h3', 'h4', 'h5', 'h6'
         ];
-        const textColor = isDark ? '#f8fafc' : '#18181b';
+        // Always use black for text in light mode
+        const textColor = isDark ? '#f8fafc' : '#000';
         const grayColor = isDark ? '#94a3b8' : '#475569';
 
         boxSelectors.forEach(sel => {
             document.querySelectorAll(sel).forEach(el => {
                 // For .cert-badge, only set color on direct text, not on links or icons
                 if (sel === '.cert-badge') {
-                    // Set color on the badge itself
                     el.style.color = textColor;
-                    // Reset color for links and icons inside .cert-badge
                     el.querySelectorAll('a, i').forEach(child => {
                         child.style.color = '';
                     });
@@ -1870,7 +1869,6 @@ Bank-ID, identitetsverifiering, dokumentforensik, kundsupport, felsökning.</li>
                 el.style.color = textColor;
             });
         });
-        // Also fix .project-description, .reference-content, .education-description, .timeline-description, .about-text p, .footer-text, .contact-details p, .contact-details a
         [
             '.project-description',
             '.reference-content',
@@ -1888,16 +1886,13 @@ Bank-ID, identitetsverifiering, dokumentforensik, kundsupport, felsökning.</li>
                 el.style.color = grayColor;
             });
         });
-        // Special: .tagline
         document.querySelectorAll('.tagline').forEach(el => {
             el.style.color = grayColor;
         });
-        // Special: .project-title, .reference-info h4
         document.querySelectorAll('.project-title, .reference-info h4').forEach(el => {
             el.style.color = textColor;
         });
 
-        // Ensure all links inside .project-card, .timeline-item, .education-item, .reference-card, .footer-links, .contact-details are visible in both themes
         [
             '.project-card a',
             '.timeline-item a',
