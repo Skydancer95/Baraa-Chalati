@@ -48,17 +48,27 @@
         :root {
             --primary: #10b981;
             --primary-dark: #059669;
-            --dark: #0f172a;
-            --darker: #020617;
-            --light: #f8fafc;
-            --gray: #94a3b8;
             --error: #ef4444;
             --success: #10b981;
-            --bg-dark: #0f172a;
-            --bg-light: #f8fafc;
-            --text-dark: #f8fafc;
-            --text-light: #0f172a;
+            
+            /* Dark theme as default */
+            --bg: #0f172a;
+            --bg-secondary: #020617;
+            --text: #f8fafc;
+            --text-secondary: #94a3b8;
+            --card-bg: rgba(15, 23, 42, 0.7);
+            --card-border: rgba(255, 255, 255, 0.05);
         }
+
+        [data-theme="light"] {
+            --bg: #f8fafc;
+            --bg-secondary: #e2e8f0;
+            --text: #0f172a;
+            --text-secondary: #475569;
+            --card-bg: rgba(248, 250, 252, 0.9);
+            --card-border: rgba(0, 0, 0, 0.1);
+        }
+
         .cert-title {
             font-size: 1.1rem;
         }
@@ -79,8 +89,8 @@
         }
 
         body {
-            background-color: var(--darker);
-            color: var(--light);
+            background-color: var(--bg);
+            color: var(--text);
             line-height: 1.7;
             scroll-behavior: smooth;
             transition: background-color 0.3s, color 0.3s;
@@ -88,7 +98,7 @@
 
         /* Header Styles */
         header {
-            background: linear-gradient(135deg, var(--dark), var(--darker));
+            background: linear-gradient(135deg, var(--bg), var(--bg-secondary));
             padding: 6rem 2rem 4rem;
             text-align: center;
             position: relative;
@@ -135,7 +145,7 @@
 
         .tagline {
             font-size: 1.25rem;
-            color: var(--gray);
+            color: var(--text-secondary);
             margin-bottom: 2rem;
             font-weight: 300;
         }
@@ -156,6 +166,7 @@
 
         .stats-item {
             font-size: 1.1rem;
+            color: var(--text);
         }
 
         .contact-buttons {
@@ -179,7 +190,7 @@
 
         .btn-primary {
             background: var(--primary);
-            color: var(--darker);
+            color: var(--bg-secondary);
         }
 
         .btn-primary:hover {
@@ -195,7 +206,7 @@
 
         .btn-outline:hover {
             background: var(--primary);
-            color: var(--darker);
+            color: var(--bg-secondary);
         }
 
         /* Navigation */
@@ -206,7 +217,7 @@
             position: sticky;
             top: 0;
             z-index: 100;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            border-bottom: 1px solid var(--card-border);
         }
 
         .nav-container {
@@ -229,7 +240,7 @@
         }
 
         .nav-links a {
-            color: var(--light);
+            color: var(--text);
             text-decoration: none;
             font-weight: 500;
             position: relative;
@@ -288,7 +299,7 @@
         .collapsible-header {
             cursor: pointer;
             background-color: var(--primary);
-            color: var(--text-light);
+            color: var(--bg);
             padding: 0.5rem;
             border-radius: 5px;
             margin-top: 1rem;
@@ -303,7 +314,7 @@
             border: 1px solid var(--primary);
             border-radius: 5px;
             margin-top: 0.5rem;
-            background: rgba(15, 23, 42, 0.7);
+            background: var(--card-bg);
         }
         .content.open {
             display: block;
@@ -325,11 +336,11 @@
 
         .about-text p {
             margin-bottom: 1.5rem;
-            color: var(--gray);
+            color: var(--text-secondary);
         }
 
         .personal-letter {
-            background: rgba(15, 23, 42, 0.7);
+            background: var(--card-bg);
             border-left: 4px solid var(--primary);
             padding: 2rem;
             border-radius: 0 8px 8px 0;
@@ -338,7 +349,7 @@
 
         .personal-letter p {
             font-style: italic;
-            color: var(--light);
+            color: var(--text);
         }
 
         .skills-grid {
@@ -348,10 +359,10 @@
         }
 
         .skill-category {
-            background: rgba(15, 23, 42, 0.7);
+            background: var(--card-bg);
             border-radius: 8px;
             padding: 1.5rem;
-            border: 1px solid rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--card-border);
         }
 
         .skill-category h3 {
@@ -372,6 +383,7 @@
             display: flex;
             align-items: center;
             gap: 0.5rem;
+            color: var(--text);
         }
 
         .skill-list li::before {
@@ -386,7 +398,7 @@
         }
         
         .success-card {
-            background: rgba(15, 23, 42, 0.7);
+            background: var(--card-bg);
             border-radius: 8px;
             padding: 1.5rem;
             margin-bottom: 1.5rem;
@@ -398,6 +410,11 @@
             align-items: center;
             gap: 0.5rem;
             margin-bottom: 1rem;
+            color: var(--text);
+        }
+
+        .success-card p {
+            color: var(--text-secondary);
         }
 
         /* Education Section */
@@ -432,7 +449,7 @@
             width: 16px;
             height: 16px;
             border-radius: 50%;
-            background: var(--darker);
+            background: var(--bg-secondary);
             border: 3px solid var(--primary);
         }
 
@@ -447,16 +464,17 @@
             font-size: 1.25rem;
             font-weight: 600;
             margin: 0.5rem 0;
+            color: var(--text);
         }
 
         .education-institution {
-            color: var(--gray);
+            color: var(--text-secondary);
             margin-bottom: 0.5rem;
             display: block;
         }
 
         .education-description {
-            color: var(--gray);
+            color: var(--text-secondary);
         }
 
         .education-description ul {
@@ -466,6 +484,7 @@
 
         .education-description li {
             margin-bottom: 0.5rem;
+            color: var(--text-secondary);
         }
 
         /* Certifications */
@@ -485,6 +504,7 @@
             align-items: center;
             gap: 0.5rem;
             font-size: 0.9rem;
+            color: var(--text);
         }
 
         /* Experience Section */
@@ -518,7 +538,7 @@
             width: 16px;
             height: 16px;
             border-radius: 50%;
-            background: var(--darker);
+            background: var(--bg-secondary);
             border: 3px solid var(--primary);
         }
 
@@ -533,16 +553,17 @@
             font-size: 1.25rem;
             font-weight: 600;
             margin: 0.5rem 0;
+            color: var(--text);
         }
 
         .timeline-company {
-            color: var(--gray);
+            color: var(--text-secondary);
             margin-bottom: 0.5rem;
             display: block;
         }
 
         .timeline-description {
-            color: var(--gray);
+            color: var(--text-secondary);
         }
 
         .timeline-description ul {
@@ -552,6 +573,7 @@
 
         .timeline-description li {
             margin-bottom: 0.5rem;
+            color: var(--text-secondary);
         }
 
         /* Projects Section */
@@ -562,10 +584,10 @@
         }
 
         .project-card {
-            background: rgba(15, 23, 42, 0.7);
+            background: var(--card-bg);
             border-radius: 8px;
             overflow: hidden;
-            border: 1px solid rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--card-border);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
@@ -579,7 +601,7 @@
             width: 100%;
             height: 200px;
             object-fit: cover;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            border-bottom: 1px solid var(--card-border);
         }
 
         .project-content {
@@ -590,11 +612,11 @@
             font-size: 1.25rem;
             font-weight: 600;
             margin-bottom: 0.5rem;
-            color: var(--light);
+            color: var(--text);
         }
 
         .project-description {
-            color: var(--gray);
+            color: var(--text-secondary);
             margin-bottom: 1rem;
         }
 
@@ -631,7 +653,7 @@
         }
 
         .project-link:hover {
-            color: var(--light);
+            color: var(--text);
         }
 
         /* Knowledge Base */
@@ -642,10 +664,10 @@
         }
 
         .knowledge-card {
-            background: rgba(15, 23, 42, 0.7);
+            background: var(--card-bg);
             border-radius: 8px;
             padding: 1.5rem;
-            border: 1px solid rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--card-border);
         }
 
         /* References Section */
@@ -656,15 +678,15 @@
         }
 
         .reference-card {
-            background: rgba(15, 23, 42, 0.7);
+            background: var(--card-bg);
             border-radius: 8px;
             padding: 1.5rem;
-            border: 1px solid rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--card-border);
         }
 
         .reference-content {
             font-style: italic;
-            color: var(--gray);
+            color: var(--text-secondary);
             margin-bottom: 1.5rem;
             position: relative;
         }
@@ -704,10 +726,11 @@
         .reference-info h4 {
             font-weight: 600;
             margin-bottom: 0.25rem;
+            color: var(--text);
         }
 
         .reference-info p {
-            color: var(--gray);
+            color: var(--text-secondary);
             font-size: 0.9rem;
         }
 
@@ -739,10 +762,11 @@
         .contact-details h3 {
             font-size: 1.1rem;
             margin-bottom: 0.25rem;
+            color: var(--text);
         }
 
         .contact-details p, .contact-details a {
-            color: var(--gray);
+            color: var(--text-secondary);
             text-decoration: none;
             transition: color 0.3s ease;
         }
@@ -771,7 +795,7 @@
 
         .social-link:hover {
             background: var(--primary);
-            color: var(--darker);
+            color: var(--bg-secondary);
             transform: translateY(-3px);
         }
 
@@ -789,6 +813,7 @@
 
         .form-group label {
             font-weight: 500;
+            color: var(--text);
         }
 
         .form-group label:after {
@@ -799,10 +824,10 @@
 
         .form-control {
             padding: 0.75rem 1rem;
-            background: rgba(15, 23, 42, 0.7);
-            border: 1px solid rgba(255, 255, 255, 0.05);
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
             border-radius: 4px;
-            color: var(--light);
+            color: var(--text);
             font-size: 1rem;
             transition: border-color 0.3s ease;
         }
@@ -827,7 +852,7 @@
 
         .submit-btn {
             background: var(--primary);
-            color: var(--darker);
+            color: var(--bg-secondary);
             border: none;
             padding: 0.75rem 1.5rem;
             border-radius: 4px;
@@ -883,7 +908,7 @@
         .privacy-notice {
             margin-top: 1rem;
             font-size: 0.8rem;
-            color: var(--gray);
+            color: var(--text-secondary);
         }
 
         .privacy-notice a {
@@ -893,10 +918,10 @@
 
         /* Footer */
         footer {
-            background: var(--dark);
+            background: var(--bg);
             padding: 3rem 2rem;
             text-align: center;
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            border-top: 1px solid var(--card-border);
         }
 
         .footer-content {
@@ -912,7 +937,7 @@
         }
 
         .footer-text {
-            color: var(--gray);
+            color: var(--text-secondary);
             margin-bottom: 2rem;
         }
 
@@ -926,7 +951,7 @@
         }
 
         .footer-links a {
-            color: var(--gray);
+            color: var(--text-secondary);
             text-decoration: none;
             transition: color 0.3s ease;
         }
@@ -936,7 +961,7 @@
         }
 
         .copyright {
-            color: var(--gray);
+            color: var(--text-secondary);
             font-size: 0.9rem;
         }
 
@@ -949,7 +974,7 @@
             height: 50px;
             border-radius: 50%;
             background: var(--primary);
-            color: var(--darker);
+            color: var(--bg-secondary);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -972,7 +997,7 @@
             height: 50px;
             border-radius: 50%;
             background: var(--primary);
-            color: var(--darker);
+            color: var(--bg-secondary);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -1075,7 +1100,7 @@
                 top: 100%;
                 left: 0;
                 right: 0;
-                background: var(--dark);
+                background: var(--bg);
                 flex-direction: column;
                 gap: 0;
                 display: none;
@@ -1083,7 +1108,7 @@
             }
             .nav-links a {
                 padding: 1rem 2rem;
-                border-bottom: 1px solid rgba(255,255,255,0.05);
+                border-bottom: 1px solid var(--card-border);
             }
             #nav-toggle:checked ~ .nav-links {
                 display: flex;
@@ -1126,7 +1151,7 @@
         
         /* Simple contact section */
         .simple-contact {
-            background: rgba(15, 23, 42, 0.7);
+            background: var(--card-bg);
             padding: 1.5rem;
             border-radius: 8px;
             margin-top: 2rem;
@@ -1137,6 +1162,7 @@
             display: flex;
             align-items: center;
             gap: 0.5rem;
+            color: var(--text);
         }
     </style>
 </head>
@@ -1355,7 +1381,7 @@
                     <p>Universitetsstudier som ledde till en passion för IT och teknik. Under denna tid utvecklade jag:</p>
                     <ul>
                         <li>Strukturerat tänkande och problemlösningsförmåga</li>
-                        <li>Vetenskapligt arbetssätt och noggrannhet</li>
+                        <li>Vetenskapligt arbetssätt och noggrannheit</li>
                         <li>Kundfokus och kommunikationsfärdigheter</li>
                     </ul>
                 </div>
@@ -1590,7 +1616,7 @@ Bank-ID, identitetsverifiering, dokumentforensik, kundsupport, felsökning.</li>
                 
                 <div class="reference-card">
                     <div class="reference-content">
-                        “Baraa har varit en nyckelperson i vårt IT-supportteam. Han hanterat tekniska ärenden med stort engagemang och professionalism, oavsett om det gällt felsökning av mjukvara, hårdvara eller nätverksproblem. Han är snabb på att hitta lösningar, arbetar strukturerat i ticket-system och är alltid noggrann med att följa SLA. Baraa har även visat stor skicklighet i att administrera Microsoft 365 och Azure AD samt vid installation och konfigurering av datorer och skrivare. Användarna uppskattar hans tydliga kommunikation och goda bemötande.”
+                        “Baraa har varit en nyckelperson i vårt IT-supportteam. Han hanterat tekniska ärenden med stort engagemang och professionalism, oavsett om det gällt felsökning av mjukvara, hårdvara eller nätverksproblem. Han är snabb på att hitta lösningar, arbetar strukturerat i ticket-system och är alltid noggrann med att följa SLA. Baraa har även visat stor skickligheit i att administrera Microsoft 365 och Azure AD samt vid installation och konfigurering av datorer och skrivare. Användarna uppskattar hans tydliga kommunikation och goda bemötande.”
                     </div>
                     <div class="reference-author">
                         <img src="images/ref2.jpg" alt="Serhan Yilmaz" class="reference-avatar" loading="lazy">
@@ -1703,7 +1729,7 @@ Bank-ID, identitetsverifiering, dokumentforensik, kundsupport, felsökning.</li>
     </button>
     
     <!-- Theme Toggle Button -->
-    <button class="theme-toggle" id="theme-toggle" onclick="toggleTheme()" aria-pressed="false">🌗</button>
+    <button class="theme-toggle" id="theme-toggle" aria-pressed="false">🌗</button>
 
     <!-- Footer -->
     <footer>
@@ -1744,7 +1770,6 @@ Bank-ID, identitetsverifiering, dokumentforensik, kundsupport, felsökning.</li>
         </div>
     </footer>
 
-    <script src="https://cdn.emailjs.com/dist/email.min.js" async></script>
     <script>
         // Initialize EmailJS
         (function() {
@@ -1781,8 +1806,9 @@ Bank-ID, identitetsverifiering, dokumentforensik, kundsupport, felsökning.</li>
                         submitBtn.disabled = false;
                         loadingIndicator.style.display = 'none';
                     }
-                    });
-                }
+                });
+            }
+            
             // Global handler for unhandled promise rejections
             window.addEventListener('unhandledrejection', function(event) {
                 console.error('Unhandled promise rejection:', event.reason);
@@ -1795,206 +1821,105 @@ Bank-ID, identitetsverifiering, dokumentforensik, kundsupport, felsökning.</li>
                 if (loadingIndicator) loadingIndicator.style.display = 'none';
             });
         })();
-</script>
-<script>
-(() => {
-    'use strict';
 
-    // Helper: safely get element by id
-    const $id = id => document.getElementById(id);
-
-    // Apply theme CSS variables and document attributes
-    function applyThemeVars(isDark) {
-        const root = document.documentElement;
-        if (isDark) {
-            // Set dark theme
-            root.style.setProperty('--primary', '#10b981');
-            root.style.setProperty('--primary-dark', '#059669');
-            root.style.setProperty('--dark', '#0f172a');
-            root.style.setProperty('--darker', '#020617');
-            root.style.setProperty('--light', '#f8fafc');
-            root.style.setProperty('--gray', '#94a3b8');
-            document.body.style.backgroundColor = '#0f172a';
-            document.body.style.color = '#f8fafc';
-            root.setAttribute('data-theme', 'dark');
-        } else {
-            // Set light theme
-            root.style.setProperty('--primary', '#10b981');
-            root.style.setProperty('--primary-dark', '#059669');
-            root.style.setProperty('--dark', '#f8fafc');
-            root.style.setProperty('--darker', '#e2e8f0');
-            root.style.setProperty('--light', '#18181b'); // background color for light mode
-            root.style.setProperty('--gray', '#475569');
-            document.body.style.backgroundColor = '#f8fafc';
-            document.body.style.color = '#18181b'; // dark text for light mode
-            root.setAttribute('data-theme', 'light');
-        }
-
-        // Fix text color for all box elements and headings in both themes
-        const boxSelectors = [
-            '.skill-category',
-            '.success-card',
-            '.education-item',
-            '.cert-badge',
-            '.timeline-item',
-            '.project-card',
-            '.knowledge-card',
-            '.reference-card',
-            '.contact-info',
-            '.contact-form',
-            '.simple-contact'
-        ];
-        const headingSelectors = [
-            'h1', 'h2', 'h3', 'h4', 'h5', 'h6'
-        ];
-        const textColor = isDark ? '#f8fafc' : '#18181b';
-        const grayColor = isDark ? '#94a3b8' : '#475569';
-
-        boxSelectors.forEach(sel => {
-            document.querySelectorAll(sel).forEach(el => {
-                // For .cert-badge, only set color on direct text, not on links or icons
-                if (sel === '.cert-badge') {
-                    // Set color on the badge itself
-                    el.style.color = textColor;
-                    // Reset color for links and icons inside .cert-badge
-                    el.querySelectorAll('a, i').forEach(child => {
-                        child.style.color = '';
-                    });
-                } else {
-                    el.style.color = textColor;
+        // Theme switching functionality
+        (function() {
+            'use strict';
+            
+            // Helper: safely get element by id
+            const $id = id => document.getElementById(id);
+            
+            // Set theme to 'dark' or 'light'
+            function setTheme(mode) {
+                if (mode !== 'dark' && mode !== 'light') return;
+                
+                // Set data attribute on body
+                document.body.setAttribute('data-theme', mode);
+                localStorage.setItem('theme', mode);
+                
+                // Update theme toggle button if present
+                const themeToggleBtn = $id('theme-toggle');
+                if (themeToggleBtn) {
+                    themeToggleBtn.setAttribute('aria-pressed', String(mode === 'dark'));
+                    themeToggleBtn.innerHTML = mode === 'dark' ? '🌞' : '🌙';
                 }
-            });
-        });
-        headingSelectors.forEach(sel => {
-            document.querySelectorAll(sel).forEach(el => {
-                el.style.color = textColor;
-            });
-        });
-        // Also fix .project-description, .reference-content, .education-description, .timeline-description, .about-text p, .footer-text, .contact-details p, .contact-details a
-        [
-            '.project-description',
-            '.reference-content',
-            '.education-description',
-            '.timeline-description',
-            '.about-text p',
-            '.footer-text',
-            '.contact-details p',
-            '.contact-details a',
-            '.skill-list li',
-            '.education-institution',
-            '.timeline-company'
-        ].forEach(sel => {
-            document.querySelectorAll(sel).forEach(el => {
-                el.style.color = grayColor;
-            });
-        });
-        // Special: .tagline
-        document.querySelectorAll('.tagline').forEach(el => {
-            el.style.color = grayColor;
-        });
-        // Special: .project-title, .reference-info h4
-        document.querySelectorAll('.project-title, .reference-info h4').forEach(el => {
-            el.style.color = textColor;
-        });
-
-        // Ensure all links inside .project-card, .timeline-item, .education-item, .reference-card, .footer-links, .contact-details are visible in both themes
-        [
-            '.project-card a',
-            '.timeline-item a',
-            '.education-item a',
-            '.reference-card a',
-            '.footer-links a',
-            '.contact-details a'
-        ].forEach(sel => {
-            document.querySelectorAll(sel).forEach(el => {
-                el.style.color = isDark ? '#10b981' : '#059669';
-            });
-        });
-    }
-
-    // Public: set theme to 'dark' or 'light'
-    function setTheme(mode) {
-        if (mode !== 'dark' && mode !== 'light') return;
-        applyThemeVars(mode === 'dark');
-        localStorage.setItem('theme', mode);
-        // Update theme toggle button if present
-        const themeToggleBtn = $id('theme-toggle');
-        if (themeToggleBtn) {
-            themeToggleBtn.setAttribute('aria-pressed', String(mode === 'dark'));
-            themeToggleBtn.innerHTML = mode === 'dark' ? '🌞' : '🌙';
-        }
-    }
-
-    // Public: toggle theme (uses/set localStorage)
-    window.toggleTheme = function () {
-        const saved = localStorage.getItem('theme') ||
-            (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-        const next = saved === 'dark' ? 'light' : 'dark';
-        setTheme(next);
-    };
-
-    // Make toggleSection available globally
-    window.toggleSection = function (id) {
-        const el = $id(id);
-        if (!el) return;
-        el.classList.toggle('open');
-        // Try to toggle icon in header
-        const header = el.previousElementSibling;
-        if (header) {
-            const icon = header.querySelector && header.querySelector('i');
-            if (icon) {
-                icon.className = el.classList.contains('open') ? 'fas fa-chevron-up' : 'fas fa-chevron-down';
             }
-        }
-    };
-
-    // DOM ready
-    document.addEventListener('DOMContentLoaded', function () {
-        // Back to top button
-        const backToTopButton = $id('backToTop');
-        if (backToTopButton) {
-            // initial visibility
-            const updateBackToTop = () => {
-                if (window.pageYOffset > 300) {
-                    backToTopButton.classList.add('visible');
-                    backToTopButton.setAttribute('aria-hidden', 'false');
-                } else {
-                    backToTopButton.classList.remove('visible');
-                    backToTopButton.setAttribute('aria-hidden', 'true');
+            
+            // Toggle theme (uses/set localStorage)
+            window.toggleTheme = function () {
+                const current = document.body.getAttribute('data-theme') || 'dark';
+                const next = current === 'dark' ? 'light' : 'dark';
+                setTheme(next);
+            };
+            
+            // Make toggleSection available globally
+            window.toggleSection = function (id) {
+                const el = $id(id);
+                if (!el) return;
+                el.classList.toggle('open');
+                
+                // Try to toggle icon in header
+                const header = el.previousElementSibling;
+                if (header) {
+                    const icon = header.querySelector && header.querySelector('i');
+                    if (icon) {
+                        icon.className = el.classList.contains('open') ? 'fas fa-chevron-up' : 'fas fa-chevron-down';
+                    }
                 }
             };
-            updateBackToTop();
-            window.addEventListener('scroll', updateBackToTop);
-            backToTopButton.addEventListener('click', () => {
-                window.scrollTo({ top: 0, behavior: 'smooth' });
+            
+            // DOM ready
+            document.addEventListener('DOMContentLoaded', function () {
+                // Back to top button
+                const backToTopButton = $id('backToTop');
+                if (backToTopButton) {
+                    // initial visibility
+                    const updateBackToTop = () => {
+                        if (window.pageYOffset > 300) {
+                            backToTopButton.classList.add('visible');
+                            backToTopButton.setAttribute('aria-hidden', 'false');
+                        } else {
+                            backToTopButton.classList.remove('visible');
+                            backToTopButton.setAttribute('aria-hidden', 'true');
+                        }
+                    };
+                    updateBackToTop();
+                    window.addEventListener('scroll', updateBackToTop);
+                    backToTopButton.addEventListener('click', () => {
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                    });
+                }
+                
+                // Current year in footer
+                const currentYearEl = $id('currentYear');
+                if (currentYearEl) {
+                    currentYearEl.textContent = new Date().getFullYear();
+                }
+                
+                // Mobile nav toggle
+                const navToggle = $id('nav-toggle');
+                
+                // Apply saved theme (or system preference)
+                const savedTheme = localStorage.getItem('theme');
+                let initialTheme;
+                if (savedTheme === 'dark' || savedTheme === 'light') {
+                    initialTheme = savedTheme;
+                    setTheme(savedTheme);
+                } else {
+                    const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+                    initialTheme = prefersDark ? 'dark' : 'light';
+                    setTheme(initialTheme);
+                }
+                
+                // Set theme toggle button icon to match current theme
+                const themeToggleBtn = $id('theme-toggle');
+                if (themeToggleBtn) {
+                    themeToggleBtn.innerHTML = initialTheme === 'dark' ? '🌞' : '🌙';
+                    themeToggleBtn.setAttribute('aria-pressed', String(initialTheme === 'dark'));
+                    themeToggleBtn.addEventListener('click', toggleTheme);
+                }
             });
-        }
-
-        // Current year in footer
-        const currentYearEl = $id('currentYear');
-        if (currentYearEl) {
-            currentYearEl.textContent = new Date().getFullYear();
-        }
-
-        // Mobile nav toggle
-        const navToggle = $id('nav-toggle');
-        // Apply saved theme (or system preference)
-        const savedTheme = localStorage.getItem('theme');
-        let initialTheme;
-        if (savedTheme === 'dark' || savedTheme === 'light') {
-            initialTheme = savedTheme;
-            setTheme(savedTheme);
-        } else {
-            const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-            initialTheme = prefersDark ? 'dark' : 'light';
-            setTheme(initialTheme);
-        }
-        // Set theme toggle button icon to match current theme
-        const themeToggleBtn = $id('theme-toggle');
-        if (themeToggleBtn) {
-            themeToggleBtn.innerHTML = initialTheme === 'dark' ? '🌞' : '🌙';
-            themeToggleBtn.setAttribute('aria-pressed', String(initialTheme === 'dark'));
-        }
-    });
-})();
-</script>
+        })();
+    </script>
+</body>
+</html>
