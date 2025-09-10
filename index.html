@@ -1826,6 +1826,63 @@ Bank-ID, identitetsverifiering, dokumentforensik, kundsupport, felsökning.</li>
             document.body.style.color = '#18181b'; // dark text for light mode
             root.setAttribute('data-theme', 'light');
         }
+
+        // Fix text color for all box elements and headings in both themes
+        const boxSelectors = [
+            '.skill-category',
+            '.success-card',
+            '.education-item',
+            '.cert-badge',
+            '.timeline-item',
+            '.project-card',
+            '.knowledge-card',
+            '.reference-card',
+            '.contact-info',
+            '.contact-form',
+            '.simple-contact'
+        ];
+        const headingSelectors = [
+            'h1', 'h2', 'h3', 'h4', 'h5', 'h6'
+        ];
+        const textColor = isDark ? '#f8fafc' : '#18181b';
+        const grayColor = isDark ? '#94a3b8' : '#475569';
+
+        boxSelectors.forEach(sel => {
+            document.querySelectorAll(sel).forEach(el => {
+                el.style.color = textColor;
+            });
+        });
+        headingSelectors.forEach(sel => {
+            document.querySelectorAll(sel).forEach(el => {
+                el.style.color = textColor;
+            });
+        });
+        // Also fix .project-description, .reference-content, .education-description, .timeline-description, .about-text p, .footer-text, .contact-details p, .contact-details a
+        [
+            '.project-description',
+            '.reference-content',
+            '.education-description',
+            '.timeline-description',
+            '.about-text p',
+            '.footer-text',
+            '.contact-details p',
+            '.contact-details a',
+            '.skill-list li',
+            '.education-institution',
+            '.timeline-company'
+        ].forEach(sel => {
+            document.querySelectorAll(sel).forEach(el => {
+                el.style.color = grayColor;
+            });
+        });
+        // Special: .tagline
+        document.querySelectorAll('.tagline').forEach(el => {
+            el.style.color = grayColor;
+        });
+        // Special: .project-title, .reference-info h4
+        document.querySelectorAll('.project-title, .reference-info h4').forEach(el => {
+            el.style.color = textColor;
+        });
     }
 
     // Public: set theme to 'dark' or 'light'
@@ -1924,12 +1981,12 @@ Bank-ID, identitetsverifiering, dokumentforensik, kundsupport, felsökning.</li>
             initialTheme = prefersDark ? 'dark' : 'light';
             setTheme(initialTheme);
         }
-            // Set theme toggle button icon to match current theme
-            const themeToggleBtn = $id('theme-toggle');
-            if (themeToggleBtn) {
-                themeToggleBtn.innerHTML = initialTheme === 'dark' ? '🌞' : '🌙';
-                themeToggleBtn.setAttribute('aria-pressed', String(initialTheme === 'dark'));
-            }
-        });
-    })();
-    </script>
+        // Set theme toggle button icon to match current theme
+        const themeToggleBtn = $id('theme-toggle');
+        if (themeToggleBtn) {
+            themeToggleBtn.innerHTML = initialTheme === 'dark' ? '🌞' : '🌙';
+            themeToggleBtn.setAttribute('aria-pressed', String(initialTheme === 'dark'));
+        }
+    });
+})();
+</script>
