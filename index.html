@@ -54,6 +54,10 @@
             --gray: #94a3b8;
             --error: #ef4444;
             --success: #10b981;
+            --bg-dark: #0f172a;
+            --bg-light: #f8fafc;
+            --text-dark: #f8fafc;
+            --text-light: #0f172a;
         }
 
         * {
@@ -68,6 +72,7 @@
             color: var(--light);
             line-height: 1.7;
             scroll-behavior: smooth;
+            transition: background-color 0.3s, color 0.3s;
         }
 
         /* Header Styles */
@@ -254,6 +259,7 @@
             color: var(--primary);
             position: relative;
             display: inline-block;
+            cursor: pointer;
         }
 
         h2::after {
@@ -265,6 +271,34 @@
             height: 4px;
             background: var(--primary);
             border-radius: 2px;
+        }
+
+        /* Collapsible sections */
+        .collapsible-header {
+            cursor: pointer;
+            background-color: var(--primary);
+            color: var(--text-light);
+            padding: 0.5rem;
+            border-radius: 5px;
+            margin-top: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .content {
+            display: none;
+            padding: 1.5rem;
+            border: 1px solid var(--primary);
+            border-radius: 5px;
+            margin-top: 0.5rem;
+            background: rgba(15, 23, 42, 0.7);
+        }
+        
+        .content pre {
+            white-space: pre-wrap;
+            font-family: inherit;
+            line-height: 1.6;
         }
 
         /* About Section */
@@ -874,6 +908,7 @@
             gap: 2rem;
             margin-bottom: 2rem;
             flex-wrap: wrap;
+            font-size: 0.9rem;
         }
 
         .footer-links a {
@@ -1079,6 +1114,21 @@
             color:red;
             margin-left:3px;
         }
+        
+        /* Simple contact section */
+        .simple-contact {
+            background: rgba(15, 23, 42, 0.7);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-top: 2rem;
+        }
+        
+        .simple-contact p {
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
     </style>
 </head>
 <body>
@@ -1193,7 +1243,6 @@
                     </div>
                 </div>
             </div>
-        </section>
 
         <!-- Success Stories Section -->
         <section id="success">
@@ -1241,10 +1290,10 @@
                     <i class="fas fa-certificate"></i> PowerShell Automation
                 </span>
             </div>
-            
+      
             <div class="education-timeline">
                 <div class="education-item">
-                    <span class="education-date">2025-02-10 – Pågående</span>
+                    <span class="education-date">2025-02-10 – 2025-08-04</span>
                     <h3 class="education-title">IT-Support Specialist</h3>
                     <span class="education-institution">Lexicon, Sverige</span>
                     <div class="education-description">
@@ -1293,7 +1342,7 @@
                     <h3 class="education-title">Naturvetenskapligt program</h3>
                     <span class="education-institution">Al Mamoon Gymnasium, Syrien</span>
                     <div class="education-description">
-                        <p>Gymnasieexamen med fokus på:</p>
+                        <p>Gymnasieexamen med focus på:</p>
                         <ul>
                             <li>Matematik och fysik</li>
                             <li>Problemorienterat lärande</li>
@@ -1308,6 +1357,18 @@
         <section id="experience">
             <h2>Professionell Erfarenhet</h2>
             <div class="timeline">
+                                <div class="timeline-item">
+                    <span class="timeline-date">2025-08-05 – Pågående</span>
+                    <h3 class="timeline-title">Supporttekniker för säkerhetssystem </h3>
+                    <span class="timeline-company"> G2 Risk Solutions / ZignSec</span>
+                    <div class="timeline-description">
+                        <p>Ansvarar för teknisk support och drift av säkerhets- och identitetsverifieringslösningar för företagskunder. Arbetet omfattar felsökning, API-integrationer (Postman, Swagger, Hotspot) och kundsupport för tjänster som Bank-ID, e-post- och telefonverifiering, ID- och biometriverifiering, dokumentforensik, adressverifiering samt PEP- och sanktionskontroller. Stödjer även produkter som Global Onboarding, Persistent Merchant Monitoring och Transaction Laundering Detection. </p>
+ <ul>
+                            <li>Teknisk kompetens: Postman, Swagger (OpenAPI), Hotspot, API-testning, 
+Bank-ID, identitetsverifiering, dokumentforensik, kundsupport, felsökning.</li>
+                        </ul>
+                    </div>
+                </div>
                 <div class="timeline-item">
                     <span class="timeline-date">2022-11 – 2024-05</span>
                     <h3 class="timeline-title">IT-konsult och Service Desk Specialist</h3>
@@ -1324,7 +1385,7 @@
                         </ul>
                     </div>
                 </div>
-                
+
                 <div class="timeline-item">
                     <span class="timeline-date">2008-02 – 2012-07</span>
                     <h3 class="timeline-title">Systemadministratör</h3>
@@ -1452,7 +1513,7 @@
                     <img src="images/powershell.jpg" alt="PowerShell automationsskript" class="project-image" loading="lazy">
                     <div class="project-content">
                         <h3 class="project-title">Användarautomatisering med PowerShell</h3>
-                        <p class="project-description">Samling av användbara skript för Active Directory och Microsoft 365 administration som jag utvecklat under åren.</p>
+                        <p class="project-description">Samling of användbara skript för Active Directory och Microsoft 365 administration som jag utvecklat under åren.</p>
                         <div class="project-tech">
                             <span class="tech-tag">PowerShell</span>
                             <span class="tech-tag">Active Directory</span>
@@ -1505,7 +1566,7 @@
                 
                 <div class="reference-card">
                     <div class="reference-content">
-                        “Baraa har varit en nyckelperson i vårt IT-supportteam. Han har hanterat tekniska ärenden med stort engagemang och professionalism, oavsett om det gällt felsökning av mjukvara, hårdvara eller nätverksproblem. Han är snabb på att hitta lösningar, arbetar strukturerat i ticket-system och är alltid noggrann med att följa SLA. Baraa har även visat stor skicklighet i att administrera Microsoft 365 och Azure AD samt vid installation och konfigurering av datorer och skrivare. Användarna uppskattar hans tydliga kommunikation och goda bemötande.”
+                        “Baraa har varit en nyckelperson i vårt IT-supportteam. Han hanterat tekniska ärenden med stort engagemang och professionalism, oavsett om det gällt felsökning av mjukvara, hårdvara eller nätverksproblem. Han är snabb på att hitta lösningar, arbetar strukturerat i ticket-system och är alltid noggrann med att följa SLA. Baraa har även visat stor skicklighet i att administrera Microsoft 365 och Azure AD samt vid installation och konfigurering av datorer och skrivare. Användarna uppskattar hans tydliga kommunikation och goda bemötande.”
                     </div>
                     <div class="reference-author">
                         <img src="images/ref2.jpg" alt="Serhan Yilmaz" class="reference-avatar" loading="lazy">
@@ -1610,6 +1671,14 @@
                     </form>
                 </div>
             </div>
+            
+            <!-- Simple Contact Info from original version -->
+            <div class="simple-contact">
+                <h3>Direktkontakt</h3>
+                <p><i class="fas fa-envelope"></i> E-post: BaraaChalati@icloud.com</p>
+                <p><i class="fas fa-phone"></i> Telefon: +46739551570</p>
+                <p><i class="fas fa-globe"></i> Portfölj: <a href="https://skydancer95.github.io/Baraa-Chalati/" target="_blank">https://skydancer95.github.io/Baraa-Chalati/</a></p>
+            </div>
         </section>
     </main>
     
@@ -1617,6 +1686,9 @@
     <button class="back-to-top" id="backToTop" aria-label="Gå till toppen av sidan">
         <i class="fas fa-arrow-up"></i>
     </button>
+    
+    <!-- Theme Toggle Button -->
+    <button class="theme-toggle" onclick="toggleTheme()">🌗</button>
 
     <!-- Footer -->
     <footer>
@@ -1629,6 +1701,8 @@
                 <a href="#education" aria-label="Min utbildning">Utbildning</a>
                 <a href="#experience" aria-label="Min erfarenhet">Erfarenhet</a>
                 <a href="#projects" aria-label="Mina projekt">Projekt</a>
+                <a href="#success" aria-label="Framgångar">Framgångar</a>
+                <a href="#references" aria-label="Referenser">Referenser</a>
                 <a href="#contact" aria-label="Kontakta mig">Kontakt</a>
                 <a href="docs/baraa-chalati-cv.pdf" download aria-label="Ladda ner mitt CV">Ladda Ner CV</a>
             </div>
@@ -1651,7 +1725,7 @@
             <p class="copyright">
                 &copy; <span id="currentYear"></span> Baraa Chalati. Alla rättigheter reserverade.
                 <br>
-                <small>Uppdaterad: Maj 2024</small>
+                <small>Uppdaterad: Septemper 2025</small>
             </p>
         </div>
     </footer>
@@ -1667,32 +1741,34 @@
             const loadingIndicator = document.getElementById('loading');
             const formMessage = document.getElementById('form-message');
             
-            contactForm.addEventListener('submit', async function(e) {
-                e.preventDefault();
-                
-                submitBtn.disabled = true;
-                loadingIndicator.style.display = 'block';
-                formMessage.style.display = 'none';
-                
-                try {
-                    await emailjs.sendForm('service_unhga2e', 'template_vdfc19l', contactForm);
+            if (contactForm) {
+                contactForm.addEventListener('submit', async function(e) {
+                    e.preventDefault();
                     
-                    formMessage.innerHTML = '✅ Tack för ditt meddelande! Jag återkommer inom 1-2 arbetsdagar.';
-                    formMessage.className = 'success';
-                    formMessage.style.display = 'block';
-                    contactForm.reset();
+                    submitBtn.disabled = true;
+                    loadingIndicator.style.display = 'block';
+                    formMessage.style.display = 'none';
                     
-                } catch (error) {
-                    console.error("E-postfel:", error);
-                    formMessage.innerHTML = '❌ Misslyckades med att skicka. Kontakta mig direkt via <a href="mailto:baraachalati@gmail.com">mail</a> eller <a href="tel:+46739551570">telefon</a>.';
-                    formMessage.className = 'error';
-                    formMessage.style.display = 'block';
-                    
-                } finally {
-                    submitBtn.disabled = false;
-                    loadingIndicator.style.display = 'none';
-                }
-            });
+                    try {
+                        await emailjs.sendForm('service_unhga2e', 'template_vdfc19l', contactForm);
+                        
+                        formMessage.innerHTML = '✅ Tack för ditt meddelande! Jag återkommer inom 1-2 arbetsdagar.';
+                        formMessage.className = 'success';
+                        formMessage.style.display = 'block';
+                        contactForm.reset();
+                        
+                    } catch (error) {
+                        console.error("E-postfel:", error);
+                        formMessage.innerHTML = '❌ Misslyckades med att skicka. Kontakta mig direkt via <a href="mailto:baraachalati@gmail.com">mail</a> eller <a href="tel:+46739551570">telefon</a>.';
+                        formMessage.className = 'error';
+                        formMessage.style.display = 'block';
+                        
+                    } finally {
+                        submitBtn.disabled = false;
+                        loadingIndicator.style.display = 'none';
+                    }
+                });
+            }
         })();
 
         // Back to top button functionality
@@ -1724,6 +1800,58 @@
             link.addEventListener('click', () => {
                 navToggle.checked = false;
             });
+        });
+        
+        // Toggle sections function from original code
+        function toggleSection(id) {
+            const el = document.getElementById(id);
+            if (el) {
+                el.style.display = el.style.display === 'none' ? 'block' : 'none';
+                
+                // Toggle icon
+                const header = el.previousElementSibling;
+                const icon = header.querySelector('i');
+                if (icon) {
+                    if (el.style.display === 'none') {
+                        icon.className = 'fas fa-chevron-down';
+                    } else {
+                        icon.className = 'fas fa-chevron-up';
+                    }
+                }
+            }
+        }
+        
+        // Theme toggle function from original code
+        function toggleTheme() {
+            const root = document.documentElement;
+            const dark = getComputedStyle(root).getPropertyValue('--bg-dark').trim();
+            
+            if (document.body.style.backgroundColor === dark || !document.body.style.backgroundColor) {
+                // Switch to light theme
+                root.style.setProperty('--bg-dark', '#f8fafc');
+                root.style.setProperty('--text-dark', '#0f172a');
+                root.style.setProperty('--bg-light', '#0f172a');
+                root.style.setProperty('--text-light', '#f8fafc');
+                document.body.style.backgroundColor = '#f8fafc';
+                document.body.style.color = '#0f172a';
+            } else {
+                // Switch to dark theme
+                root.style.setProperty('--bg-dark', '#0f172a');
+                root.style.setProperty('--text-dark', '#f8fafc');
+                root.style.setProperty('--bg-light', '#f8fafc');
+                root.style.setProperty('--text-light', '#0f172a');
+                document.body.style.backgroundColor = '#0f172a';
+                document.body.style.color = '#f8fafc';
+            }
+        }
+        
+        // Initialize collapsible sections
+        document.addEventListener("DOMContentLoaded", () => {
+            // Hide detailed info section by default
+            const detailedInfo = document.getElementById('detailed-info');
+            if (detailedInfo) {
+                detailedInfo.style.display = 'none';
+            }
         });
     </script>
 </body>
