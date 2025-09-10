@@ -3,28 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Baraa Chalati | IT Support Specialist & System Administrator</title>
+    <title>Baraa Chalati | Certified IT Specialist - Systemadmin, Microsoft 365, Automation Expert</title>
+    <meta name="description" content="Senior IT-supporttekniker med expertis inom systemadministration, Microsoft 365 och infrastrukturhantering. 5+ års erfarenhet av enterprise-support och processautomatisering.">
+    <meta name="keywords" content="IT-support, Systemadministration, PowerShell, Azure, Microsoft 365, Automation">
+    <meta name="author" content="Baraa Chalati">
+    
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:title" content="Baraa Chalati | Certified IT Specialist">
+    <meta property="og:description" content="Systemadministration, Microsoft 365 och processautomatiseringsexpert">
+    <meta property="og:image" content="https://yourdomain.com/images/og-image.webp">
+    <meta property="og:url" content="https://yourdomain.com">
+    <meta property="og:type" content="website">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:creator" content="@Darkskydancer95">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Baraa Chalati",
+      "jobTitle": "Senior IT Support Specialist",
+      "url": "https://yourdomain.com",
+      "sameAs": [
+        "https://www.linkedin.com/in/baraachalati",
+        "https://github.com/Skydancer95",
+        "https://x.com/Darkskydancer95"
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "August Södermans väg 98",
+        "addressLocality": "Uppsala",
+        "addressCountry": "SE"
+      },
+      "email": "mailto:baraachalati@gmail.com",
+      "telephone": "+46739551570"
+    }
+    </script>
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
             --primary: #10b981;
             --primary-dark: #059669;
-            --primary-light: #a7f3d0;
             --dark: #0f172a;
             --darker: #020617;
             --light: #f8fafc;
             --gray: #94a3b8;
             --error: #ef4444;
             --success: #10b981;
-            --cyber-blue: #0ea5e9;
-            --cyber-purple: #8b5cf6;
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Inter', system-ui, sans-serif;
         }
 
         body {
@@ -32,34 +68,6 @@
             color: var(--light);
             line-height: 1.7;
             scroll-behavior: smooth;
-            background-image: 
-                radial-gradient(circle at 15% 50%, rgba(17, 24, 39, 0.4) 0%, transparent 25%),
-                radial-gradient(circle at 85% 30%, rgba(17, 24, 39, 0.4) 0%, transparent 25%);
-            overflow-x: hidden;
-        }
-
-        /* Cyber UI Elements */
-        .cyber-border {
-            position: relative;
-            border: 1px solid var(--primary);
-            box-shadow: 0 0 15px rgba(16, 185, 129, 0.4);
-        }
-
-        .cyber-border::before {
-            content: '';
-            position: absolute;
-            top: -3px;
-            left: -3px;
-            right: -3px;
-            bottom: -3px;
-            border: 1px solid var(--cyber-blue);
-            box-shadow: 0 0 10px rgba(14, 165, 233, 0.6);
-            pointer-events: none;
-            z-index: -1;
-        }
-
-        .cyber-glow {
-            text-shadow: 0 0 10px var(--primary), 0 0 20px var(--primary);
         }
 
         /* Header Styles */
@@ -78,10 +86,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: 
-                linear-gradient(45deg, transparent 49%, var(--primary) 49%, var(--primary) 51%, transparent 51%),
-                linear-gradient(-45deg, transparent 49%, var(--primary) 49%, var(--primary) 51%, transparent 51%);
-            background-size: 30px 30px;
+            background: url('images/tech-pattern.webp') center/cover;
             opacity: 0.05;
         }
 
@@ -99,28 +104,21 @@
             object-fit: cover;
             border: 5px solid var(--primary);
             margin: 0 auto 1.5rem;
-            box-shadow: 0 0 30px rgba(16, 185, 129, 0.5);
-            transition: all 0.5s ease;
-        }
-
-        .profile-img:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 40px rgba(16, 185, 129, 0.8);
+            box-shadow: 0 10px 30px rgba(16, 185, 129, 0.3);
         }
 
         h1 {
-            font-size: 3.5rem;
+            font-size: 3rem;
             font-weight: 800;
             margin-bottom: 0.5rem;
-            background: linear-gradient(to right, var(--primary), var(--cyber-blue));
+            background: linear-gradient(to right, var(--primary), #3b82f6);
             -webkit-background-clip: text;
             background-clip: text;
             -webkit-text-fill-color: transparent;
-            letter-spacing: 1px;
         }
 
         .tagline {
-            font-size: 1.5rem;
+            font-size: 1.25rem;
             color: var(--gray);
             margin-bottom: 2rem;
             font-weight: 300;
@@ -138,14 +136,10 @@
             gap: 1rem;
             text-align: center;
             border: 1px solid rgba(16, 185, 129, 0.2);
-            backdrop-filter: blur(10px);
         }
 
         .stats-item {
             font-size: 1.1rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
         }
 
         .contact-buttons {
@@ -161,27 +155,10 @@
             align-items: center;
             gap: 0.5rem;
             padding: 0.75rem 1.5rem;
-            border-radius: 5px;
+            border-radius: 50px;
             text-decoration: none;
             font-weight: 500;
             transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .btn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-            transition: 0.5s;
-        }
-
-        .btn:hover::before {
-            left: 100%;
         }
 
         .btn-primary {
@@ -226,11 +203,8 @@
 
         .logo {
             font-weight: 700;
-            font-size: 1.5rem;
+            font-size: 1.25rem;
             color: var(--primary);
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
         }
 
         .nav-links {
@@ -244,7 +218,6 @@
             font-weight: 500;
             position: relative;
             padding: 0.5rem 0;
-            transition: color 0.3s ease;
         }
 
         .nav-links a::after {
@@ -262,10 +235,6 @@
             width: 100%;
         }
 
-        .nav-links a:hover {
-            color: var(--primary);
-        }
-
         /* Main Content */
         main {
             max-width: 1200px;
@@ -279,71 +248,23 @@
         }
 
         h2 {
-            font-size: 2.8rem;
+            font-size: 2.5rem;
             font-weight: 700;
             margin-bottom: 2rem;
             color: var(--primary);
             position: relative;
             display: inline-block;
-            padding-bottom: 0.5rem;
         }
 
         h2::after {
             content: '';
             position: absolute;
-            bottom: 0;
+            bottom: -10px;
             left: 0;
             width: 60px;
             height: 4px;
             background: var(--primary);
             border-radius: 2px;
-        }
-
-        /* Collapsible Sections */
-        .collapsible {
-            margin-bottom: 1.5rem;
-        }
-
-        .collapsible-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1.5rem;
-            background: linear-gradient(90deg, rgba(16, 185, 129, 0.1), rgba(14, 165, 233, 0.1));
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 8px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .collapsible-header:hover {
-            background: linear-gradient(90deg, rgba(16, 185, 129, 0.2), rgba(14, 165, 233, 0.2));
-        }
-
-        .collapsible-header h3 {
-            font-size: 1.4rem;
-            color: var(--primary);
-            margin: 0;
-        }
-
-        .collapsible-content {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.5s ease;
-            background: rgba(15, 23, 42, 0.7);
-            border-radius: 0 0 8px 8px;
-        }
-
-        .collapsible-content-inner {
-            padding: 1.5rem;
-        }
-
-        .collapsible.active .collapsible-content {
-            max-height: 2000px;
-        }
-
-        .collapsible.active .collapsible-header i {
-            transform: rotate(180deg);
         }
 
         /* About Section */
@@ -357,8 +278,6 @@
         .about-text p {
             margin-bottom: 1.5rem;
             color: var(--gray);
-            font-size: 1.1rem;
-            line-height: 1.8;
         }
 
         .personal-letter {
@@ -367,24 +286,11 @@
             padding: 2rem;
             border-radius: 0 8px 8px 0;
             margin-top: 2rem;
-            position: relative;
-        }
-
-        .personal-letter::before {
-            content: '"';
-            position: absolute;
-            top: 10px;
-            left: 10px;
-            font-size: 4rem;
-            color: var(--primary);
-            opacity: 0.2;
         }
 
         .personal-letter p {
             font-style: italic;
             color: var(--light);
-            font-size: 1.2rem;
-            line-height: 1.8;
         }
 
         .skills-grid {
@@ -398,18 +304,12 @@
             border-radius: 8px;
             padding: 1.5rem;
             border: 1px solid rgba(255, 255, 255, 0.05);
-            transition: transform 0.3s ease;
-        }
-
-        .skill-category:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
         }
 
         .skill-category h3 {
             color: var(--primary);
             margin-bottom: 1rem;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             display: flex;
             align-items: center;
             gap: 0.5rem;
@@ -429,7 +329,7 @@
         .skill-list li::before {
             content: '▹';
             color: var(--primary);
-            font-size: 1rem;
+            font-size: 0.9rem;
         }
 
         /* Success Stories */
@@ -443,11 +343,6 @@
             padding: 1.5rem;
             margin-bottom: 1.5rem;
             border-left: 4px solid var(--primary);
-            transition: transform 0.3s ease;
-        }
-        
-        .success-card:hover {
-            transform: translateX(5px);
         }
         
         .success-card h3 {
@@ -457,7 +352,94 @@
             margin-bottom: 1rem;
         }
 
-        /* Education & Experience Sections */
+        /* Education Section */
+        .education-timeline {
+            position: relative;
+            padding-left: 2rem;
+            margin-top: 2rem;
+        }
+
+        .education-timeline::before {
+            content: '';
+            position: absolute;
+            left: 7px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--primary);
+            opacity: 0.3;
+        }
+
+        .education-item {
+            position: relative;
+            margin-bottom: 2.5rem;
+            padding-left: 2rem;
+        }
+
+        .education-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 5px;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: var(--darker);
+            border: 3px solid var(--primary);
+        }
+
+        .education-date {
+            font-weight: 500;
+            color: var(--primary);
+            display: block;
+            margin-bottom: 0.25rem;
+        }
+
+        .education-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin: 0.5rem 0;
+        }
+
+        .education-institution {
+            color: var(--gray);
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .education-description {
+            color: var(--gray);
+        }
+
+        .education-description ul {
+            margin-top: 0.5rem;
+            padding-left: 1.5rem;
+        }
+
+        .education-description li {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Certifications */
+        .certifications {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+        
+        .cert-badge {
+            background: rgba(16, 185, 129, 0.1);
+            border: 1px solid var(--primary);
+            border-radius: 50px;
+            padding: 0.5rem 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        /* Experience Section */
         .timeline {
             position: relative;
             padding-left: 2rem;
@@ -497,26 +479,22 @@
             color: var(--primary);
             display: block;
             margin-bottom: 0.25rem;
-            font-size: 0.9rem;
         }
 
         .timeline-title {
-            font-size: 1.4rem;
+            font-size: 1.25rem;
             font-weight: 600;
             margin: 0.5rem 0;
-            color: var(--light);
         }
 
         .timeline-company {
             color: var(--gray);
             margin-bottom: 0.5rem;
             display: block;
-            font-size: 1.1rem;
         }
 
         .timeline-description {
             color: var(--gray);
-            line-height: 1.7;
         }
 
         .timeline-description ul {
@@ -526,31 +504,6 @@
 
         .timeline-description li {
             margin-bottom: 0.5rem;
-        }
-
-        /* Certifications */
-        .certifications {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
-            margin: 1.5rem 0;
-        }
-        
-        .cert-badge {
-            background: rgba(16, 185, 129, 0.1);
-            border: 1px solid var(--primary);
-            border-radius: 50px;
-            padding: 0.5rem 1rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-size: 0.9rem;
-            transition: all 0.3s ease;
-        }
-
-        .cert-badge:hover {
-            background: rgba(16, 185, 129, 0.2);
-            transform: translateY(-2px);
         }
 
         /* Projects Section */
@@ -566,19 +519,6 @@
             overflow: hidden;
             border: 1px solid rgba(255, 255, 255, 0.05);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
-            position: relative;
-        }
-
-        .project-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(to bottom, transparent 0%, var(--darker) 100%);
-            opacity: 0.7;
-            z-index: 1;
         }
 
         .project-card:hover {
@@ -596,12 +536,10 @@
 
         .project-content {
             padding: 1.5rem;
-            position: relative;
-            z-index: 2;
         }
 
         .project-title {
-            font-size: 1.4rem;
+            font-size: 1.25rem;
             font-weight: 600;
             margin-bottom: 0.5rem;
             color: var(--light);
@@ -610,7 +548,6 @@
         .project-description {
             color: var(--gray);
             margin-bottom: 1rem;
-            line-height: 1.6;
         }
 
         .project-tech {
@@ -661,11 +598,6 @@
             border-radius: 8px;
             padding: 1.5rem;
             border: 1px solid rgba(255, 255, 255, 0.05);
-            transition: transform 0.3s ease;
-        }
-
-        .knowledge-card:hover {
-            transform: translateY(-5px);
         }
 
         /* References Section */
@@ -680,11 +612,6 @@
             border-radius: 8px;
             padding: 1.5rem;
             border: 1px solid rgba(255, 255, 255, 0.05);
-            transition: transform 0.3s ease;
-        }
-
-        .reference-card:hover {
-            transform: translateY(-5px);
         }
 
         .reference-content {
@@ -692,7 +619,6 @@
             color: var(--gray);
             margin-bottom: 1.5rem;
             position: relative;
-            line-height: 1.7;
         }
 
         .reference-content::before,
@@ -730,7 +656,6 @@
         .reference-info h4 {
             font-weight: 600;
             margin-bottom: 0.25rem;
-            color: var(--light);
         }
 
         .reference-info p {
@@ -758,15 +683,14 @@
         }
 
         .contact-icon {
-            font-size: 1.5rem;
+            font-size: 1.25rem;
             color: var(--primary);
             margin-top: 0.25rem;
         }
 
         .contact-details h3 {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             margin-bottom: 0.25rem;
-            color: var(--light);
         }
 
         .contact-details p, .contact-details a {
@@ -786,8 +710,8 @@
         }
 
         .social-link {
-            width: 45px;
-            height: 45px;
+            width: 40px;
+            height: 40px;
             border-radius: 50%;
             background: rgba(16, 185, 129, 0.1);
             display: flex;
@@ -795,7 +719,6 @@
             justify-content: center;
             color: var(--primary);
             transition: all 0.3s ease;
-            font-size: 1.2rem;
         }
 
         .social-link:hover {
@@ -818,7 +741,6 @@
 
         .form-group label {
             font-weight: 500;
-            color: var(--light);
         }
 
         .form-group label:after {
@@ -830,7 +752,7 @@
         .form-control {
             padding: 0.75rem 1rem;
             background: rgba(15, 23, 42, 0.7);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.05);
             border-radius: 4px;
             color: var(--light);
             font-size: 1rem;
@@ -840,7 +762,6 @@
         .form-control:focus {
             outline: none;
             border-color: var(--primary);
-            box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.2);
         }
 
         .form-control:invalid:not(:focus):not(:placeholder-shown) {
@@ -928,7 +849,6 @@
             padding: 3rem 2rem;
             text-align: center;
             border-top: 1px solid rgba(255, 255, 255, 0.05);
-            position: relative;
         }
 
         .footer-content {
@@ -937,7 +857,7 @@
         }
 
         .footer-logo {
-            font-size: 1.8rem;
+            font-size: 1.5rem;
             font-weight: 700;
             margin-bottom: 1rem;
             color: var(--primary);
@@ -946,7 +866,6 @@
         .footer-text {
             color: var(--gray);
             margin-bottom: 2rem;
-            font-size: 1.1rem;
         }
 
         .footer-links {
@@ -961,7 +880,6 @@
             color: var(--gray);
             text-decoration: none;
             transition: color 0.3s ease;
-            font-size: 1rem;
         }
 
         .footer-links a:hover {
@@ -991,15 +909,10 @@
             transition: all 0.3s ease;
             z-index: 99;
             border: none;
-            font-size: 1.2rem;
         }
 
         .back-to-top.visible {
             opacity: 1;
-        }
-
-        .back-to-top:hover {
-            transform: translateY(-5px);
         }
 
         .theme-toggle {
@@ -1017,28 +930,7 @@
             cursor: pointer;
             z-index: 99;
             border: none;
-            font-size: 1.2rem;
-            transition: all 0.3s ease;
         }
-
-        .theme-toggle:hover {
-            transform: rotate(30deg);
-        }
-
-        /* Animations */
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .fade-in {
-            animation: fadeIn 1s ease forwards;
-        }
-
-        .delay-1 { animation-delay: 0.2s; }
-        .delay-2 { animation-delay: 0.4s; }
-        .delay-3 { animation-delay: 0.6s; }
-        .delay-4 { animation-delay: 0.8s; }
 
         /* Responsive Design */
         @media (max-width: 992px) {
@@ -1060,29 +952,19 @@
 
             .nav-links {
                 gap: 1.5rem;
-                flex-wrap: wrap;
-                justify-content: center;
             }
 
             h1 {
-                font-size: 2.8rem;
+                font-size: 2.5rem;
             }
 
             .tagline {
-                font-size: 1.2rem;
+                font-size: 1.1rem;
             }
             
             .stats-bar {
                 flex-direction: column;
                 gap: 0.5rem;
-            }
-            
-            .stats-item {
-                justify-content: center;
-            }
-            
-            h2 {
-                font-size: 2.3rem;
             }
         }
 
@@ -1092,8 +974,8 @@
             }
 
             .profile-img {
-                width: 150px;
-                height: 150px;
+                width: 140px;
+                height: 140px;
             }
 
             .contact-buttons {
@@ -1116,14 +998,6 @@
 
             h2 {
                 font-size: 2rem;
-            }
-            
-            .collapsible-header h3 {
-                font-size: 1.2rem;
-            }
-            
-            .timeline-title {
-                font-size: 1.2rem;
             }
         }
 
@@ -1157,13 +1031,10 @@
                 gap: 0;
                 display: none;
                 z-index: 101;
-                padding: 1rem 0;
             }
             .nav-links a {
                 padding: 1rem 2rem;
                 border-bottom: 1px solid rgba(255,255,255,0.05);
-                width: 100%;
-                text-align: center;
             }
             #nav-toggle:checked ~ .nav-links {
                 display: flex;
@@ -1208,110 +1079,29 @@
             color:red;
             margin-left:3px;
         }
-        
-        /* IT Support Specific Elements */
-        .terminal {
-            background: var(--darker);
-            border-radius: 8px;
-            padding: 1.5rem;
-            font-family: 'Courier New', monospace;
-            color: var(--primary-light);
-            border: 1px solid var(--primary);
-            margin: 1.5rem 0;
-            overflow-x: auto;
-        }
-        
-        .terminal .command::before {
-            content: '> ';
-            color: var(--primary);
-        }
-        
-        .troubleshooting-steps {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 1.5rem;
-            margin: 2rem 0;
-        }
-        
-        .troubleshooting-step {
-            background: rgba(15, 23, 42, 0.7);
-            border-radius: 8px;
-            padding: 1.5rem;
-            border-left: 4px solid var(--cyber-blue);
-        }
-        
-        .troubleshooting-step h4 {
-            color: var(--cyber-blue);
-            margin-bottom: 0.5rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-        
-        .network-diagram {
-            width: 100%;
-            height: 200px;
-            background: rgba(15, 23, 42, 0.7);
-            border-radius: 8px;
-            margin: 2rem 0;
-            position: relative;
-            overflow: hidden;
-            border: 1px solid var(--primary);
-        }
-        
-        .network-node {
-            position: absolute;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            background: var(--primary);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--darker);
-            font-weight: bold;
-        }
-        
-        .network-connection {
-            position: absolute;
-            height: 2px;
-            background: var(--primary);
-            transform-origin: 0 0;
-        }
-        
-        /* Pulse animation for live elements */
-        @keyframes pulse {
-            0% { opacity: 1; }
-            50% { opacity: 0.7; }
-            100% { opacity: 1; }
-        }
-        
-        .pulse {
-            animation: pulse 2s infinite;
-        }
     </style>
 </head>
 <body>
     <!-- Header Section -->
     <header>
         <div class="profile-container">
-            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80" alt="Porträttbild av Baraa Chalati, IT-specialist" class="profile-img">
-            <h1 class="cyber-glow">Baraa Chalati</h1>
-            <p class="tagline">IT Support Specialist & System Administrator</p>
+            <img src="images/profile.jpg" alt="Porträttbild av Baraa Chalati, IT-specialist" class="profile-img" loading="lazy">
+            <h1>Baraa Chalati</h1>
+            <p class="tagline">Certified IT Specialist – Systemadmin, Microsoft 365, Automation Expert</p>
             
             <!-- Stats Bar -->
-            <div class="stats-bar cyber-border">
-                <div class="stats-item"><i class="fas fa-users"></i> 500+ användare supportade</div>
-                <div class="stats-item"><i class="fas fa-file-alt"></i> 200+ artiklar publicerade</div>
-                <div class="stats-item"><i class="fas fa-robot"></i> 30% processautomatisering</div>
+            <div class="stats-bar">
+                <div class="stats-item">👨‍💻 500+ användare supportade</div>
+                <div class="stats-item">🛠 200+ artiklar publicerade</div>
+                <div class="stats-item">💡 30% processautomatisering</div>
             </div>
             
             <div class="contact-buttons">
                 <a href="#contact" class="btn btn-primary" aria-label="Kontakta mig via formulär">
                     <i class="fas fa-envelope"></i> Kontakta Mig
                 </a>
-                <a href="#projects" class="btn btn-outline" aria-label="Se mina projekt">
-                    <i class="fas fa-code"></i> Mina Projekt
+                <a href="docs/baraa-chalati-cv.pdf" download class="btn btn-outline" aria-label="Ladda ner mitt CV">
+                    <i class="fas fa-download"></i> Ladda Ner CV
                 </a>
             </div>
         </div>
@@ -1320,7 +1110,7 @@
     <!-- Navigation -->
     <nav aria-label="Huvudnavigation">
         <div class="nav-container">
-            <a href="#" class="logo" aria-label="Startsida"><i class="fas fa-terminal"></i> Baraa Chalati</a>
+            <a href="#" class="logo" aria-label="Startsida">Portfolio</a>
             <input type="checkbox" id="nav-toggle" style="display:none;">
             <label for="nav-toggle" class="nav-toggle-label" aria-label="Öppna meny">
                 <span></span>
@@ -1328,12 +1118,13 @@
                 <span></span>
             </label>
             <div class="nav-links">
-                <a href="#about"><i class="fas fa-user"></i> Om Mig</a>
-                <a href="#skills"><i class="fas fa-tools"></i> Kompetenser</a>
-                <a href="#experience"><i class="fas fa-briefcase"></i> Erfarenhet</a>
-                <a href="#education"><i class="fas fa-graduation-cap"></i> Utbildning</a>
-                <a href="#projects"><i class="fas fa-code-branch"></i> Projekt</a>
-                <a href="#contact"><i class="fas fa-envelope"></i> Kontakt</a>
+                <a href="#about">Om Mig</a>
+                <a href="#education">Utbildning</a>
+                <a href="#experience">Erfarenhet</a>
+                <a href="#projects">Projekt</a>
+                <a href="#success">Framgångar</a>
+                <a href="#references">Referenser</a>
+                <a href="#contact">Kontakt</a>
             </div>
         </div>
     </nav>
@@ -1344,16 +1135,16 @@
         <section id="about">
             <h2>Om Mig</h2>
             <div class="about-content">
-                <div class="about-text fade-in">
+                <div class="about-text">
                     <p>Jag är en certifierad IT-professionell med över 5 års erfarenhet inom IT-support, systemadministration och infrastrukturhantering. Min expertis sträcker sig från första linjens support till avancerad systemadministration och virtualisering.</p>
                     <p>Med en stark teknisk bakgrund och exceptionella kundservicefärdigheter har jag hjälpt både små företag och stora enterprise-kunder att optimera sina IT-miljöer. Jag brinner för att skapa effektiva tekniska lösningar som ökar produktiviteten och minskar driftstopp.</p>
                     
-                    <div class="personal-letter fade-in delay-1">
+                    <div class="personal-letter">
                         <p>"Min passion för teknik började redan som barn när jag plockade isär min första dator. Idag kombinerar jag denna nyfikenhet med professionell expertis för att leverera lösningar som gör verklig skillnad. Jag tror på att bra IT inte bara ska fungera - det ska underlätta och inspirera."</p>
                     </div>
                 </div>
                 
-                <div class="fade-in delay-2">
+                <div>
                     <h3 style="margin-bottom: 1.5rem;">Mina nyckelkompetenser</h3>
                     <div class="skills-grid">
                         <div class="skill-category">
@@ -1404,63 +1195,110 @@
             </div>
         </section>
 
-        <!-- Skills Section -->
-        <section id="skills">
-            <h2>Tekniska Kompetenser</h2>
-            
-            <div class="collapsible">
-                <div class="collapsible-header">
-                    <h3><i class="fas fa-desktop"></i> Operativsystem & Plattformar</h3>
-                    <i class="fas fa-chevron-down"></i>
+        <!-- Success Stories Section -->
+        <section id="success">
+            <h2>Framgångshistorier</h2>
+            <div class="success-stories">
+                <div class="success-card">
+                    <h3><span>🛠</span> Problem</h3>
+                    <p>Användare upplevde inloggningsfel varje måndag morgon på grund av en felkonfigurerad Group Policy som återställde behörigheter under helgen.</p>
+                    
+                    <h3><span>🧠</span> Lösning</h3>
+                    <p>Diagnosticerade problemet genom att analysera AD-loggarna och skrev om GPO:n med mer specifika behörighetsinställningar som bevarades mellan veckorna.</p>
+                    
+                    <h3><span>✅</span> Resultat</h3>
+                    <p>Eliminerade 100% av måndagens inloggningsproblem och minskade supportärenden relaterade till behörigheter med 75%.</p>
                 </div>
-                <div class="collapsible-content">
-                    <div class="collapsible-content-inner">
-                        <div class="certifications">
-                            <span class="cert-badge"><i class="fas fa-certificate"></i> Windows 10/11</span>
-                            <span class="cert-badge"><i class="fas fa-certificate"></i> Windows Server 2016-2022</span>
-                            <span class="cert-badge"><i class="fas fa-certificate"></i> macOS</span>
-                            <span class="cert-badge"><i class="fas fa-certificate"></i> Linux (Ubuntu, CentOS)</span>
-                            <span class="cert-badge"><i class="fas fa-certificate"></i> VMware vSphere</span>
-                            <span class="cert-badge"><i class="fas fa-certificate"></i> Hyper-V</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="collapsible">
-                <div class="collapsible-header">
-                    <h3><i class="fas fa-wifi"></i> Nätverk & Säkerhet</h3>
-                    <i class="fas fa-chevron-down"></i>
-                </div>
-                <div class="collapsible-content">
-                    <div class="collapsible-content-inner">
-                        <div class="certifications">
-                            <span class="cert-badge"><i class="fas fa-certificate"></i> TCP/IP</span>
-                            <span class="cert-badge"><i class="fas fa-certificate"></i> DNS & DHCP</span>
-                            <span class="cert-badge"><i class="fas fa-certificate"></i> VPN Technologies</span>
-                            <span class="cert-badge"><i class="fas fa-certificate"></i> Firewall Configuration</span>
-                            <span class="cert-badge"><i class="fas fa-certificate"></i> Network Monitoring</span>
-                            <span class="cert-badge"><i class="fas fa-certificate"></i> Wireshark</span>
-                        </div>
-                    </div>
+                
+                <div class="success-card">
+                    <h3><span>🛠</span> Problem</h3>
+                    <p>Manuell skapelse av användarkonton tog i genomsnitt 15 minuter per användare med hög felmarginal.</p>
+                    
+                    <h3><span>🧠</span> Lösning</h3>
+                    <p>Utvecklade ett PowerShell-skript som automatiskt skapar användare i Active Directory och Microsoft 365 baserat på Excel-filer från HR.</p>
+                    
+                    <h3><span>✅</span> Resultat</h3>
+                    <p>Reducerade tid per användare till 2 minuter (87% besparing) och eliminerade manuella fel helt.</p>
                 </div>
             </div>
+        </section>
+
+        <!-- Education Section -->
+        <section id="education">
+            <h2>Utbildning & Certifieringar</h2>
             
-            <div class="collapsible">
-                <div class="collapsible-header">
-                    <h3><i class="fas fa-cloud"></i> Molntjänster & Virtualisering</h3>
-                    <i class="fas fa-chevron-down"></i>
+            <div class="certifications">
+                <span class="cert-badge">
+                    <i class="fas fa-certificate"></i> Microsoft 365 Fundamentals (MS-900)
+                </span>
+                <span class="cert-badge">
+                    <i class="fas fa-certificate"></i> ITIL Foundation
+                </span>
+                <span class="cert-badge">
+                    <i class="fas fa-certificate"></i> Azure AD Administration
+                </span>
+                <span class="cert-badge">
+                    <i class="fas fa-certificate"></i> PowerShell Automation
+                </span>
+            </div>
+            
+            <div class="education-timeline">
+                <div class="education-item">
+                    <span class="education-date">2025-02-10 – Pågående</span>
+                    <h3 class="education-title">IT-Support Specialist</h3>
+                    <span class="education-institution">Lexicon, Sverige</span>
+                    <div class="education-description">
+                        <p>Komplett utbildning inom IT-support med fokus på:</p>
+                        <ul>
+                            <li>IT-säkerhet och nätverksteknik</li>
+                            <li>Databashantering och operativsystem</li>
+                            <li>Molntjänster (Microsoft Azure)</li>
+                            <li>Administration av Microsoft 365-miljöer</li>
+                            <li>Användarsupport och problemlösning</li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="collapsible-content">
-                    <div class="collapsible-content-inner">
-                        <div class="certifications">
-                            <span class="cert-badge"><i class="fas fa-certificate"></i> Microsoft 365</span>
-                            <span class="cert-badge"><i class="fas fa-certificate"></i> Azure AD</span>
-                            <span class="cert-badge"><i class="fas fa-certificate"></i> Exchange Online</span>
-                            <span class="cert-badge"><i class="fas fa-certificate"></i> SharePoint Online</span>
-                            <span class="cert-badge"><i class="fas fa-certificate"></i> OneDrive for Business</span>
-                            <span class="cert-badge"><i class="fas fa-certificate"></i> VMware vSphere</span>
-                        </div>
+                
+                <div class="education-item">
+                    <span class="education-date">2023-11 – 2023-12</span>
+                    <h3 class="education-title">Servicedesk Tekniker / IT-support</h3>
+                    <span class="education-institution">Cornerstone, Sverige</span>
+                    <div class="education-description">
+                        <p>Intensivutbildning inom enterprise IT-support:</p>
+                        <ul>
+                            <li>ITIL-processer och ärendehantering</li>
+                            <li>Microsoft 365 och Azure AD-administration</li>
+                            <li>Nätverksgrunderna och säkerhetsprinciper</li>
+                            <li>MS900-certifierad (Microsoft 365 Fundamentals)</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="education-item">
+                    <span class="education-date">2019-08 – 2021-06</span>
+                    <h3 class="education-title">Receptarieprogrammet</h3>
+                    <span class="education-institution">Uppsala Universitet, Sverige</span>
+                    <div class="education-description">
+                        <p>Universitetsstudier som ledde till en passion för IT och teknik. Under denna tid utvecklade jag:</p>
+                        <ul>
+                            <li>Strukturerat tänkande och problemlösningsförmåga</li>
+                            <li>Vetenskapligt arbetssätt och noggrannity</li>
+                            <li>Kundfokus och kommunikationsfärdigheter</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="education-item">
+                    <span class="education-date">2011-01 – 2013-06</span>
+                    <h3 class="education-title">Naturvetenskapligt program</h3>
+                    <span class="education-institution">Al Mamoon Gymnasium, Syrien</span>
+                    <div class="education-description">
+                        <p>Gymnasieexamen med fokus på:</p>
+                        <ul>
+                            <li>Matematik och fysik</li>
+                            <li>Problemorienterat lärande</li>
+                            <li>Teknisk analys och logiskt tänkande</li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -1468,129 +1306,73 @@
 
         <!-- Experience Section -->
         <section id="experience">
-            <h2>Erfarenhet</h2>
-            
-            <div class="collapsible">
-                <div class="collapsible-header">
-                    <h3><i class="fas fa-briefcase"></i> Professionell Erfarenhet</h3>
-                    <i class="fas fa-chevron-down"></i>
-                </div>
-                <div class="collapsible-content">
-                    <div class="collapsible-content-inner">
-                        <div class="timeline">
-                            <div class="timeline-item fade-in">
-                                <span class="timeline-date">2022-11 – 2024-05</span>
-                                <h3 class="timeline-title">IT-konsult och Service Desk Specialist</h3>
-                                <span class="timeline-company">Msemploy och Cleverex Bemanning / Tietoevry, Stockholm</span>
-                                <div class="timeline-description">
-                                    <p>Ansvarar för avancerad IT-support och problemlösning för enterprise-kunder med fokus på Microsoft 365 och Azure-miljöer.</p>
-                                    <ul>
-                                        <li>Löser komplexa tekniska problem för över 500 användare</li>
-                                        <li>Hanterat samtal och ärenden parallellt, arbetat mot SLA och prioriterat effektiv problemlösning.</li>
-                                        <li>Utvecklar PowerShell-skript för automatisering av rutinuppgifter</li>
-                                        <li>Levererat teknisk support av hög kvalitet till enterprise-kunder via samtal, mail och chatt.</li>
-                                        <li>Samarbetat med 2:a och 3:e linjens supportteam för att lösa komplexa problem.</li>
-                                        <li>Skrivit och publicerat över 200 kunskapsartiklar för interna databaser</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            
-                            <div class="timeline-item fade-in">
-                                <span class="timeline-date">2008-02 – 2012-07</span>
-                                <h3 class="timeline-title">Systemadministratör</h3>
-                                <span class="timeline-company">Academedia Institute, Syrien</span>
-                                <div class="timeline-description">
-                                    <p>Ansvarade för hela IT-infrastrukturen för en organisation med 200+ användare.</p>
-                                    <ul>
-                                        <li>Undervisning i ICDL-kurser på engelska och arabiska.</li>
-                                        <li>Praktisk utbildning i datorprogram och grafisk design (Photoshop).</li>
-                                        <li>Automatiserade användarhantering med PowerShell</li>
-                                        <li>Utbildning i Microsoft Office-program för barn.</li>
-                                    </ul>
-                                </div>
-                            </div>
-
-                            <div class="timeline-item fade-in">
-                                <span class="timeline-date">2022-08 – 2022-10</span>
-                                <h3 class="timeline-title">Flygplatskontrollant</h3>
-                                <span class="timeline-company">Arlanda, Stockholm</span>
-                                <div class="timeline-description">
-                                    <p>Utförde säkerhetskontroller och hanterade röntgenmaskiner för bagagekontroll.</p>
-                                    <ul>
-                                        <li>Säkerställde att säkerhetsföreskrifter efterlevdes och bidrog till en trygg miljö.</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
+            <h2>Professionell Erfarenhet</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <span class="timeline-date">2022-11 – 2024-05</span>
+                    <h3 class="timeline-title">IT-konsult och Service Desk Specialist</h3>
+                    <span class="timeline-company">Msemploy och Cleverex Bemanning / Tietoevry, Stockholm</span>
+                    <div class="timeline-description">
+                        <p>Ansvarar för avancerad IT-support och problemlösning för enterprise-kunder med fokus på Microsoft 365 och Azure-miljöer.</p>
+                        <ul>
+                            <li>Löser komplexa tekniska problem för över 500 användare</li>
+                            <li>Hanterat samtal och ärenden parallellt, arbetat mot SLA och prioriterat effektiv problemlösning.</li>
+                            <li>Utvecklar PowerShell-skript för automatisering av rutinuppgifter</li>
+                            <li>Levererat teknisk support av hög kvalitet till enterprise-kunder via samtal, mail och chatt.</li>
+                            <li>Samarbetat med 2:a och 3:e linjens supportteam för att lösa komplexa problem.</li>
+                            <li>Skrivit och publicerat över 200 kunskapsartiklar för interna databaser</li>
+                        </ul>
                     </div>
                 </div>
-            </div>
-        </section>
-
-        <!-- Education Section -->
-        <section id="education">
-            <h2>Utbildning</h2>
-            
-            <div class="collapsible">
-                <div class="collapsible-header">
-                    <h3><i class="fas fa-graduation-cap"></i> Utbildning & Certifieringar</h3>
-                    <i class="fas fa-chevron-down"></i>
+                
+                <div class="timeline-item">
+                    <span class="timeline-date">2008-02 – 2012-07</span>
+                    <h3 class="timeline-title">Systemadministratör</h3>
+                    <span class="timeline-company">Academedia Institute, Syrien</span>
+                    <div class="timeline-description">
+                        <p>Ansvarade för hela IT-infrastrukturen för en organisation med 200+ användare.</p>
+                        <ul>
+                            <li>Undervisning i ICDL-kurser på engelska och arabiska.</li>
+                            <li>Praktisk utbildning i datorprogram och grafisk design (Photoshop).</li>
+                            <li>Automatiserade användarhantering med PowerShell</li>
+                            <li>Utbildning i Microsoft Office-program för barn.</li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="collapsible-content">
-                    <div class="collapsible-content-inner">
-                        <div class="certifications">
-                            <span class="cert-badge"><i class="fas fa-certificate"></i> Microsoft 365 Fundamentals (MS-900)</span>
-                            <span class="cert-badge"><i class="fas fa-certificate"></i> ITIL Foundation</span>
-                            <span class="cert-badge"><i class="fas fa-certificate"></i> Azure AD Administration</span>
-                            <span class="cert-badge"><i class="fas fa-certificate"></i> PowerShell Automation</span>
-                        </div>
-                        
-                        <div class="timeline">
-                            <div class="timeline-item fade-in">
-                                <span class="timeline-date">2025-02-10 – 2025-08-04</span>
-                                <h3 class="timeline-title">IT-Support Specialist</h3>
-                                <span class="timeline-company">Lexicon, Sverige</span>
-                                <div class="timeline-description">
-                                    <p>Komplett utbildning inom IT-support med fokus på:</p>
-                                    <ul>
-                                        <li>IT-säkerhet och nätverksteknik</li>
-                                        <li>Databashantering och operativsystem</li>
-                                        <li>Molntjänster (Microsoft Azure)</li>
-                                        <li>Administration av Microsoft 365-miljöer</li>
-                                        <li>Användarsupport och problemlösning</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            
-                            <div class="timeline-item fade-in">
-                                <span class="timeline-date">2023-11 – 2023-12</span>
-                                <h3 class="timeline-title">Servicedesk Tekniker / IT-support</h3>
-                                <span class="timeline-company">Cornerstone, Sverige</span>
-                                <div class="timeline-description">
-                                    <p>Intensivutbildning inom enterprise IT-support:</p>
-                                    <ul>
-                                        <li>ITIL-processer och ärendehantering</li>
-                                        <li>Microsoft 365 och Azure AD-administration</li>
-                                        <li>Nätverksgrunderna och säkerhetsprinciper</li>
-                                        <li>MS900-certifierad (Microsoft 365 Fundamentals)</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            
-                            <div class="timeline-item fade-in">
-                                <span class="timeline-date">2019-08 – 2021-06</span>
-                                <h3 class="timeline-title">Receptarieprogrammet</h3>
-                                <span class="timeline-company">Uppsala Universitet, Sverige</span>
-                                <div class="timeline-description">
-                                    <p>Universitetsstudier som ledde till en passion för IT och teknik. Under denna tid utvecklade jag:</p>
-                                    <ul>
-                                        <li>Strukturerat tänkande och problemlösningsförmåga</li>
-                                        <li>Vetenskapligt arbetssätt och noggrannity</li>
-                                        <li>Kundfokus och kommunikationsfärdigheter</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
+
+                <div class="timeline-item">
+                    <span class="timeline-date">2022-08 – 2022-10</span>
+                    <h3 class="timeline-title">Flygplatskontrollant</h3>
+                    <span class="timeline-company">Arlanda, Stockholm</span>
+                    <div class="timeline-description">
+                        <p>Utförde säkerhetskontroller och hanterade röntgenmaskiner för bagagekontroll.</p>
+                        <ul>
+                            <li>Säkerställde att säkerhetsföreskrifter efterlevdes och bidrog till en trygg miljö.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <span class="timeline-date">2022-08 – 2022-10</span>
+                    <h3 class="timeline-title">HR-assistent</h3>
+                    <span class="timeline-company">Landstinget i Kalmar Län</span>
+                    <div class="timeline-description">
+                        <p>Hanterade administrativa uppgifter, deltog i rekrytering av utländska läkare och planerade uppgifter för HR-chefen</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <span class="timeline-date">2013-11 – 2014-04</span>
+                    <h3 class="timeline-title">Receptionist och IT-ansvarig</h3>
+                    <span class="timeline-company">Levant Center, Turkiet</span>
+                    <div class="timeline-description">
+                        <p>Levererade teknisk support och underhåll för en mångsidig IT-miljö.</p>
+                        <ul>
+                            <li>Hanterade helpdesk-ärenden och felsökningsprocesser</li>
+                            <li>Implementerade Active Directory-strukturer</li>
+                            <li>Konfigurerade och underhöll nätverksutrustning</li>
+                            <li>Utvecklade dokumentation och kunskapsbaser</li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -1598,72 +1380,151 @@
 
         <!-- Projects Section -->
         <section id="projects">
-            <h2>Projekt</h2>
-            
-            <div class="collapsible">
-                <div class="collapsible-header">
-                    <h3><i class="fas fa-code-branch"></i> Tekniska Projekt & Automation</h3>
-                    <i class="fas fa-chevron-down"></i>
+            <h2>Utvalda Projekt</h2>
+            <div class="projects-grid">
+                <!-- Project 1 -->
+                <div class="project-card">
+                    <img src="images/server-migration.jpg" alt="Server Migration Project" class="project-image" loading="lazy">
+                    <div class="project-content">
+                        <h3 class="project-title">Virtualiseringsplattform från grunden</h3>
+                        <p class="project-description">Designade och implementerade en komplett virtualiseringslösning med VMware vSphere för att modernisera företagets IT-infrastruktur, vilket minskade driftstopp med 40%.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">HyperV</span>
+                            <span class="tech-tag">Windows Server</span>
+                            <span class="tech-tag">Storage</span>
+                            <span class="tech-tag">Backup</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="project-server.html" class="project-link" aria-label="Läs mer om virtualiseringsprojektet">
+                                <i class="fas fa-arrow-right"></i> Läs mer
+                            </a>
+                        </div>
+                    </div>
                 </div>
-                <div class="collapsible-content">
-                    <div class="collapsible-content-inner">
-                        <div class="projects-grid">
-                            <div class="project-card fade-in">
-                                <img src="https://images.unsplash.com/photo-1563207153-f403bf289096?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Server Migration Project" class="project-image">
-                                <div class="project-content">
-                                    <h3 class="project-title">Virtualiseringsplattform från grunden</h3>
-                                    <p class="project-description">Designade och implementerade en komplett virtualiseringslösning med VMware vSphere för att modernisera företagets IT-infrastruktur, vilket minskade driftstopp med 40%.</p>
-                                    <div class="project-tech">
-                                        <span class="tech-tag">HyperV</span>
-                                        <span class="tech-tag">Windows Server</span>
-                                        <span class="tech-tag">Storage</span>
-                                        <span class="tech-tag">Backup</span>
-                                    </div>
-                                    <div class="project-links">
-                                        <a href="#" class="project-link" aria-label="Läs mer om virtualiseringsprojektet">
-                                            <i class="fas fa-arrow-right"></i> Läs mer
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <div class="project-card fade-in">
-                                <img src="https://images.unsplash.com/photo-1562408590-e32931084e23?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Active Directory Project" class="project-image">
-                                <div class="project-content">
-                                    <h3 class="project-title">Active Directory Modernisering</h3>
-                                    <p class="project-description">Implementerade en ny AD-struktur med avancerade Group Policy-inställningar som förbättrade säkerheten med 60% och förenklade användarhanteringen.</p>
-                                    <div class="project-tech">
-                                        <span class="tech-tag">Active Directory</span>
-                                        <span class="tech-tag">Group Policy</span>
-                                        <span class="tech-tag">PowerShell</span>
-                                        <span class="tech-tag">LDAP</span>
-                                    </div>
-                                    <div class="project-links">
-                                        <a href="#" class="project-link" aria-label="Läs mer om Active Directory-projektet">
-                                            <i class="fas fa-arrow-right"></i> Läs mer
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <div class="project-card fade-in">
-                                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Automation Project" class="project-image">
-                                <div class="project-content">
-                                    <h3 class="project-title">IT-processautomatisering</h3>
-                                    <p class="project-description">Utvecklade PowerShell-skript som automatiserar användarhantering, rapportering och systemövervakning, vilket sparade 20 timmar/vecka i manuellt arbete.</p>
-                                    <div class="project-tech">
-                                        <span class="tech-tag">PowerShell</span>
-                                        <span class="tech-tag">Automation</span>
-                                        <span class="tech-tag">Scheduled Tasks</span>
-                                        <span class="tech-tag">API</span>
-                                    </div>
-                                    <div class="project-links">
-                                        <a href="https://github.com/Skydancer95/IT-Automation" class="project-link" aria-label="Visa automationsskript på GitHub">
-                                            <i class="fab fa-github"></i> Visa på GitHub
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
+                
+                <!-- Project 2 -->
+                <div class="project-card">
+                    <img src="images/active-directory.jpg" alt="Active Directory Project" class="project-image" loading="lazy">
+                    <div class="project-content">
+                        <h3 class="project-title">Active Directory Modernisering</h3>
+                        <p class="project-description">Implementerade en ny AD-struktur med avancerade Group Policy-inställningar som förbättrade säkerheten med 60% och förenklade användarhanteringen.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Active Directory</span>
+                            <span class="tech-tag">Group Policy</span>
+                            <span class="tech-tag">PowerShell</span>
+                            <span class="tech-tag">LDAP</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="project-ad.html" class="project-link" aria-label="Läs mer om Active Directory-projektet">
+                                <i class="fas fa-arrow-right"></i> Läs mer
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 3 -->
+                <div class="project-card">
+                    <img src="images/automation.jpg" alt="Automation Project" class="project-image" loading="lazy">
+                    <div class="project-content">
+                        <h3 class="project-title">IT-processautomatisering</h3>
+                        <p class="project-description">Utvecklade PowerShell-skript som automatiserar användarhantering, rapportering och systemövervakning, vilket sparade 20 timmar/vecka i manuellt arbete.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">PowerShell</span>
+                            <span class="tech-tag">Automation</span>
+                            <span class="tech-tag">Scheduled Tasks</span>
+                            <span class="tech-tag">API</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/Skydancer95/IT-Automation" class="project-link" aria-label="Visa automationsskript på GitHub">
+                                <i class="fab fa-github"></i> Visa på GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Knowledge Base Section -->
+        <section id="knowledge">
+            <h2>Kunskapsbank</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <img src="images/powershell.jpg" alt="PowerShell automationsskript" class="project-image" loading="lazy">
+                    <div class="project-content">
+                        <h3 class="project-title">Användarautomatisering med PowerShell</h3>
+                        <p class="project-description">Samling av användbara skript för Active Directory och Microsoft 365 administration som jag utvecklat under åren.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">PowerShell</span>
+                            <span class="tech-tag">Active Directory</span>
+                            <span class="tech-tag">Automation</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/Skydancer95/IT-Automation" class="project-link" aria-label="Visa PowerShell-skript på GitHub">
+                                <i class="fab fa-github"></i> Visa på GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <img src="images/troubleshooting.jpg" alt="Felsökningsguide" class="project-image" loading="lazy">
+                    <div class="project-content">
+                        <h3 class="project-title">Felsökningsguider</h3>
+                        <p class="project-description">Mina samlade checklists och metodiker för effektiv felsökning av vanliga IT-problem.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Metodik</span>
+                            <span class="tech-tag">Checklistor</span>
+                            <span class="tech-tag">Best Practices</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="docs/troubleshooting-guides.pdf" class="project-link" aria-label="Ladda ner felsökningsguider">
+                                <i class="fas fa-download"></i> Ladda ner PDF
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- References Section -->
+        <section id="references">
+            <h2>Referenser</h2>
+            <div class="references-grid">
+                <div class="reference-card">
+                    <div class="reference-content">
+                        “Baraa har under sin utbildning hos oss på Lexikon visat stort engagemang och intresse för IT-supportområdet. Han har snabbt tagit till sig både teoretisk och praktisk kunskap inom bland annat felsökning, klienthantering, nätverk, Microsoft 365, Azure AD och ärendehantering. Baraa arbetar strukturerat, är lösningsorienterad och visar en god förståelse för hur man ger support till användare på ett professionellt och pedagogiskt sätt. Han är en uppskattad student som tar ansvar för sin egen utveckling och samarbetar väl med både lärare och kurskamrater.”
+                    </div>
+                    <div class="reference-author">
+                        <img src="images/ref1.jpg" alt="Lasse Westring" class="reference-avatar" loading="lazy">
+                        <div class="reference-info">
+                            <h4>Lasse Westring</h4>
+                            <p>Lexicon</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="reference-card">
+                    <div class="reference-content">
+                        “Baraa har varit en nyckelperson i vårt IT-supportteam. Han har hanterat tekniska ärenden med stort engagemang och professionalism, oavsett om det gällt felsökning av mjukvara, hårdvara eller nätverksproblem. Han är snabb på att hitta lösningar, arbetar strukturerat i ticket-system och är alltid noggrann med att följa SLA. Baraa har även visat stor skicklighet i att administrera Microsoft 365 och Azure AD samt vid installation och konfigurering av datorer och skrivare. Användarna uppskattar hans tydliga kommunikation och goda bemötande.”
+                    </div>
+                    <div class="reference-author">
+                        <img src="images/ref2.jpg" alt="Serhan Yilmaz" class="reference-avatar" loading="lazy">
+                        <div class="reference-info">
+                            <h4>Serhan Yilmaz</h4>
+                            <p>VD/CEO, msemploy</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="reference-card">
+                    <div class="reference-content">
+                        Som kollega är Baraa både kunnig och hjälpsam. Hans automationsskript har sparat oss otaliga timmar i manuellt arbete och minskat våra felhastigheter markant. Han har en unik förmåga att förklara komplexa tekniska koncept på ett enkelt sätt som gör honom till en utmärkt lagspelare och mentor.
+                    </div>
+                    <div class="reference-author">
+                        <img src="images/ref3.jpg" alt="Jovana Laketic" class="reference-avatar" loading="lazy">
+                        <div class="reference-info">
+                            <h4>Jovana Laketic</h4>
+                            <p>IT-supporttekniker, Tietoevry</p>
                         </div>
                     </div>
                 </div>
@@ -1673,51 +1534,129 @@
         <!-- Contact Section -->
         <section id="contact">
             <h2>Kontakt</h2>
-            
-            <div class="collapsible">
-                <div class="collapsible-header">
-                    <h3><i class="fas fa-envelope"></i> Kontakta Mig</h3>
-                    <i class="fas fa-chevron-down"></i>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt contact-icon"></i>
+                        <div class="contact-details">
+                            <h3>Adress</h3>
+                            <p>August Södermans väg 98<br>UPPSALA, Sverige</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope contact-icon"></i>
+                        <div class="contact-details">
+                            <h3>E-post</h3>
+                            <a href="mailto:baraachalati@gmail.com">baraachalati@gmail.com</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone contact-icon"></i>
+                        <div class="contact-details">
+                            <h3>Telefon</h3>
+                            <a href="tel:+46739551570">+46 73 955 15 70</a>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/baraachalati/" class="social-link" aria-label="Min LinkedIn-profil" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://github.com/Skydancer95" class="social-link" aria-label="Min GitHub-profil" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://x.com/Darkskydancer95" class="social-link" aria-label="Min Twitter-profil" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </div>
                 </div>
-                <div class="collapsible-content">
-                    <div class="collapsible-content-inner">
-                        <div class="contact-container">
-                            <div class="contact-info">
-                                <div class="contact-item">
-                                    <i class="fas fa-map-marker-alt contact-icon"></i>
-                                    <div class="contact-details">
-                                        <h3>Adress</h3>
-                                        <p>August Södermans väg 98<br>UPPSALA, Sverige</p>
-                                    </div>
-                                </div>
-                                <div class="contact-item">
-                                    <i class="fas fa-envelope contact-icon"></i>
-                                    <div class="contact-details">
-                                        <h3>E-post</h3>
-                                        <a href="mailto:baraachalati@gmail.com">baraachalati@gmail.com</a>
-                                    </div>
-                                </div>
-                                <div class="contact-item">
-                                    <i class="fas fa-phone contact-icon"></i>
-                                    <div class="contact-details">
-                                        <h3>Telefon</h3>
-                                        <a href="tel:+46739551570">+46 73 955 15 70</a>
-                                    </div>
-                                </div>
-                                <div class="social-links">
-                                    <a href="https://www.linkedin.com/in/baraachalati/" class="social-link" aria-label="Min LinkedIn-profil" target="_blank" rel="noopener noreferrer">
-                                        <i class="fab fa-linkedin-in"></i>
-                                    </a>
-                                    <a href="https://github.com/Skydancer95" class="social-link" aria-label="Min GitHub-profil" target="_blank" rel="noopener noreferrer">
-                                        <i class="fab fa-github"></i>
-                                    </a>
-                                    <a href="https://x.com/Darkskydancer95" class="social-link" aria-label="Min Twitter-profil" target="_blank" rel="noopener noreferrer">
-                                        <i class="fab fa-twitter"></i>
-                                    </a>
-                                </div>
-                            </div>
-                            
-                            <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+                
+                <!-- Kontaktformulär - Portfolio -->
+                <div class="contact-form">
+                    <form id="contact-form">
+                        <div class="form-group">
+                            <label for="name">Namn*</label>
+                            <input type="text" id="name" name="name" class="form-control" required minlength="2">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">E-post*</label>
+                            <input type="email" id="email" name="email" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Ämne*</label>
+                            <input type="text" id="subject" name="title" class="form-control" required minlength="3">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Meddelande*</label>
+                            <textarea id="message" name="message" class="form-control" required minlength="10"></textarea>
+                        </div>
+
+                        <!-- Osynligt fält för spamskydd -->
+                        <div style="position: absolute; left: -5000px;" aria-hidden="true">
+                            <input type="text" name="_honey" tabindex="-1">
+                        </div>
+
+                        <button type="submit" class="submit-btn" id="submit-btn">
+                            <i class="fas fa-paper-plane"></i> Skicka meddelande
+                        </button>
+                        
+                        <!-- Laddningsanimation -->
+                        <div id="loading" style="display: none;">
+                            <div class="spinner"></div>
+                            <p>Skickar ditt meddelande...</p>
+                        </div>
+                        
+                        <!-- Responsmeddelande -->
+                        <div id="form-message" style="display: none;"></div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop" aria-label="Gå till toppen av sidan">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">Baraa Chalati</div>
+            <p class="footer-text">IT-infrastruktursexpert med passion för teknik och problemlösning</p>
+            
+            <div class="footer-links">
+                <a href="#about" aria-label="Om mig">Om Mig</a>
+                <a href="#education" aria-label="Min utbildning">Utbildning</a>
+                <a href="#experience" aria-label="Min erfarenhet">Erfarenhet</a>
+                <a href="#projects" aria-label="Mina projekt">Projekt</a>
+                <a href="#contact" aria-label="Kontakta mig">Kontakt</a>
+                <a href="docs/baraa-chalati-cv.pdf" download aria-label="Ladda ner mitt CV">Ladda Ner CV</a>
+            </div>
+            
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/baraachalati/" class="social-link" aria-label="Min LinkedIn-profil" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="https://github.com/Skydancer95" class="social-link" aria-label="Min GitHub-profil" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://x.com/Darkskydancer95" class="social-link" aria-label="Min Twitter-profil" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="mailto:baraachalati@gmail.com" class="social-link" aria-label="Skicka email" target="_blank" rel="noopener noreferrer">
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
+            
+            <p class="copyright">
+                &copy; <span id="currentYear"></span> Baraa Chalati. Alla rättigheter reserverade.
+                <br>
+                <small>Uppdaterad: Maj 2024</small>
+            </p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
     <script>
         // Initialize EmailJS
         (function() {
@@ -1777,169 +1716,6 @@
         // Set current year in footer
         document.getElementById('currentYear').textContent = new Date().getFullYear();
 
-        // Mobile navigation toggle
-        const navToggle = document.getElementById('nav-toggle');
-        const navLinks = document.querySelector('.nav-links');
-        
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                navToggle.checked = false;
-            });
-        });
-    </script>
-</body>
-</html>
-    
-    <!-- Back to Top Button -->
-    <button class="back-to-top" id="backToTop" aria-label="Gå till toppen av sidan">
-        <i class="fas fa-arrow-up"></i>
-    </button>
-    
-    <!-- Theme Toggle Button -->
-    <button class="theme-toggle" onclick="toggleTheme()">🌗</button>
-
-    <!-- Footer -->
-    <footer>
-        <div class="footer-content">
-            <div class="footer-logo"><i class="fas fa-terminal"></i> Baraa Chalati</div>
-            <p class="footer-text">IT-infrastruktursexpert med passion för teknik och problemlösning</p>
-            
-            <div class="footer-links">
-                <a href="#about" aria-label="Om mig">Om Mig</a>
-                <a href="#skills" aria-label="Mina kompetenser">Kompetenser</a>
-                <a href="#experience" aria-label="Min erfarenhet">Erfarenhet</a>
-                <a href="#education" aria-label="Min utbildning">Utbildning</a>
-                <a href="#projects" aria-label="Mina projekt">Projekt</a>
-                <a href="#contact" aria-label="Kontakta mig">Kontakt</a>
-            </div>
-            
-            <div class="social-links">
-                <a href="https://www.linkedin.com/in/baraachalati/" class="social-link" aria-label="Min LinkedIn-profil" target="_blank" rel="noopener noreferrer">
-                    <i class="fab fa-linkedin-in"></i>
-                </a>
-                <a href="https://github.com/Skydancer95" class="social-link" aria-label="Min GitHub-profil" target="_blank" rel="noopener noreferrer">
-                    <i class="fab fa-github"></i>
-                </a>
-                <a href="https://x.com/Darkskydancer95" class="social-link" aria-label="Min Twitter-profil" target="_blank" rel="noopener noreferrer">
-                    <i class="fab fa-twitter"></i>
-                </a>
-                <a href="mailto:baraachalati@gmail.com" class="social-link" aria-label="Skicka email" target="_blank" rel="noopener noreferrer">
-                    <i class="fas fa-envelope"></i>
-                </a>
-            </div>
-            
-            <p class="copyright">
-                &copy; <span id="currentYear"></span> Baraa Chalati. Alla rättigheter reserverade.
-                <br>
-                <small>Uppdaterad: Septemper 2025</small>
-            </p>
-        </div>
-    </footer>
-
-    <script>
-        // Initialize collapsible sections
-        document.addEventListener('DOMContentLoaded', function() {
-            const collapsibles = document.querySelectorAll('.collapsible');
-            
-            collapsibles.forEach(collapsible => {
-                const header = collapsible.querySelector('.collapsible-header');
-                
-                header.addEventListener('click', () => {
-                    collapsible.classList.toggle('active');
-                });
-            });
-            
-            // Set current year in footer
-            document.getElementById('currentYear').textContent = new Date().getFullYear();
-            
-            // Back to top button
-            const backToTopButton = document.getElementById('backToTop');
-            
-            window.addEventListener('scroll', () => {
-                if (window.pageYOffset > 300) {
-                    backToTopButton.classList.add('visible');
-                } else {
-                    backToTopButton.classList.remove('visible');
-                }
-            });
-            
-            backToTopButton.addEventListener('click', () => {
-                window.scrollTo({
-                    top: 0,
-                    behavior: 'smooth'
-                });
-            });
-            
-            // Form submission
-            const contactForm = document.getElementById('contact-form');
-            if (contactForm) {
-                contactForm.addEventListener('submit', function(e) {
-                    e.preventDefault();
-                    
-                    const submitBtn = document.getElementById('submit-btn');
-                    const formMessage = document.getElementById('form-message');
-                    
-                    submitBtn.disabled = true;
-                    
-                    // Simulate form submission
-                    setTimeout(() => {
-                        formMessage.textContent = 'Tack för ditt meddelande! Jag återkommer så snart som möjligt.';
-                        formMessage.className = 'form-message success';
-                        formMessage.style.display = 'block';
-                        contactForm.reset();
-                        submitBtn.disabled = false;
-                        
-                        // Hide message after 5 seconds
-                        setTimeout(() => {
-                            formMessage.style.display = 'none';
-                        }, 5000);
-                    }, 1000);
-                });
-            }
-            
-            // Add animations to elements when they come into view
-            const animateOnScroll = () => {
-                const elements = document.querySelectorAll('.fade-in');
-                
-                elements.forEach(element => {
-                    const elementPosition = element.getBoundingClientRect().top;
-                    const screenPosition = window.innerHeight / 1.3;
-                    
-                    if (elementPosition < screenPosition) {
-                        element.style.opacity = 1;
-                        element.style.transform = 'translateY(0)';
-                    }
-                });
-            };
-            
-            // Set initial state for animated elements
-            document.querySelectorAll('.fade-in').forEach(element => {
-                element.style.opacity = 0;
-                element.style.transform = 'translateY(20px)';
-                element.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-            });
-            
-            window.addEventListener('scroll', animateOnScroll);
-            // Trigger once on load
-            animateOnScroll();
-        });
-        
-        // Theme toggle function
-        function toggleTheme() {
-            const body = document.body;
-            const themeToggle = document.querySelector('.theme-toggle');
-            
-            if (body.classList.contains('light-theme')) {
-                body.classList.remove('light-theme');
-                body.classList.add('dark-theme');
-                themeToggle.innerHTML = '🌞';
-            } else {
-                body.classList.remove('dark-theme');
-                body.classList.add('light-theme');
-                themeToggle.innerHTML = '🌙';
-            }
-        }
-        
         // Mobile navigation toggle
         const navToggle = document.getElementById('nav-toggle');
         const navLinks = document.querySelector('.nav-links');
