@@ -47,19 +47,6 @@
     <style>
         :root {
             --primary: #10b981;
-        }
-        .cert-title {
-            font-size: 1.1rem;
-        }
-        }
-
-        .cert-image {
-            height: 80px;
-            width: 80px;
-            border-radius: 50%;
-            box-shadow: 0 2px 12px rgba(16,185,129,0.25);
-            object-fit: cover;
-        }
             --primary-dark: #059669;
             --dark: #0f172a;
             --darker: #020617;
@@ -71,6 +58,17 @@
             --bg-light: #f8fafc;
             --text-dark: #f8fafc;
             --text-light: #0f172a;
+        }
+        .cert-title {
+            font-size: 1.1rem;
+        }
+
+        .cert-image {
+            height: 80px;
+            width: 80px;
+            border-radius: 50%;
+            box-shadow: 0 2px 12px rgba(16,185,129,0.25);
+            object-fit: cover;
         }
 
         * {
@@ -1122,11 +1120,6 @@
             color: #c62828;
             border: 1px solid #ffcdd2;
         }
-        .form-group label:after {
-            content:"*";
-            color:red;
-            margin-left:3px;
-        }
         
         /* Simple contact section */
         .simple-contact {
@@ -1283,7 +1276,6 @@
                     <p>Reducerade tid per användare till 2 minuter (87% besparing) och eliminerade manuella fel helt.</p>
                 </div>
             </div>
-                    <span class="cert-title">Microsoft 365 Fundamentals (MS-900)</span>
     <!-- Certifications Section -->
     <section id="certifications">
         <h2>Certifieringar</h2>
@@ -1700,14 +1692,6 @@ Bank-ID, identitetsverifiering, dokumentforensik, kundsupport, felsökning.</li>
                     </form>
                 </div>
             </div>
-            
-            <!-- Simple Contact Info from original version -->
-            <div class="simple-contact">
-                <h3>Direktkontakt</h3>
-                <p><i class="fas fa-envelope"></i> E-post: BaraaChalati@icloud.com</p>
-                <p><i class="fas fa-phone"></i> Telefon: +46739551570</p>
-                <p><i class="fas fa-globe"></i> Portfölj: <a href="https://skydancer95.github.io/Baraa-Chalati/" target="_blank">https://skydancer95.github.io/Baraa-Chalati/</a></p>
-            </div>
         </section>
     </main>
     
@@ -1755,11 +1739,11 @@ Bank-ID, identitetsverifiering, dokumentforensik, kundsupport, felsökning.</li>
                 &copy; <span id="currentYear"></span> Baraa Chalati. Alla rättigheter reserverade.
                 <br>
                 <small>Uppdaterad: Septemper 2025</small>
-            </p>
+                <small>Uppdaterad: September 2025</small>
         </div>
     </footer>
 
-    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script src="https://cdn.emailjs.com/dist/email.min.js" async></script>
     <script>
         // Initialize EmailJS
         (function() {
@@ -1782,14 +1766,14 @@ Bank-ID, identitetsverifiering, dokumentforensik, kundsupport, felsökning.</li>
                         await emailjs.sendForm('service_unhga2e', 'template_vdfc19l', contactForm);
                         
                         formMessage.innerHTML = '✅ Tack för ditt meddelande! Jag återkommer inom 1-2 arbetsdagar.';
-                        formMessage.className = 'success';
+                        formMessage.className = 'form-message success';
                         formMessage.style.display = 'block';
                         contactForm.reset();
                         
                     } catch (error) {
                         console.error("E-postfel:", error);
                         formMessage.innerHTML = '❌ Misslyckades med att skicka. Kontakta mig direkt via <a href="mailto:baraachalati@gmail.com">mail</a> eller <a href="tel:+46739551570">telefon</a>.';
-                        formMessage.className = 'error';
+                        formMessage.className = 'form-message error';
                         formMessage.style.display = 'block';
                         
                     } finally {
@@ -1857,31 +1841,45 @@ Bank-ID, identitetsverifiering, dokumentforensik, kundsupport, felsökning.</li>
             
             if (document.body.style.backgroundColor === dark || !document.body.style.backgroundColor) {
                 // Switch to light theme
-                root.style.setProperty('--bg-dark', '#f8fafc');
-                root.style.setProperty('--text-dark', '#0f172a');
-                root.style.setProperty('--bg-light', '#0f172a');
-                root.style.setProperty('--text-light', '#f8fafc');
+                root.style.setProperty('--bg-dark', '#f8fafc'); // Light background
+                root.style.setProperty('--text-dark', '#0f172a'); // Dark text
+                root.style.setProperty('--bg-light', '#f8fafc'); // Light background for elements
+                root.style.setProperty('--text-light', '#0f172a'); // Dark text for elements
                 document.body.style.backgroundColor = '#f8fafc';
                 document.body.style.color = '#0f172a';
             } else {
                 // Switch to dark theme
-                root.style.setProperty('--bg-dark', '#0f172a');
-                root.style.setProperty('--text-dark', '#f8fafc');
-                root.style.setProperty('--bg-light', '#f8fafc');
-                root.style.setProperty('--text-light', '#0f172a');
+                root.style.setProperty('--bg-dark', '#0f172a'); // Dark background
+                root.style.setProperty('--text-dark', '#f8fafc'); // Light text
+                root.style.setProperty('--bg-light', '#0f172a'); // Dark background for elements
+                root.style.setProperty('--text-light', '#f8fafc'); // Light text for elements
                 document.body.style.backgroundColor = '#0f172a';
                 document.body.style.color = '#f8fafc';
             }
+            }
+
+        function toggleTheme() {
+            const currentMode = localStorage.getItem('theme') || 'dark';
+            const newMode = currentMode === 'dark' ? 'light' : 'dark';
+            setTheme(newMode);
+            localStorage.setItem('theme', newMode);
         }
-        
-        // Initialize collapsible sections
-        document.addEventListener("DOMContentLoaded", () => {
+
+        // Apply theme on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            const savedTheme = localStorage.getItem('theme') || 'dark';
+            setTheme(savedTheme);
+
             // Hide detailed info section by default
             const detailedInfo = document.getElementById('detailed-info');
             if (detailedInfo) {
                 detailedInfo.style.display = 'none';
             }
         });
+            if (detailedInfo) {
+                detailedInfo.style.display = 'none';
+            }
+        ;
     </script>
 </body>
 </html>
