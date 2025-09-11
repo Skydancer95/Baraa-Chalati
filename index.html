@@ -115,6 +115,13 @@
             color: #000 !important;
         }
 
+        /* Navigation panel text should be white in light mode */
+        [data-theme="light"] .nav-links a,
+        [data-theme="light"] .logo,
+        [data-theme="light"] .nav-toggle-label span {
+            color: #fff !important;
+        }
+
         /* Header Styles */
         header {
             background: linear-gradient(135deg, var(--dark), var(--darker));
@@ -1181,7 +1188,8 @@
                 class="profile-img" 
                 loading="lazy"
                 width="180" 
-                height="180">
+                height="180"
+                onerror="this.onerror=null;this.src='https://via.placeholder.com/180?text=No+Image';">
             <h1>Baraa Chalati</h1>
             <p class="tagline">Certified IT Specialist – Systemadmin, Microsoft 365, Automation Expert</p>
             
