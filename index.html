@@ -1201,7 +1201,6 @@
             </div>
         </div>
     </header>
-
 <!DOCTYPE html>
 <html lang="sv">
 <head>
@@ -1214,8 +1213,10 @@
     font-family: Arial, sans-serif;
     background: #1e1e2f;
     color: #fff;
+    padding-top: 60px; /* Prevent overlap with fixed navbar */
   }
 
+  /* Navbar */
   #top-nav {
     --collapsed-h: 60px;
     --expanded-h: 280px;
@@ -1237,6 +1238,7 @@
     z-index: 1000;
   }
 
+  /* Logo */
   .logo {
     display: flex;
     align-items: center;
@@ -1262,6 +1264,7 @@
     transition: opacity 0.35s ease, transform 0.35s ease;
   }
 
+  /* Hamburger */
   #nav-toggle-btn {
     width: 50px;
     height: 50px;
@@ -1276,14 +1279,16 @@
     position: relative;
   }
 
-  #nav-toggle-btn span {
+  #nav-toggle-btn span,
+  #nav-toggle-btn span::before,
+  #nav-toggle-btn span::after {
     display: block;
     background: #ecf0f1;
     height: 3px;
     width: 28px;
     border-radius: 2px;
-    position: relative;
     transition: all 0.3s ease;
+    position: relative;
   }
 
   #nav-toggle-btn span::before,
@@ -1291,11 +1296,6 @@
     content: '';
     position: absolute;
     left: 0;
-    width: 28px;
-    height: 3px;
-    background: #ecf0f1;
-    border-radius: 2px;
-    transition: all 0.3s ease;
   }
 
   #nav-toggle-btn span::before {
@@ -1306,6 +1306,7 @@
     top: 8px;
   }
 
+  /* Navigation links */
   .nav-links {
     display: flex;
     flex-direction: column;
@@ -1383,15 +1384,16 @@
     logoText.style.transform = expanded ? 'translateY(0)' : 'translateY(-15px)';
     logoCircle.style.transform = expanded ? 'scale(1.1)' : 'scale(1)';
 
+    // Animate hamburger icon
     if (expanded) {
       hamburger.style.transform = 'rotate(45deg)';
       hamburger.style.background = 'transparent';
-      hamburger.style.setAttribute = 'data-expanded';
     } else {
       hamburger.style.transform = 'rotate(0deg)';
       hamburger.style.background = '#ecf0f1';
     }
 
+    // Animate links
     links.forEach((link, index) => {
       if (expanded) {
         link.style.opacity = '1';
@@ -1407,8 +1409,6 @@
     });
   });
 </script>
-</body>
-</html>
     <!-- Main Content -->
     <main role="main">
         <!-- About Section -->
