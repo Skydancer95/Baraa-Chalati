@@ -1215,10 +1215,9 @@
     color: #fff;
   }
 
-  /* Navbar */
   #top-nav {
-    --collapsed-h:60px;
-    --expanded-h:280px;
+    --collapsed-h: 60px;
+    --expanded-h: 280px;
     position: fixed;
     top: 0;
     left: 0;
@@ -1237,7 +1236,6 @@
     z-index: 1000;
   }
 
-  /* Logo */
   .logo {
     display: flex;
     align-items: center;
@@ -1263,7 +1261,6 @@
     transition: opacity 0.35s ease, transform 0.35s ease;
   }
 
-  /* Hamburger */
   #nav-toggle-btn {
     width: 50px;
     height: 50px;
@@ -1305,7 +1302,6 @@
     top: 8px;
   }
 
-  /* Navigation links */
   .nav-links {
     display: flex;
     flex-direction: column;
@@ -1383,47 +1379,30 @@
     logoText.style.transform = expanded ? 'translateY(0)' : 'translateY(-15px)';
     logoCircle.style.transform = expanded ? 'scale(1.1)' : 'scale(1)';
 
-    // Hamburger to X
-    if(expanded){
-      hamburger.style.background = 'transparent';
+    if (expanded) {
       hamburger.style.transform = 'rotate(45deg)';
-      hamburger.style.position = 'relative';
-      hamburger.style.top = '0';
-      hamburger.style.left = '0';
-      hamburger.style.boxShadow = 'none';
-      hamburger.style.transition = 'all 0.3s ease';
-      // before
-      hamburger.style.setProperty('--before', '');
-      hamburger.style.setProperty('--after', '');
-      hamburger.style.setProperty('::before', '');
-      hamburger.style.setProperty('::after', '');
       hamburger.style.background = 'transparent';
-      hamburger.style.position = 'relative';
-      hamburger.style.top = '0';
+      hamburger.style.setAttribute = 'data-expanded';
     } else {
-      hamburger.style.background = '#ecf0f1';
       hamburger.style.transform = 'rotate(0deg)';
+      hamburger.style.background = '#ecf0f1';
     }
 
-    // Animate links
-    links.forEach((link,index)=>{
-      if(expanded){
-        link.style.opacity='1';
-        link.style.transform='translateY(0)';
-        link.style.transitionDelay = `${index*0.05}s`;
-        link.querySelector('span').style.transform='scale(1.3)';
+    links.forEach((link, index) => {
+      if (expanded) {
+        link.style.opacity = '1';
+        link.style.transform = 'translateY(0)';
+        link.style.transitionDelay = `${index * 0.05}s`;
+        link.querySelector('span').style.transform = 'scale(1.3)';
       } else {
-        link.style.opacity='0';
-        link.style.transform='translateY(-10px)';
-        link.style.transitionDelay='0s';
-        link.querySelector('span').style.transform='scale(1)';
+        link.style.opacity = '0';
+        link.style.transform = 'translateY(-10px)';
+        link.style.transitionDelay = '0s';
+        link.querySelector('span').style.transform = 'scale(1)';
       }
     });
   });
 </script>
-
-</body>
-</html>
     <!-- Main Content -->
     <main role="main">
         <!-- About Section -->
