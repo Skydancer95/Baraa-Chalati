@@ -1201,29 +1201,45 @@
             </div>
         </div>
     </header>
-<!-- Navigation -->
-<nav aria-label="Huvudnavigation" style="background:#222; padding:15px;">
-  <div style="display:flex; justify-content:space-between; align-items:center; max-width:1200px; margin:0 auto;">
-    
-    <!-- Logo -->
-    <a href="#" class="logo" aria-label="Startsida" 
-       style="color:white; font-size:1.4rem; font-weight:bold; text-decoration:none;">
-       Baraa Chalati
-    </a>
-    
-    <!-- Links -->
-    <div class="nav-links" style="display:flex; gap:20px;">
-      <a href="#about" style="color:white; text-decoration:none;">Om Mig</a>
-      <a href="#education" style="color:white; text-decoration:none;">Utbildning</a>
-      <a href="#experience" style="color:white; text-decoration:none;">Erfarenhet</a>
-      <a href="#projects" style="color:white; text-decoration:none;">Projekt</a>
-      <a href="#success" style="color:white; text-decoration:none;">Framgångar</a>
-      <a href="#references" style="color:white; text-decoration:none;">Referenser</a>
-      <a href="#contact" style="color:white; text-decoration:none;">Kontakt</a>
-    </div>
-    
+<!-- Vertical Navigation -->
+<nav aria-label="Huvudnavigation" 
+     style="position:fixed; top:0; left:0; height:100%; width:220px; background:#2c3e50; 
+            padding:20px; display:flex; flex-direction:column; align-items:flex-start; 
+            box-shadow:2px 0 10px rgba(0,0,0,0.2); transition:all 0.3s ease;">
+
+  <!-- Logo -->
+  <a href="#" class="logo" aria-label="Startsida" 
+     style="color:#ecf0f1; font-size:1.6rem; font-weight:bold; text-decoration:none; margin-bottom:40px;">
+     Baraa Chalati
+  </a>
+
+  <!-- Hamburger Toggle -->
+  <input type="checkbox" id="nav-toggle" style="display:none;">
+  <label for="nav-toggle" 
+         style="cursor:pointer; margin-bottom:30px; display:inline-block;">
+      <span style="display:block; width:25px; height:3px; background:#ecf0f1; margin:5px 0;"></span>
+      <span style="display:block; width:25px; height:3px; background:#ecf0f1; margin:5px 0;"></span>
+      <span style="display:block; width:25px; height:3px; background:#ecf0f1; margin:5px 0;"></span>
+  </label>
+
+  <!-- Links -->
+  <div class="nav-links" 
+       style="display:flex; flex-direction:column; gap:20px; width:100%; font-size:1rem;">
+    <a href="#about" style="color:#bdc3c7; text-decoration:none;">Om Mig</a>
+    <a href="#education" style="color:#bdc3c7; text-decoration:none;">Utbildning</a>
+    <a href="#experience" style="color:#bdc3c7; text-decoration:none;">Erfarenhet</a>
+    <a href="#projects" style="color:#bdc3c7; text-decoration:none;">Projekt</a>
+    <a href="#success" style="color:#bdc3c7; text-decoration:none;">Framgångar</a>
+    <a href="#references" style="color:#bdc3c7; text-decoration:none;">Referenser</a>
+    <a href="#contact" style="color:#bdc3c7; text-decoration:none;">Kontakt</a>
   </div>
 </nav>
+
+<!-- Page Content -->
+<div style="margin-left:240px; padding:40px;">
+  <h1>Välkommen!</h1>
+  <p>Din portfolio börjar här...</p>
+</div>
 
     <!-- Main Content -->
     <main role="main">
