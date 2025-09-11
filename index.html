@@ -1201,6 +1201,7 @@
             </div>
         </div>
     </header>
+
 <!DOCTYPE html>
 <html lang="sv">
 <head>
@@ -1275,16 +1276,14 @@
     position: relative;
   }
 
-  #nav-toggle-btn span,
-  #nav-toggle-btn span::before,
-  #nav-toggle-btn span::after {
+  #nav-toggle-btn span {
     display: block;
     background: #ecf0f1;
     height: 3px;
     width: 28px;
     border-radius: 2px;
-    transition: all 0.3s ease;
     position: relative;
+    transition: all 0.3s ease;
   }
 
   #nav-toggle-btn span::before,
@@ -1292,6 +1291,11 @@
     content: '';
     position: absolute;
     left: 0;
+    width: 28px;
+    height: 3px;
+    background: #ecf0f1;
+    border-radius: 2px;
+    transition: all 0.3s ease;
   }
 
   #nav-toggle-btn span::before {
@@ -1403,6 +1407,8 @@
     });
   });
 </script>
+</body>
+</html>
     <!-- Main Content -->
     <main role="main">
         <!-- About Section -->
