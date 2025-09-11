@@ -1201,41 +1201,25 @@
             </div>
         </div>
     </header>
-<!DOCTYPE html>
-<html lang="sv">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Cool Sliding Navbar</title>
+<!-- Navigation Bar -->
 <style>
-  body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: #1e1e2f;
-    color: #fff;
-    padding-top: 60px; /* Prevent overlap with fixed navbar */
-  }
-
-  /* Navbar */
+  /* Navbar container */
   #top-nav {
-    --collapsed-h: 60px;
-    --expanded-h: 280px;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    height: var(--collapsed-h);
-    background: rgba(44,62,80,0.85);
+    height: 60px;
+    background: rgba(30, 40, 60, 0.85);
     backdrop-filter: blur(12px) saturate(180%);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 10px 24px;
-    gap: 16px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
-    transition: height 0.35s cubic-bezier(.4,0,.2,1);
-    overflow: hidden;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
     z-index: 1000;
+    transition: height 0.35s ease;
+    overflow: hidden;
   }
 
   /* Logo */
@@ -1258,7 +1242,7 @@
   }
 
   .logo .text {
-    font-size: 1.4rem;
+    font-size: 1.3rem;
     opacity: 0;
     transform: translateY(-15px);
     transition: opacity 0.35s ease, transform 0.35s ease;
@@ -1266,74 +1250,52 @@
 
   /* Hamburger */
   #nav-toggle-btn {
-    width: 50px;
-    height: 50px;
-    border-radius: 12px;
+    width: 40px;
+    height: 40px;
     border: none;
+    background: transparent;
     cursor: pointer;
-    background: rgba(255,255,255,0.05);
-    color: #ecf0f1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 0;
+    z-index: 1100;
   }
 
-  #nav-toggle-btn span,
-  #nav-toggle-btn span::before,
-  #nav-toggle-btn span::after {
+  #nav-toggle-btn span {
     display: block;
-    background: #ecf0f1;
-    height: 3px;
     width: 28px;
+    height: 3px;
+    background: #ecf0f1;
     border-radius: 2px;
     transition: all 0.3s ease;
-    position: relative;
   }
 
-  #nav-toggle-btn span::before,
-  #nav-toggle-btn span::after {
-    content: '';
-    position: absolute;
-    left: 0;
-  }
-
-  #nav-toggle-btn span::before {
-    top: -8px;
-  }
-
-  #nav-toggle-btn span::after {
-    top: 8px;
-  }
-
-  /* Navigation links */
+  /* Navigation Links */
   .nav-links {
     display: flex;
     flex-direction: column;
     gap: 12px;
     width: 100%;
-    margin-top: 10px;
+    margin-top: 20px;
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: all 0.35s ease;
   }
 
   .nav-links a {
     display: flex;
     align-items: center;
     gap: 12px;
-    padding: 10px 14px;
-    font-size: 20px;
+    padding: 10px 16px;
+    font-size: 18px;
     font-weight: 500;
     color: #dfe7ea;
     text-decoration: none;
     border-radius: 12px;
-    opacity: 0;
-    transform: translateY(-10px);
-    transition: all 0.35s ease;
-    text-shadow: 0 0 4px rgba(0,0,0,0.5);
-  }
-
-  .nav-links a span {
-    display: inline-block;
-    transition: transform 0.3s ease, text-shadow 0.3s ease;
+    transition: all 0.3s ease;
   }
 
   .nav-links a:hover {
@@ -1341,18 +1303,30 @@
     text-shadow: 0 0 8px #6dd5ed, 0 0 16px #2193b0;
     background: rgba(255,255,255,0.05);
   }
+
+  .nav-links a span {
+    display: inline-block;
+    transition: transform 0.3s ease;
+  }
 </style>
 </head>
 <body>
 
 <nav id="top-nav">
+  <!-- Logo -->
   <a href="#" class="logo">
     <span class="circle"></span>
     <span class="text">Baraa Chalati</span>
   </a>
 
-  <button id="nav-toggle-btn"><span></span></button>
+  <!-- Hamburger -->
+  <button id="nav-toggle-btn">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
 
+  <!-- Links -->
   <div class="nav-links">
     <a href="#about"><span>🧑</span> Om Mig</a>
     <a href="#education"><span>🎓</span> Utbildning</a>
@@ -1365,49 +1339,49 @@
 </nav>
 
 <script>
-  const nav = document.getElementById('top-nav');
-  const toggleBtn = document.getElementById('nav-toggle-btn');
-  const logoCircle = nav.querySelector('.logo .circle');
-  const logoText = nav.querySelector('.logo .text');
-  const links = nav.querySelectorAll('.nav-links a');
-  const hamburger = toggleBtn.querySelector('span');
+const nav = document.getElementById('top-nav');
+const toggleBtn = document.getElementById('nav-toggle-btn');
+const logoText = nav.querySelector('.logo .text');
+const logoCircle = nav.querySelector('.logo .circle');
+const links = nav.querySelector('.nav-links');
+const linkItems = nav.querySelectorAll('.nav-links a');
+const bars = toggleBtn.querySelectorAll('span');
 
-  const collapsedH = 60;
-  const expandedH = 280;
+let expanded = false;
 
-  let expanded = false;
+toggleBtn.addEventListener('click', () => {
+  expanded = !expanded;
 
-  toggleBtn.addEventListener('click', () => {
-    expanded = !expanded;
-    nav.style.height = expanded ? expandedH + 'px' : collapsedH + 'px';
-    logoText.style.opacity = expanded ? '1' : '0';
-    logoText.style.transform = expanded ? 'translateY(0)' : 'translateY(-15px)';
-    logoCircle.style.transform = expanded ? 'scale(1.1)' : 'scale(1)';
+  // Navbar height
+  nav.style.height = expanded ? '280px' : '60px';
 
-    // Animate hamburger icon
-    if (expanded) {
-      hamburger.style.transform = 'rotate(45deg)';
-      hamburger.style.background = 'transparent';
-    } else {
-      hamburger.style.transform = 'rotate(0deg)';
-      hamburger.style.background = '#ecf0f1';
-    }
+  // Logo text
+  logoText.style.opacity = expanded ? '1' : '0';
+  logoText.style.transform = expanded ? 'translateY(0)' : 'translateY(-15px)';
 
-    // Animate links
-    links.forEach((link, index) => {
-      if (expanded) {
-        link.style.opacity = '1';
-        link.style.transform = 'translateY(0)';
-        link.style.transitionDelay = `${index * 0.05}s`;
-        link.querySelector('span').style.transform = 'scale(1.3)';
-      } else {
-        link.style.opacity = '0';
-        link.style.transform = 'translateY(-10px)';
-        link.style.transitionDelay = '0s';
-        link.querySelector('span').style.transform = 'scale(1)';
-      }
-    });
+  // Logo circle
+  logoCircle.style.transform = expanded ? 'scale(1.1)' : 'scale(1)';
+
+  // Links animation
+  links.style.opacity = expanded ? '1' : '0';
+  links.style.transform = expanded ? 'translateY(0)' : 'translateY(-20px)';
+
+  linkItems.forEach((link, index) => {
+    link.style.transitionDelay = expanded ? `${index * 0.05}s` : '0s';
+    link.querySelector('span').style.transform = expanded ? 'scale(1.3)' : 'scale(1)';
   });
+
+  // Hamburger morph
+  if(expanded){
+    bars[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
+    bars[1].style.opacity = '0';
+    bars[2].style.transform = 'rotate(-45deg) translate(5px, -5px)';
+  } else {
+    bars[0].style.transform = 'rotate(0) translate(0, 0)';
+    bars[1].style.opacity = '1';
+    bars[2].style.transform = 'rotate(0) translate(0, 0)';
+  }
+});
 </script>
     <!-- Main Content -->
     <main role="main">
