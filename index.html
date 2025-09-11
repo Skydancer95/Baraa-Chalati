@@ -1201,53 +1201,110 @@
             </div>
         </div>
     </header>
-<!-- Vertical Navigation -->
-<nav aria-label="Huvudnavigation" 
-     style="position:fixed; top:0; left:0; height:100%; width:220px; background:#2c3e50; 
-            padding:20px; display:flex; flex-direction:column; align-items:flex-start; 
-            box-shadow:2px 0 10px rgba(0,0,0,0.2); transition:all 0.3s ease;">
+<!-- Left Vertical Navigation -->
+<input id="nav-toggle" type="checkbox" style="position:fixed; left:16px; top:16px; z-index:2500; width:44px; height:44px; opacity:0; pointer-events:auto;" aria-hidden="true">
+
+<nav id="left-nav" aria-label="Huvudnavigation"
+     style="
+       --collapsed-w:72px;
+       --expanded-w:220px;
+       --bg: rgba(44,62,80,0.75);
+       --glass: rgba(255,255,255,0.06);
+       position:fixed;
+       top:0;
+       left:0;
+       height:100%;
+       width:var(--collapsed-w);
+       padding:16px 10px;
+       display:flex;
+       flex-direction:column;
+       gap:18px;
+       align-items:flex-start;
+       box-shadow:2px 0 14px rgba(0,0,0,0.18);
+       backdrop-filter: blur(6px);
+       background: linear-gradient(180deg, var(--bg), var(--glass));
+       transition: width .25s ease, background .25s ease;
+       z-index:1200;
+       overflow:visible;
+     ">
 
   <!-- Logo -->
-  <a href="#" class="logo" aria-label="Startsida" 
-     style="color:#ecf0f1; font-size:1.6rem; font-weight:bold; text-decoration:none; margin-bottom:40px;">
-     Baraa Chalati
+  <a href="#" class="logo" aria-label="Startsida"
+     style="display:flex; align-items:center; gap:12px; color:#ecf0f1; text-decoration:none; width:100%; white-space:nowrap;">
+    <span style="display:inline-block; width:40px; height:40px; border-radius:50%; background:linear-gradient(90deg,#6dd5ed,#2193b0); flex-shrink:0;"></span>
+    <span class="logo-text" style="font-weight:700; font-size:1rem; opacity:0; transform:translateX(-6px); transition:opacity .18s ease, transform .18s ease;">Baraa Chalati</span>
   </a>
 
-  <!-- Hamburger Toggle -->
-  <input type="checkbox" id="nav-toggle" style="display:none;">
-  <label for="nav-toggle" 
-         style="cursor:pointer; margin-bottom:30px; display:inline-block;">
-      <span style="display:block; width:25px; height:3px; background:#ecf0f1; margin:5px 0;"></span>
-      <span style="display:block; width:25px; height:3px; background:#ecf0f1; margin:5px 0;"></span>
-      <span style="display:block; width:25px; height:3px; background:#ecf0f1; margin:5px 0;"></span>
-  </label>
+  <!-- Hamburger Button -->
+  <button id="nav-toggle-btn" aria-label="Öppna/stäng meny"
+          style="width:44px; height:44px; border-radius:8px; border:none; cursor:pointer; background:transparent; color:#ecf0f1; display:flex; align-items:center; justify-content:center; box-shadow:none; margin-top:4px;">
+    <span style="display:inline-block; width:22px; height:2px; background:#ecf0f1; box-shadow:0 6px 0 #ecf0f1, 0 -6px 0 #ecf0f1; border-radius:2px;"></span>
+  </button>
 
-  <!-- Links -->
-  <div class="nav-links" 
-       style="display:flex; flex-direction:column; gap:20px; width:100%; font-size:1rem;">
-    <a href="#about" style="color:#bdc3c7; text-decoration:none;">Om Mig</a>
-    <a href="#education" style="color:#bdc3c7; text-decoration:none;">Utbildning</a>
-    <a href="#experience" style="color:#bdc3c7; text-decoration:none;">Erfarenhet</a>
-    <a href="#projects" style="color:#bdc3c7; text-decoration:none;">Projekt</a>
-    <a href="#success" style="color:#bdc3c7; text-decoration:none;">Framgångar</a>
-    <a href="#references" style="color:#bdc3c7; text-decoration:none;">Referenser</a>
-    <a href="#contact" style="color:#bdc3c7; text-decoration:none;">Kontakt</a>
+  <!-- Navigation Links -->
+  <div class="nav-links" style="display:flex; flex-direction:column; gap:10px; width:100%; margin-top:6px;">
+    <a href="#about" style="display:flex; gap:12px; align-items:center; padding:8px; color:#dfe7ea; text-decoration:none; border-radius:8px;">
+      <span style="width:28px; height:28px; display:inline-flex; align-items:center; justify-content:center; font-size:14px;">🧑</span>
+      <span class="link-text" style="opacity:0; transition:opacity .18s ease, transform .18s ease; transform:translateX(-6px);">Om Mig</span>
+    </a>
+    <a href="#education" style="display:flex; gap:12px; align-items:center; padding:8px; color:#dfe7ea; text-decoration:none; border-radius:8px;">
+      <span style="width:28px; height:28px; display:inline-flex; align-items:center; justify-content:center; font-size:14px;">🎓</span>
+      <span class="link-text" style="opacity:0; transition:opacity .18s ease, transform .18s ease; transform:translateX(-6px);">Utbildning</span>
+    </a>
+    <a href="#experience" style="display:flex; gap:12px; align-items:center; padding:8px; color:#dfe7ea; text-decoration:none; border-radius:8px;">
+      <span style="width:28px; height:28px; display:inline-flex; align-items:center; justify-content:center; font-size:14px;">💼</span>
+      <span class="link-text" style="opacity:0; transition:opacity .18s ease, transform .18s ease; transform:translateX(-6px);">Erfarenhet</span>
+    </a>
+    <a href="#projects" style="display:flex; gap:12px; align-items:center; padding:8px; color:#dfe7ea; text-decoration:none; border-radius:8px;">
+      <span style="width:28px; height:28px; display:inline-flex; align-items:center; justify-content:center; font-size:14px;">🛠️</span>
+      <span class="link-text" style="opacity:0; transition:opacity .18s ease, transform .18s ease; transform:translateX(-6px);">Projekt</span>
+    </a>
+    <a href="#success" style="display:flex; gap:12px; align-items:center; padding:8px; color:#dfe7ea; text-decoration:none; border-radius:8px;">
+      <span style="width:28px; height:28px; display:inline-flex; align-items:center; justify-content:center; font-size:14px;">🏆</span>
+      <span class="link-text" style="opacity:0; transition:opacity .18s ease, transform .18s ease; transform:translateX(-6px);">Framgångar</span>
+    </a>
+    <a href="#references" style="display:flex; gap:12px; align-items:center; padding:8px; color:#dfe7ea; text-decoration:none; border-radius:8px;">
+      <span style="width:28px; height:28px; display:inline-flex; align-items:center; justify-content:center; font-size:14px;">📄</span>
+      <span class="link-text" style="opacity:0; transition:opacity .18s ease, transform .18s ease; transform:translateX(-6px);">Referenser</span>
+    </a>
+    <a href="#contact" style="display:flex; gap:12px; align-items:center; padding:8px; color:#dfe7ea; text-decoration:none; border-radius:8px;">
+      <span style="width:28px; height:28px; display:inline-flex; align-items:center; justify-content:center; font-size:14px;">✉️</span>
+      <span class="link-text" style="opacity:0; transition:opacity .18s ease, transform .18s ease; transform:translateX(-6px);">Kontakt</span>
+    </a>
   </div>
 </nav>
 
-<!-- Page Content -->
-<div style="margin-left:240px; padding:40px;">
-  <h1>Välkommen!</h1>
-  <p>Din portfolio börjar här...</p>
-</div>
-<!-- THEME TOGGLE: fixed and visible on top-right (won't be hidden by nav) -->
-<button id="theme-toggle" aria-pressed="false" title="Växla tema"
-        style="position:fixed; top:12px; right:12px; z-index:2000; 
-               width:44px; height:44px; border-radius:8px; border:none; cursor:pointer;
-               font-size:18px; display:flex; align-items:center; justify-content:center;
-               box-shadow:0 4px 12px rgba(0,0,0,0.15); background:#ffffff;">
-  🌙
-</button>
+<script>
+  (function(){
+    const nav = document.getElementById('left-nav');
+    const toggleCheckbox = document.getElementById('nav-toggle');
+    const toggleBtn = document.getElementById('nav-toggle-btn');
+    const main = document.getElementById('main-content');
+
+    const collapsedW = 72;
+    const expandedW = 220;
+
+    function setExpanded(expanded){
+      nav.style.width = expanded ? expandedW + 'px' : collapsedW + 'px';
+      Array.from(nav.querySelectorAll('.logo-text, .link-text')).forEach(el => {
+        el.style.opacity = expanded ? '1' : '0';
+        el.style.transform = expanded ? 'translateX(0)' : 'translateX(-6px)';
+      });
+      if(main) main.style.marginLeft = (expanded ? expandedW : collapsedW) + 'px';
+    }
+
+    setExpanded(false);
+
+    toggleBtn.addEventListener('click', function(){
+      const now = !toggleCheckbox.checked;
+      toggleCheckbox.checked = now;
+      setExpanded(now);
+    }, {passive:true});
+
+    nav.addEventListener('mouseenter', function(){ if(!toggleCheckbox.checked) setExpanded(true); });
+    nav.addEventListener('mouseleave', function(){ if(!toggleCheckbox.checked) setExpanded(false); });
+  })();
+</script>
     <!-- Main Content -->
     <main role="main">
         <!-- About Section -->
