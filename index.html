@@ -1177,27 +1177,30 @@
     </style>
 </head>
 <body>
-   <!-- Header Section -->
-<header>
-    <div class="profile-container" style="text-align:center; margin:20px 0;">
-        <img 
-            src="./images/profile.jpg" 
-            srcset="./images/profile-360.jpg 360w, ./images/profile-720.jpg 720w, ./images/profile.jpg 1080w"
-            sizes="(max-width: 600px) 140px, 180px"
-            alt="Porträttbild av Baraa Chalati, IT-specialist" 
-            loading="lazy"
-            width="180" 
-            height="180"
-            style="border-radius:50%; object-fit:cover; border:4px solid #ddd; box-shadow:0 4px 10px rgba(0,0,0,0.15);"
-            onerror="this.onerror=null;this.src='https://via.placeholder.com/180?text=No+Image';">
-    </div>
-</header>
-
-<!-- Title & Tagline outside the header -->
-<div style="text-align:center;">
-    <h1>Baraa Chalati</h1>
-    <p class="tagline">Certified IT Specialist – Systemadmin, Microsoft 365, Automation Expert</p>
-</div>
+ <!-- Header Section -->
+    <header>
+        <div class="profile-container">
+            <img src="images/profile.jpg" alt="Porträttbild av Baraa Chalati, IT-specialist" class="profile-img" loading="lazy">
+            <h1>Baraa Chalati</h1>
+            <p class="tagline">Certified IT Specialist – Systemadmin, Microsoft 365, Automation Expert</p>
+            
+            <!-- Stats Bar -->
+            <div class="stats-bar">
+                <div class="stats-item">👨‍💻 500+ användare supportade</div>
+                <div class="stats-item">🛠 200+ artiklar publicerade</div>
+                <div class="stats-item">💡 30% processautomatisering</div>
+            </div>
+            
+            <div class="contact-buttons">
+                <a href="#contact" class="btn btn-primary" aria-label="Kontakta mig via formulär">
+                    <i class="fas fa-envelope"></i> Kontakta Mig
+                </a>
+                <a href="docs/baraa-chalati-cv.pdf" download class="btn btn-outline" aria-label="Ladda ner mitt CV">
+                    <i class="fas fa-download"></i> Ladda Ner CV
+                </a>
+            </div>
+        </div>
+    </header>
 
             <!-- Stats Bar -->
             <div class="stats-bar">
