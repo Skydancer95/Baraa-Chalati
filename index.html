@@ -26,11 +26,11 @@
       "@type": "Person",
       "name": "Baraa Chalati",
       "jobTitle": "Senior IT Support Specialist",
-      "url": "https://yourdomain.com",
+      "url": "https://baraachalati.se",
       "sameAs": [
         "https://www.linkedin.com/in/baraachalati",
         "https://github.com/Skydancer95",
-        "https://x.com/Darkskydancer95"
+        "https://twitter.com/Darkskydancer95"
       ],
       "address": {
         "@type": "PostalAddress",
@@ -85,6 +85,33 @@
             line-height: 1.7;
             scroll-behavior: smooth;
             transition: background-color 0.3s, color 0.3s;
+        }
+
+        /* Force all text to black in light mode for better inheritance */
+        [data-theme="light"], 
+        [data-theme="light"] body,
+        [data-theme="light"] h1, 
+        [data-theme="light"] h2, 
+        [data-theme="light"] h3, 
+        [data-theme="light"] h4, 
+        [data-theme="light"] h5, 
+        [data-theme="light"] h6,
+        [data-theme="light"] p,
+        [data-theme="light"] span,
+        [data-theme="light"] li,
+        [data-theme="light"] a,
+        [data-theme="light"] .tagline,
+        [data-theme="light"] .project-title,
+        [data-theme="light"] .reference-info h4,
+        [data-theme="light"] .footer-logo,
+        [data-theme="light"] .footer-text,
+        [data-theme="light"] .copyright,
+        [data-theme="light"] .skill-list li,
+        [data-theme="light"] .education-institution,
+        [data-theme="light"] .timeline-company,
+        [data-theme="light"] .contact-details p,
+        [data-theme="light"] .contact-details a {
+            color: #000 !important;
         }
 
         /* Header Styles */
@@ -1145,7 +1172,15 @@
     <!-- Header Section -->
     <header>
         <div class="profile-container">
-            <img src="images/profile.jpg" alt="Porträttbild av Baraa Chalati, IT-specialist" class="profile-img" loading="lazy">
+            <img 
+                src="images/profile.jpg" 
+                srcset="images/profile-360.jpg 360w, images/profile-720.jpg 720w, images/profile.jpg 1080w"
+                sizes="(max-width: 600px) 140px, 180px"
+                alt="Porträttbild av Baraa Chalati, IT-specialist" 
+                class="profile-img" 
+                loading="lazy"
+                width="180" 
+                height="180">
             <h1>Baraa Chalati</h1>
             <p class="tagline">Certified IT Specialist – Systemadmin, Microsoft 365, Automation Expert</p>
             
@@ -1668,10 +1703,10 @@ Bank-ID, identitetsverifiering, dokumentforensik, kundsupport, felsökning.</li>
                             <input type="email" id="email" name="email" class="form-control" required>
                         </div>
                         <div class="form-group">
-                            <label for="subject">Ämne*</label>
-                            <input type="text" id="subject" name="title" class="form-control" required minlength="3">
+                        <!-- Osynligt fält för spamskydd -->
+                        <div style="position: absolute; left: -5000px;" aria-hidden="true">
+                            <input type="text" name="_honey" tabindex="-1" aria-hidden="true">
                         </div>
-                        <div class="form-group">
                             <label for="message">Meddelande*</label>
                             <textarea id="message" name="message" class="form-control" required minlength="10"></textarea>
                         </div>
@@ -1741,7 +1776,7 @@ Bank-ID, identitetsverifiering, dokumentforensik, kundsupport, felsökning.</li>
             <p class="copyright">
                 &copy; <span id="currentYear"></span> Baraa Chalati. Alla rättigheter reserverade.
                 <br>
-                <small>Uppdaterad: September 2025</small>
+                <small>Uppdaterad: <span id="lastUpdated"></span></small>
         </div>
     </footer>
 
@@ -1749,6 +1784,7 @@ Bank-ID, identitetsverifiering, dokumentforensik, kundsupport, felsökning.</li>
     <script>
         // Initialize EmailJS
         (function() {
+            "use strict";
             emailjs.init("H3PHcVQNX3Q96EI3w");
             
             const contactForm = document.getElementById('contact-form');
@@ -1971,6 +2007,16 @@ Bank-ID, identitetsverifiering, dokumentforensik, kundsupport, felsökning.</li>
         if (currentYearEl) {
             currentYearEl.textContent = new Date().getFullYear();
         }
+        // Last updated date in footer
+        const lastUpdatedEl = $id('lastUpdated');
+        if (lastUpdatedEl) {
+            const months = [
+                "Januari", "Februari", "Mars", "April", "Maj", "Juni",
+                "Juli", "Augusti", "September", "Oktober", "November", "December"
+            ];
+            const now = new Date();
+            lastUpdatedEl.textContent = `${months[now.getMonth()]} ${now.getFullYear()}`;
+        }
 
         // Mobile nav toggle
         const navToggle = $id('nav-toggle');
@@ -1985,31 +2031,25 @@ Bank-ID, identitetsverifiering, dokumentforensik, kundsupport, felsökning.</li>
             initialTheme = prefersDark ? 'dark' : 'light';
             setTheme(initialTheme);
         }
-        // Set theme toggle button icon to match current theme
-        const themeToggleBtn = $id('theme-toggle');
-        if (themeToggleBtn) {
-            themeToggleBtn.innerHTML = initialTheme === 'dark' ? '🌞' : '🌙';
-            themeToggleBtn.setAttribute('aria-pressed', String(initialTheme === 'dark'));
-        }
     });
 })();
 </script>
-    <script>
-        // Smooth scrolling for anchor links
-        (function() {
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    const targetId = this.getAttribute('href').substring(1);
-                    const targetElement = document.getElementById(targetId);
-                    if (targetElement) {
-                        targetElement.scrollIntoView({ behavior: 'smooth' });
-                    }
-                });
+<script>
+    // Smooth scrolling for anchor links
+    (function() {
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({ behavior: 'smooth' });
+                }
             });
-        })();
-    </script>
-    <script>
+        });
+    })();
+</script>
+<script>
     // Lazy load images
     document.addEventListener("DOMContentLoaded", function() {
         const lazyImages = document.querySelectorAll("img[loading='lazy']");
@@ -2017,6 +2057,6 @@ Bank-ID, identitetsverifiering, dokumentforensik, kundsupport, felsökning.</li>
             img.src = img.dataset.src || img.src;
         });
     });
-    </script>
+</script>
 </body>
 </html>
