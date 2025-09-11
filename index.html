@@ -1914,29 +1914,6 @@ Bank-ID, identitetsverifiering, dokumentforensik, kundsupport, felsökning.</li>
             });
         })();
 </script>
-<!-- Theme toggle button (top-right only) -->
-<button id="theme-toggle" aria-pressed="false" title="Växla tema"
-        onclick="toggleTheme()"
-        style="
-            position:fixed;
-            top:12px;
-            right:12px;
-            z-index:2000;
-            width:44px;
-            height:44px;
-            border:none;
-            border-radius:8px;
-            cursor:pointer;
-            background:#ffffff;
-            color:#000;
-            font-size:18px;
-            display:flex;
-            align-items:center;
-            justify-content:center;
-            box-shadow:0 4px 12px rgba(0,0,0,0.15);
-        ">
-    🌙
-</button>
 <script>
 (() => {
     'use strict';
@@ -1971,7 +1948,7 @@ Bank-ID, identitetsverifiering, dokumentforensik, kundsupport, felsökning.</li>
             root.setAttribute('data-theme', 'light');
         }
 
-        // Update all relevant text colors
+        // Update text colors
         const textColor = isDark ? '#f8fafc' : '#000';
         const grayColor = isDark ? '#94a3b8' : '#475569';
 
@@ -2006,6 +1983,15 @@ Bank-ID, identitetsverifiering, dokumentforensik, kundsupport, felsökning.</li>
             '.project-card a','.timeline-item a','.education-item a','.reference-card a',
             '.footer-links a','.contact-details a'
         ].forEach(sel => document.querySelectorAll(sel).forEach(el => el.style.color = isDark ? '#10b981' : '#059669'));
+
+        // Update theme toggle button (top-right)
+        const btn = $id('theme-toggle');
+        if(btn){
+            btn.setAttribute('aria-pressed', String(isDark));
+            btn.innerHTML = isDark ? '🌞' : '🌙';
+            btn.style.background = isDark ? '#111827' : '#ffffff';
+            btn.style.color = isDark ? '#fff' : '#000';
+        }
     }
 
     // Set theme
@@ -2013,16 +1999,6 @@ Bank-ID, identitetsverifiering, dokumentforensik, kundsupport, felsökning.</li>
         if(mode !== 'dark' && mode !== 'light') return;
         applyThemeVars(mode === 'dark');
         localStorage.setItem('theme', mode);
-
-        // Update theme toggle button (top-right)
-        <!-- Theme Toggle Button (top-right) -->
-        const btn = $id('theme-toggle');
-        if(btn){
-            btn.setAttribute('aria-pressed', String(mode === 'dark'));
-            btn.innerHTML = mode === 'dark' ? '🌞' : '🌙';
-            btn.style.background = mode === 'dark' ? '#111827' : '#ffffff';
-            btn.style.color = mode === 'dark' ? '#fff' : '#000';
-        }
     }
 
     // Toggle theme
@@ -2046,7 +2022,7 @@ Bank-ID, identitetsverifiering, dokumentforensik, kundsupport, felsökning.</li>
 
     // DOMContentLoaded
     document.addEventListener('DOMContentLoaded', () => {
-        // Back to top
+        // Back to top button
         const backToTopButton = $id('backToTop');
         if(backToTopButton){
             const updateBackToTop = () => {
