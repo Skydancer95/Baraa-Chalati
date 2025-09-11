@@ -1203,16 +1203,16 @@
     </header>
 <!-- Navigation Bar -->
 <style>
-  <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="sv">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Responsive Professional Navbar</title>
+<title>Professional Navbar with Profile Photo</title>
 <style>
   body {
     margin: 0;
-    font-family: 'Arial', sans-serif;
+    font-family: Arial, sans-serif;
     background: #1e1e2f;
     color: #fff;
   }
@@ -1226,61 +1226,35 @@
     height: 50px;
     background: rgba(30, 40, 60, 0.85);
     backdrop-filter: blur(12px) saturate(180%);
-    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 0 20px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
     z-index: 1000;
-    transition: height 0.35s ease;
-    overflow: hidden;
   }
 
-  /* Logo */
+  /* Logo with profile photo */
   .logo {
     display: flex;
     align-items: center;
     gap: 12px;
-    color: #ecf0f1;
     text-decoration: none;
+    color: #ecf0f1;
     font-weight: 700;
   }
 
-  .logo .circle {
+  .logo .profile-img {
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    background: linear-gradient(135deg,#6dd5ed,#2193b0);
-    box-shadow: 0 0 12px #6dd5ed, 0 0 24px #2193b0;
-    transition: transform 0.3s ease;
+    object-fit: cover;
+    display: block;
+    box-shadow: 0 0 8px rgba(0,0,0,0.3);
   }
 
   .logo .text {
     font-size: 1.2rem;
-  }
-
-  /* Hamburger (mobile only) */
-  #nav-toggle-btn {
-    width: 35px;
-    height: 35px;
-    border: none;
-    background: transparent;
-    cursor: pointer;
-    display: none; /* hidden on desktop */
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    padding: 5px 0;
-    z-index: 1100;
-  }
-
-  #nav-toggle-btn span {
-    display: block;
-    width: 28px;
-    height: 3px;
-    background: #ecf0f1;
-    border-radius: 2px;
-    transition: all 0.3s ease;
   }
 
   /* Navigation Links */
@@ -1312,6 +1286,30 @@
   .nav-links a span {
     display: inline-block;
     transition: transform 0.3s ease;
+  }
+
+  /* Hamburger (mobile only) */
+  #nav-toggle-btn {
+    width: 35px;
+    height: 35px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    display: none; /* hidden on desktop */
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 0;
+    z-index: 1100;
+  }
+
+  #nav-toggle-btn span {
+    display: block;
+    width: 28px;
+    height: 3px;
+    background: #ecf0f1;
+    border-radius: 2px;
+    transition: all 0.3s ease;
   }
 
   /* Mobile Styles */
@@ -1349,20 +1347,20 @@
 <body>
 
 <nav id="top-nav">
-  <!-- Logo -->
+  <!-- Logo with profile photo -->
   <a href="#" class="logo">
-    <span class="circle"></span>
+    <img src="images/profile.jpg" alt="Porträttbild av Baraa Chalati, IT-specialist" class="profile-img" loading="lazy">
     <span class="text">Baraa Chalati</span>
   </a>
 
-  <!-- Hamburger -->
+  <!-- Hamburger for mobile -->
   <button id="nav-toggle-btn">
     <span></span>
     <span></span>
     <span></span>
   </button>
 
-  <!-- Links -->
+  <!-- Navigation Links -->
   <div class="nav-links">
     <a href="#about"><span>🧑</span> Om Mig</a>
     <a href="#education"><span>🎓</span> Utbildning</a>
