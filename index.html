@@ -1914,203 +1914,176 @@ Bank-ID, identitetsverifiering, dokumentforensik, kundsupport, felsökning.</li>
             });
         })();
 </script>
+<!-- Theme Toggle Button (top-right) -->
+<button id="theme-toggle" aria-pressed="false" title="Växla tema"
+        onclick="toggleTheme()"
+        style="
+            position:fixed;
+            top:12px;
+            right:12px;
+            z-index:2000;
+            width:44px;
+            height:44px;
+            border:none;
+            border-radius:8px;
+            cursor:pointer;
+            background:#ffffff;
+            color:#000;
+            font-size:18px;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            box-shadow:0 4px 12px rgba(0,0,0,0.15);
+        ">
+    🌙
+</button>
+
 <script>
 (() => {
     'use strict';
 
-    // Helper: safely get element by id
+    // Helper: get element by id
     const $id = id => document.getElementById(id);
 
-    // Apply theme CSS variables and document attributes
+    // Apply theme colors
     function applyThemeVars(isDark) {
         const root = document.documentElement;
+        const body = document.body;
+
         if (isDark) {
-            // Set dark theme
             root.style.setProperty('--primary', '#10b981');
             root.style.setProperty('--primary-dark', '#059669');
             root.style.setProperty('--dark', '#0f172a');
             root.style.setProperty('--darker', '#020617');
             root.style.setProperty('--light', '#f8fafc');
             root.style.setProperty('--gray', '#94a3b8');
-            document.body.style.backgroundColor = '#0f172a';
-            document.body.style.color = '#f8fafc';
+            body.style.backgroundColor = '#0f172a';
+            body.style.color = '#f8fafc';
             root.setAttribute('data-theme', 'dark');
         } else {
-            // Set light theme
             root.style.setProperty('--primary', '#10b981');
             root.style.setProperty('--primary-dark', '#059669');
             root.style.setProperty('--dark', '#f8fafc');
             root.style.setProperty('--darker', '#e2e8f0');
             root.style.setProperty('--light', '#18181b');
             root.style.setProperty('--gray', '#475569');
-            document.body.style.backgroundColor = '#f8fafc';
-            document.body.style.color = '#000'; // <-- force all text to black in light mode
+            body.style.backgroundColor = '#f8fafc';
+            body.style.color = '#000';
             root.setAttribute('data-theme', 'light');
         }
 
-        // Fix text color for all box elements and headings in both themes
-        const boxSelectors = [
-            '.skill-category',
-            '.success-card',
-            '.education-item',
-            '.cert-badge',
-            '.timeline-item',
-            '.project-card',
-            '.knowledge-card',
-            '.reference-card',
-            '.contact-info',
-            '.contact-form',
-            '.simple-contact'
-        ];
-        const headingSelectors = [
-            'h1', 'h2', 'h3', 'h4', 'h5', 'h6'
-        ];
-        // Always use black for text in light mode
+        // Update all relevant text colors
         const textColor = isDark ? '#f8fafc' : '#000';
         const grayColor = isDark ? '#94a3b8' : '#475569';
 
+        const boxSelectors = [
+            '.skill-category','.success-card','.education-item','.cert-badge',
+            '.timeline-item','.project-card','.knowledge-card','.reference-card',
+            '.contact-info','.contact-form','.simple-contact'
+        ];
+        const headingSelectors = ['h1','h2','h3','h4','h5','h6'];
+        const graySelectors = [
+            '.project-description','.reference-content','.education-description',
+            '.timeline-description','.about-text p','.footer-text','.contact-details p',
+            '.contact-details a','.skill-list li','.education-institution','.timeline-company'
+        ];
+
         boxSelectors.forEach(sel => {
             document.querySelectorAll(sel).forEach(el => {
-                // For .cert-badge, only set color on direct text, not on links or icons
-                if (sel === '.cert-badge') {
+                if(sel === '.cert-badge'){
                     el.style.color = textColor;
-                    el.querySelectorAll('a, i').forEach(child => {
-                        child.style.color = '';
-                    });
+                    el.querySelectorAll('a, i').forEach(c => c.style.color = '');
                 } else {
                     el.style.color = textColor;
                 }
             });
         });
-        headingSelectors.forEach(sel => {
-            document.querySelectorAll(sel).forEach(el => {
-                el.style.color = textColor;
-            });
-        });
-        [
-            '.project-description',
-            '.reference-content',
-            '.education-description',
-            '.timeline-description',
-            '.about-text p',
-            '.footer-text',
-            '.contact-details p',
-            '.contact-details a',
-            '.skill-list li',
-            '.education-institution',
-            '.timeline-company'
-        ].forEach(sel => {
-            document.querySelectorAll(sel).forEach(el => {
-                el.style.color = grayColor;
-            });
-        });
-        document.querySelectorAll('.tagline').forEach(el => {
-            el.style.color = grayColor;
-        });
-        document.querySelectorAll('.project-title, .reference-info h4').forEach(el => {
-            el.style.color = textColor;
-        });
 
+        headingSelectors.forEach(sel => document.querySelectorAll(sel).forEach(el => el.style.color = textColor));
+        graySelectors.forEach(sel => document.querySelectorAll(sel).forEach(el => el.style.color = grayColor));
+        document.querySelectorAll('.tagline').forEach(el => el.style.color = grayColor);
+        document.querySelectorAll('.project-title, .reference-info h4').forEach(el => el.style.color = textColor);
         [
-            '.project-card a',
-            '.timeline-item a',
-            '.education-item a',
-            '.reference-card a',
-            '.footer-links a',
-            '.contact-details a'
-        ].forEach(sel => {
-            document.querySelectorAll(sel).forEach(el => {
-                el.style.color = isDark ? '#10b981' : '#059669';
-            });
-        });
+            '.project-card a','.timeline-item a','.education-item a','.reference-card a',
+            '.footer-links a','.contact-details a'
+        ].forEach(sel => document.querySelectorAll(sel).forEach(el => el.style.color = isDark ? '#10b981' : '#059669'));
     }
 
-    // Public: set theme to 'dark' or 'light'
-    function setTheme(mode) {
-        if (mode !== 'dark' && mode !== 'light') return;
+    // Set theme
+    function setTheme(mode){
+        if(mode !== 'dark' && mode !== 'light') return;
         applyThemeVars(mode === 'dark');
         localStorage.setItem('theme', mode);
-        // Update theme toggle button if present
-        const themeToggleBtn = $id('theme-toggle');
-        if (themeToggleBtn) {
-            themeToggleBtn.setAttribute('aria-pressed', String(mode === 'dark'));
-            themeToggleBtn.innerHTML = mode === 'dark' ? '🌞' : '🌙';
+
+        // Update theme toggle button
+        const btn = $id('theme-toggle');
+        if(btn){
+            btn.setAttribute('aria-pressed', String(mode === 'dark'));
+            btn.innerHTML = mode === 'dark' ? '🌞' : '🌙';
+            btn.style.background = mode === 'dark' ? '#111827' : '#ffffff';
+            btn.style.color = mode === 'dark' ? '#fff' : '#000';
         }
     }
 
-    // Public: toggle theme (uses/set localStorage)
-    window.toggleTheme = function () {
-        const saved = localStorage.getItem('theme') ||
+    // Toggle theme
+    window.toggleTheme = () => {
+        const saved = localStorage.getItem('theme') || 
             (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-        const next = saved === 'dark' ? 'light' : 'dark';
-        setTheme(next);
+        setTheme(saved === 'dark' ? 'light' : 'dark');
     };
 
-    // Make toggleSection available globally
-    window.toggleSection = function (id) {
+    // Toggle sections (existing)
+    window.toggleSection = id => {
         const el = $id(id);
-        if (!el) return;
+        if(!el) return;
         el.classList.toggle('open');
-        // Try to toggle icon in header
         const header = el.previousElementSibling;
-        if (header) {
+        if(header){
             const icon = header.querySelector && header.querySelector('i');
-            if (icon) {
-                icon.className = el.classList.contains('open') ? 'fas fa-chevron-up' : 'fas fa-chevron-down';
-            }
+            if(icon) icon.className = el.classList.contains('open') ? 'fas fa-chevron-up' : 'fas fa-chevron-down';
         }
     };
 
-    // DOM ready
-    document.addEventListener('DOMContentLoaded', function () {
-        // Back to top button
+    // DOMContentLoaded
+    document.addEventListener('DOMContentLoaded', () => {
+        // Back to top
         const backToTopButton = $id('backToTop');
-        if (backToTopButton) {
-            // initial visibility
+        if(backToTopButton){
             const updateBackToTop = () => {
-                if (window.pageYOffset > 300) {
+                if(window.pageYOffset > 300){
                     backToTopButton.classList.add('visible');
-                    backToTopButton.setAttribute('aria-hidden', 'false');
+                    backToTopButton.setAttribute('aria-hidden','false');
                 } else {
                     backToTopButton.classList.remove('visible');
-                    backToTopButton.setAttribute('aria-hidden', 'true');
+                    backToTopButton.setAttribute('aria-hidden','true');
                 }
             };
             updateBackToTop();
             window.addEventListener('scroll', updateBackToTop);
-            backToTopButton.addEventListener('click', () => {
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-            });
+            backToTopButton.addEventListener('click', () => window.scrollTo({top:0, behavior:'smooth'}));
         }
 
-        // Current year in footer
+        // Footer dates
         const currentYearEl = $id('currentYear');
-        if (currentYearEl) {
-            currentYearEl.textContent = new Date().getFullYear();
-        }
-        // Last updated date in footer
+        if(currentYearEl) currentYearEl.textContent = new Date().getFullYear();
+
         const lastUpdatedEl = $id('lastUpdated');
-        if (lastUpdatedEl) {
-            const months = [
-                "Januari", "Februari", "Mars", "April", "Maj", "Juni",
-                "Juli", "Augusti", "September", "Oktober", "November", "December"
-            ];
+        if(lastUpdatedEl){
+            const months = ["Januari","Februari","Mars","April","Maj","Juni","Juli","Augusti","September","Oktober","November","December"];
             const now = new Date();
             lastUpdatedEl.textContent = `${months[now.getMonth()]} ${now.getFullYear()}`;
         }
 
         // Mobile nav toggle
         const navToggle = $id('nav-toggle');
-        // Apply saved theme (or system preference)
+
+        // Initialize theme
         const savedTheme = localStorage.getItem('theme');
-        let initialTheme;
-        if (savedTheme === 'dark' || savedTheme === 'light') {
-            initialTheme = savedTheme;
+        if(savedTheme === 'dark' || savedTheme === 'light'){
             setTheme(savedTheme);
         } else {
             const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-            initialTheme = prefersDark ? 'dark' : 'light';
-            setTheme(initialTheme);
+            setTheme(prefersDark ? 'dark' : 'light');
         }
     });
 })();
